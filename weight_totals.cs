@@ -24,34 +24,46 @@ namespace HelloWorld
 
         static void Main(string[] args)
         {
-            int num_point_arrays = 2;
+            int num_point_arrays = 3;
 
+            //test values
             point point1 = new point(1, 2, 0);
             point point2 = new point(3, 3, 1);
+            point point3 = new point(10, 10, 10);
 
             point[] points1 = new point[] { point1, point2 };
             point[] points2 = new point[] { point2, point1 };
+            point[] points3 = new point[] { point1, point3 };
 
             point[][] sections = new point[num_point_arrays][]; //creates an array of point-arrays
 
             //places point-arrays that are just tests in sections
             sections[0] = points1;
             sections[1] = points2;
-            
-            Hashtable scannerResults = getScannerResults(points1);
+            sections[2] = points3;
+
+            Hashtable[] section_results = new Hashtable[num_point_arrays];
+            int j = 0;
+
+            foreach (point[] array in sections)
+            {
+                section_results[j] = getScannerResults(array);
+                j++;
+            }
 
 
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < num_point_arrays; i++)
             {
 
-
-                foreach (DictionaryEntry entry in scannerResults)
+                foreach (DictionaryEntry entry in section_results[i])
                 {
                     Console.WriteLine("{0}, {1}", entry.Key, entry.Value);
                 }
-                Console.ReadKey();
+                
             }
+            Console.ReadKey();
         }
+        
 
         static Hashtable getScannerResults(point[] Points)
         {
