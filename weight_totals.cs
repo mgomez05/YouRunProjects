@@ -24,7 +24,7 @@ namespace HelloWorld
 
         static void Main(string[] args)
         {
-            /*
+            
             int num_point_arrays = 3;
             
             //test values
@@ -58,7 +58,7 @@ namespace HelloWorld
                 section_results[j] = getScannerResults(array);
                 j++;
             }
-            */
+            
 
             //STEP 3
 
@@ -69,26 +69,36 @@ namespace HelloWorld
             weight_percentages.Add("hills", 0.25);
             weight_percentages.Add("sidewalk", 0.50);
 
-            //just checks that I can cast the type
-            double check_if_double = (double)weight_percentages["sidewalk"];
+            
+            //STEP 4
 
-            Console.WriteLine(check_if_double);
-
-            /*
+            //an array containing the total values for each section when the weight percentages are factored in
+            double[] section_totals = new double[num_point_arrays];
 
             //runs a loop to output the information to see if the program worked
             for (int i = 0; i < num_point_arrays; i++)
             {
-
+                
+                
                 foreach (DictionaryEntry entry in section_results[i])
                 {
-                    Console.WriteLine("{0}, {1}", entry.Key, entry.Value);
+                    //makes the key in each DictionaryEntry a string and the Value a double
+                    string key = (string)entry.Key;     
+                    double value_for_landmark = Convert.ToDouble(entry.Value);
+
+                    //adds the result of multiplying the weight percentages to the values for each landmark
+                    section_totals[i] += ((double)weight_percentages[key] * value_for_landmark);
+                    
+                    //checks if the math adds up
+                    Console.WriteLine("This is the int value {0}", entry.Value);
+                    Console.WriteLine("This is the weight_percentage {0}",(double)weight_percentages[key]);
+                    Console.WriteLine("This is the value times the weight_percentage {0}", (double)weight_percentages[key] * value_for_landmark);
+                   // Console.WriteLine("{0}, {1}", entry.Key, entry.Value);
                 }
-                
+                Console.WriteLine("Section {0} totals equals {1}", i + 1, section_totals[i]);
             }
-            */
             Console.ReadKey();
-        }
+                 }
         
         //takes an array of pointers and stores the information in a hashtable
         //also adds the total values of all of the pointers
