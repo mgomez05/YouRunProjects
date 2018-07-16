@@ -24,17 +24,22 @@ namespace HelloWorld
 
         static void Main(string[] args)
         {
+            //STEP 5
             
-            int num_point_arrays = 3;
+            
+            int num_point_arrays = 4;
             
             //test values
             point point1 = new point(1, 2, 0);
             point point2 = new point(3, 3, 1);
             point point3 = new point(10, 10, 10);
+            point point4 = new point(50, 0, 7);
+            point point5 = new point(5, 11, 3);
 
             point[] points1 = new point[] { point1, point2 };
-            point[] points2 = new point[] { point2, point1 };
+            point[] points2 = new point[] { point5, point1 };
             point[] points3 = new point[] { point1, point3 };
+            point[] points4 = new point[] { point4, point5 };
             
             //STEP 1
 
@@ -45,6 +50,7 @@ namespace HelloWorld
             sections[0] = points1;
             sections[1] = points2;
             sections[2] = points3;
+            sections[3] = points4;
 
             //STEP 2
 
@@ -90,8 +96,8 @@ namespace HelloWorld
                     section_totals[i] += ((double)weight_percentages[key] * value_for_landmark);
                     
                     //checks if the math adds up
-                   // Console.WriteLine("This is the int value {0}", entry.Value);
-                   // Console.WriteLine("This is the weight_percentage {0}",(double)weight_percentages[key]);
+                   //Console.WriteLine("This is the int value {0}", entry.Value);
+                   //Console.WriteLine("This is the weight_percentage {0}",(double)weight_percentages[key]);
                     //Console.WriteLine("This is the value times the weight_percentage {0}", (double)weight_percentages[key] * value_for_landmark);
                    // Console.WriteLine("{0}, {1}", entry.Key, entry.Value);
                 }
