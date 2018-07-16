@@ -90,13 +90,16 @@ namespace HelloWorld
                     section_totals[i] += ((double)weight_percentages[key] * value_for_landmark);
                     
                     //checks if the math adds up
-                    Console.WriteLine("This is the int value {0}", entry.Value);
-                    Console.WriteLine("This is the weight_percentage {0}",(double)weight_percentages[key]);
-                    Console.WriteLine("This is the value times the weight_percentage {0}", (double)weight_percentages[key] * value_for_landmark);
+                   // Console.WriteLine("This is the int value {0}", entry.Value);
+                   // Console.WriteLine("This is the weight_percentage {0}",(double)weight_percentages[key]);
+                    //Console.WriteLine("This is the value times the weight_percentage {0}", (double)weight_percentages[key] * value_for_landmark);
                    // Console.WriteLine("{0}, {1}", entry.Key, entry.Value);
                 }
-                Console.WriteLine("Section {0} totals equals {1}", i + 1, section_totals[i]);
+                //double highest_weighted_total = getHighestWeightedTotal(section_totals, num_point_arrays);
+                //Console.WriteLine("Section {0} totals equals {1}", i + 1, section_totals[i]);
+                
             }
+            printHighestWeightedTotal(section_totals, num_point_arrays);
             Console.ReadKey();
                  }
         
@@ -121,6 +124,35 @@ namespace HelloWorld
             pointWeights["sidewalk"] = weight_sidewalk;
 
             return pointWeights;
+
+        }
+        static double getHighestWeightedTotal(double[] section_totals, int num_point_arrays)
+        {
+            double highest_weighted_total = section_totals[0];
+            for (int i = 1; i < num_point_arrays; i++)
+            {
+                if (section_totals[i] > section_totals[i - 1])
+                {
+                    highest_weighted_total = section_totals[i];
+                }
+            }
+            return highest_weighted_total;
+        }
+
+        static void printHighestWeightedTotal(double[] section_totals, int num_point_arrays)
+        {
+            double highest_weighted_total = getHighestWeightedTotal(section_totals, num_point_arrays);
+            int highest_section = 1;
+            for (int i = 1; i < num_point_arrays; i++)
+            {
+                if (section_totals[i] > section_totals[i - 1])
+                {
+                    highest_section = i + 1;
+                }
+            }
+            Console.WriteLine("Section #{0} has the highest weighted total of {1}", highest_section, highest_weighted_total);
+
+
 
         }
     }
