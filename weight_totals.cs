@@ -24,49 +24,54 @@ namespace HelloWorld
 
         static void Main(string[] args)
         {
-            //STEP 5
-            
-            
-            int num_point_arrays = 4;
-            
+            //STEP 5                       
+                     
             //test values
             point point1 = new point(1, 2, 0);
             point point2 = new point(3, 3, 1);
             point point3 = new point(10, 10, 10);
             point point4 = new point(50, 0, 7);
             point point5 = new point(5, 11, 3);
-
-            point[] points1 = new point[] { point1, point2 };
-            point[] points2 = new point[] { point5, point1 };
-            point[] points3 = new point[] { point1, point3 };
-            point[] points4 = new point[] { point4, point5 };
             
-            //STEP 1
-
-            //2d array of point-arrays
-            point[][] sections = new point[num_point_arrays][]; 
-
-            //places point-arrays that are just tests in sections
-            sections[0] = points1;
-            sections[1] = points2;
-            sections[2] = points3;
-            sections[3] = points4;
-
-            //STEP 2
-
-            //an array of Hashtables that contains the results from getScannerResults
-            Hashtable[] section_results = new Hashtable[num_point_arrays];
-            int j = 0;
+            List<point> points1 = new List<point>
+            {
+                point1,
+                point2
+            };
+            List<point> points2 = new List<point>
+            {
+                point5,
+                point1
+            };
+            List<point> points3 = new List<point>
+            {
+                point1,
+                point3
+            };
+            List<point> points4 = new List<point>
+            {
+                point4,
+                point5
+            };
+                              
+            //A list of lists that acts as a dynamic jagged array
+            List<List<point>> sections = new List<List<point>>();
+            sections.Add(points1);
+            sections.Add(points2);
+            sections.Add(points3);
+            sections.Add(points4);
+                      
+            
+            //a list of Hashtables that contains the results from getScannerResults
+            List<Hashtable> section_results = new List<Hashtable>();
+        
+            
 
             //places the Scanner results from each pointer-array into section_results
-            foreach (point[] array in sections)
+            foreach (List<point> subList in sections)
             {
-                section_results[j] = getScannerResults(array);
-                j++;
+                section_results.Add(getScannerResults(subList));                                
             }
-            
-
-            //STEP 3
 
             //A new hashtable with weight percentages for objects
             Hashtable weight_percentages = new Hashtable();
@@ -75,43 +80,39 @@ namespace HelloWorld
             weight_percentages.Add("hills", 0.25);
             weight_percentages.Add("sidewalk", 0.50);
 
+            //a list containing the total values for each section when the weight percentages are factored in
+            List<double> section_totals = new List<double>();
+
             
-            //STEP 4
-
-            //an array containing the total values for each section when the weight percentages are factored in
-            double[] section_totals = new double[num_point_arrays];
-
-            //runs a loop to output the information to see if the program worked
-            for (int i = 0; i < num_point_arrays; i++)
+            //runs a loop to add the totals from section_results into section_totals
+            foreach (Hashtable hashtables in section_results)
             {
-                
-                
-                foreach (DictionaryEntry entry in section_results[i])
+                double total = 0;
+
+                foreach (DictionaryEntry entry in hashtables)
                 {
                     //makes the key in each DictionaryEntry a string and the Value a double
-                    string key = (string)entry.Key;     
+                    string key = (string)entry.Key;
                     double value_for_landmark = Convert.ToDouble(entry.Value);
-
+                                        
                     //adds the result of multiplying the weight percentages to the values for each landmark
-                    section_totals[i] += ((double)weight_percentages[key] * value_for_landmark);
-                    
+                     total += ((double)weight_percentages[key] * value_for_landmark);
+
                     //checks if the math adds up
-                   //Console.WriteLine("This is the int value {0}", entry.Value);
-                   //Console.WriteLine("This is the weight_percentage {0}",(double)weight_percentages[key]);
-                    //Console.WriteLine("This is the value times the weight_percentage {0}", (double)weight_percentages[key] * value_for_landmark);
-                   // Console.WriteLine("{0}, {1}", entry.Key, entry.Value);
+                    //Console.WriteLine("This is the int value {0}", entry.Value);
+                   // Console.WriteLine("This is the weight_percentage {0}",(double)weight_percentages[key]);
+                   // Console.WriteLine("This is the value times the weight_percentage {0}", (double)weight_percentages[key] * value_for_landmark);
+                   //Console.WriteLine("{0}, {1}", entry.Key, entry.Value);
                 }
-                //double highest_weighted_total = getHighestWeightedTotal(section_totals, num_point_arrays);
-                //Console.WriteLine("Section {0} totals equals {1}", i + 1, section_totals[i]);
-                
+                section_totals.Add(total);
             }
-            printHighestWeightedTotal(section_totals, num_point_arrays);
+            printHighestWeightedTotal(section_totals);
             Console.ReadKey();
                  }
         
         //takes an array of pointers and stores the information in a hashtable
         //also adds the total values of all of the pointers
-        static Hashtable getScannerResults(point[] Points)
+        static Hashtable getScannerResults(List<point> Points)
         {
             int weight_water = 0;
             int weight_hills = 0;
@@ -132,35 +133,40 @@ namespace HelloWorld
             return pointWeights;
 
         }
-        static double getHighestWeightedTotal(double[] section_totals, int num_point_arrays)
+        static double getHighestWeightedTotal(List<double> section_totals)
         {
-            double highest_weighted_total = section_totals[0];
-            for (int i = 1; i < num_point_arrays; i++)
+            double highest_weighted_total = 0;
+            double section_total_before = 0;
+            foreach (double weighted_total in section_totals)
             {
-                if (section_totals[i] > section_totals[i - 1])
+                if (weighted_total > section_total_before)
                 {
-                    highest_weighted_total = section_totals[i];
+                    highest_weighted_total = weighted_total;
                 }
+                section_total_before = weighted_total;
             }
             return highest_weighted_total;
         }
 
-        static void printHighestWeightedTotal(double[] section_totals, int num_point_arrays)
+        static void printHighestWeightedTotal(List<double> section_totals)
         {
-            double highest_weighted_total = getHighestWeightedTotal(section_totals, num_point_arrays);
+            double highest_weighted_total = getHighestWeightedTotal(section_totals);
             int highest_section = 1;
-            for (int i = 1; i < num_point_arrays; i++)
+            double section_total_before = 0;
+            int section_number = 1;
+
+            foreach (double weighted_total in section_totals)
             {
-                if (section_totals[i] > section_totals[i - 1])
+
+                if (weighted_total > section_total_before)
                 {
-                    highest_section = i + 1;
+                    highest_section = section_number;
                 }
+                section_number++;
             }
             Console.WriteLine("Section #{0} has the highest weighted total of {1}", highest_section, highest_weighted_total);
-
-
-
         }
+       
     }
 
 }
