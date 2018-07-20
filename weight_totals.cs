@@ -22,6 +22,12 @@ namespace HelloWorld
             }
         }
 
+        public struct ScannerData
+        {
+            public Hashtable weight_percentages;
+            public List<List<point>> sections;
+        }
+
         static void Main(string[] args)
         {
             //STEP 5                       
