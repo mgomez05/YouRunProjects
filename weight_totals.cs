@@ -1,4 +1,4 @@
-                                    using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Newtonsoft.Json.Linq;
@@ -178,34 +178,139 @@ namespace HelloWorld
             Console.WriteLine("Section #{0} has the highest weighted total of {1}", highest_section, highest_weighted_total);
         }
 
-        static void parseJsonData(string jsonString)
+        static ScannerData parseJsonData(string jsonString)
         {   
-            ScannerData data;
+            ScannerData returnData;
 
             JObject results = JObject.Parse(jsonString);
 
-            Dictionary<string, double> temp = new Dictionary<string, double>();
+            Dictionary<string, double> temp1 = new Dictionary<string, double>();
+            
             Dictionary<string, double> weight_percents = new Dictionary<string, double>();
             
             foreach (var element in results["weight_percentages"])
             {
-                temp = JsonConvert.DeserializeObject<Dictionary<string, double>>(Convert.ToString(element));
+                temp1 = JsonConvert.DeserializeObject<Dictionary<string, double>>(Convert.ToString(element));
                 
-                foreach (KeyValuePair<string, double> item in temp)
+                foreach (KeyValuePair<string, double> item in temp1)
                 {
                     weight_percents.Add(item.Key, item.Value);
                 }              
                 
             }
-            data.weight_percentages = new Hashtable(weight_percents);
+            returnData.weight_percentages = new Hashtable(weight_percents);
 
-           /* foreach (DictionaryEntry item in data.weight_percentages)
+            /* foreach (DictionaryEntry item in data.weight_percentages)
+             {
+                 Console.WriteLine("Key {0}, Value {1}", item.Key, item.Value);
+             }
+             */
+            returnData.sections = new List<List<point>>();
+
+            List<point> list = new List<point>();
+                             
+                                  
+
+            //var weights = from element in points["points"] select element["water"];
+
+            string sections_string = results["sections"].ToString();
+
+            string points_string;
+
+            JArray sections_array = JArray.Parse(sections_string);
+
+            int num_sections = sections_array.Count;
+
+            int water;
+
+            int hills;
+
+            int sidewalk = 0;
+
+            JArray points_array;
+
+            int num_points;
+
+            point place;
+
+            
+            
+            for (int i = 0; i < num_sections; i++)
             {
-                Console.WriteLine("Key {0}, Value {1}", item.Key, item.Value);
+                list = new List<point>();
+                points_string = results["sections"][i]["points"].ToString();
+
+                points_array = JArray.Parse(points_string);
+
+                num_points = points_array.Count;
+
+                for (int j = 0; j < num_points; j++)
+                {
+                    water = (int)results["sections"][i]["points"][j]["weights"]["water"];
+                    hills = (int)results["sections"][i]["points"][j]["weights"]["hills"];
+                    
+                    place = new point(water, hills, sidewalk);
+                    list.Add(place);
+                }
+                returnData.sections.Add(list);
+                
+
+                
             }
-            */
-                      
-             
+
+            foreach (List<point> subList in returnData.sections)
+            {
+                foreach (point item in subList)
+                {
+                    Console.WriteLine("water: {0}, hills: {1}", item.water, item.hills);
+                }
+            }
+
+            return returnData;
+            
+            
+
+
+
+
+
+
+
+
+            //var weights = from something in results["sections"][0]["points"] select something["weights"];
+
+
+
+            // int something = (int)results["sections"][0]["points"][0]["weights"]["water"];
+
+
+
+
+
+            /*foreach (var element in results["sections"])
+            {
+                JToken points = JToken.Parse(results["sections"].ToString());
+               // foreach (var point in points)
+                //{
+                    //JToken weights = JToken.Parse(points["points"].ToString());
+                    
+                    foreach (var item in points)
+                 
+                    {
+                        */
+            /* temp2 = JsonConvert.DeserializeObject<Dictionary<string, int>>(Convert.ToString(item));
+             foreach (KeyValuePair<string, int> component in temp2)
+             {
+                 temp3.Add(component.Key, component.Value);
+             }
+             place.water = temp3["water"];
+             place.hills = temp3["hills"];
+
+         }
+     //}
+
+ }
+ */
             //{"weight_percentages":[{"water":0.75},{"hills":0.5}],"sections"
             //:[{"id":"1","points":[{"latitude":11.7575,"longitude":13.55567,
             //"weights":{"water":1,"hills":2}},{"latitude":12.2343,"longitude":
