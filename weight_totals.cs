@@ -34,60 +34,25 @@ namespace HelloWorld
         {
             string jsonString = "{ \"weight_percentages\":[{\"water\":0.75},{\"hills\":0.5}],\"sections\":[{\"id\":\"1\",\"points\":[{\"latitude\":11.7575,\"longitude\":13.55567,\"weights\":{\"water\":1,\"hills\":2}},{\"latitude\":12.2343,\"longitude\":2.553535,\"weights\":{\"water\":3,\"hills\":8}}]},{\"id\":\"9\",\"points\":[{\"latitude\":44.7898,\"longitude\":90.5898,\"weights\":{\"water\":6,\"hills\":7}},{\"latitude\":60.2676,\"longitude\":32.553535,\"weights\":{\"water\":5,\"hills\":6}}]}]}";
 
-            parseJsonData(jsonString);
-            //test values
-            point point1 = new point(1, 2, 0);
-            point point2 = new point(3, 3, 1);
-            point point3 = new point(10, 10, 10);
-            point point4 = new point(50, 0, 7);
-            point point5 = new point(5, 11, 3);
+            ScannerData data = parseJsonData(jsonString);
 
-            List<point> points1 = new List<point>
-            {
-                point1,
-                point2
-            };
-            List<point> points2 = new List<point>
-            {
-                point5,
-                point1
-            };
-            List<point> points3 = new List<point>
-            {
-                point1,
-                point3
-            };
-            List<point> points4 = new List<point>
-            {
-                point4,
-                point5
-            };
-
-            //A list of lists that acts as a dynamic jagged array
-            List<List<point>> sections = new List<List<point>>();
-            sections.Add(points1);
-            sections.Add(points2);
-            sections.Add(points3);
-            sections.Add(points4);
-
+            List<List<point>> sections = data.sections;
 
             //a list of Hashtables that contains the results from getScannerResults
             List<Hashtable> section_results = new List<Hashtable>();
 
-
+            Hashtable temp = new Hashtable();
 
             //places the Scanner results from each pointer-array into section_results
             foreach (List<point> subList in sections)
             {
                 section_results.Add(getScannerResults(subList));
+                temp = getScannerResults(subList);
+                                
             }
 
             //A new hashtable with weight percentages for objects
-            Hashtable weight_percentages = new Hashtable();
-
-            weight_percentages.Add("water", 0.75);
-            weight_percentages.Add("hills", 0.25);
-            weight_percentages.Add("sidewalk", 0.50);
+            Hashtable weight_percentages = data.weight_percentages;
 
             //a list containing the total values for each section when the weight percentages are factored in
             List<double> section_totals = new List<double>();
@@ -144,6 +109,8 @@ namespace HelloWorld
             return pointWeights;
 
         }
+
+        //helper function that gets the highest waited total
         static double getHighestWeightedTotal(List<double> section_totals)
         {
             double highest_weighted_total = 0;
@@ -159,6 +126,7 @@ namespace HelloWorld
             return highest_weighted_total;
         }
 
+        //helper function that prints the highest weighted total and its section number
         static void printHighestWeightedTotal(List<double> section_totals)
         {
             double highest_weighted_total = getHighestWeightedTotal(section_totals);
@@ -178,139 +146,18 @@ namespace HelloWorld
             Console.WriteLine("Section #{0} has the highest weighted total of {1}", highest_section, highest_weighted_total);
         }
 
+        //parses a json string and places desired information into a ScannerData struct
         static ScannerData parseJsonData(string jsonString)
         {   
             ScannerData returnData;
 
-            JObject results = JObject.Parse(jsonString);
-
-            Dictionary<string, double> temp1 = new Dictionary<string, double>();
+            returnData.weight_percentages = Get_Weight_Percentages(jsonString);
+            returnData.sections = Get_Values_For_Each_Section(jsonString);
             
-            Dictionary<string, double> weight_percents = new Dictionary<string, double>();
-            
-            foreach (var element in results["weight_percentages"])
-            {
-                temp1 = JsonConvert.DeserializeObject<Dictionary<string, double>>(Convert.ToString(element));
-                
-                foreach (KeyValuePair<string, double> item in temp1)
-                {
-                    weight_percents.Add(item.Key, item.Value);
-                }              
-                
-            }
-            returnData.weight_percentages = new Hashtable(weight_percents);
-
-            /* foreach (DictionaryEntry item in data.weight_percentages)
-             {
-                 Console.WriteLine("Key {0}, Value {1}", item.Key, item.Value);
-             }
-             */
-            returnData.sections = new List<List<point>>();
-
-            List<point> list = new List<point>();
-                             
-                                  
-
-            //var weights = from element in points["points"] select element["water"];
-
-            string sections_string = results["sections"].ToString();
-
-            string points_string;
-
-            JArray sections_array = JArray.Parse(sections_string);
-
-            int num_sections = sections_array.Count;
-
-            int water;
-
-            int hills;
-
-            int sidewalk = 0;
-
-            JArray points_array;
-
-            int num_points;
-
-            point place;
-
-            
-            
-            for (int i = 0; i < num_sections; i++)
-            {
-                list = new List<point>();
-                points_string = results["sections"][i]["points"].ToString();
-
-                points_array = JArray.Parse(points_string);
-
-                num_points = points_array.Count;
-
-                for (int j = 0; j < num_points; j++)
-                {
-                    water = (int)results["sections"][i]["points"][j]["weights"]["water"];
-                    hills = (int)results["sections"][i]["points"][j]["weights"]["hills"];
-                    
-                    place = new point(water, hills, sidewalk);
-                    list.Add(place);
-                }
-                returnData.sections.Add(list);
-                
-
-                
-            }
-
-            foreach (List<point> subList in returnData.sections)
-            {
-                foreach (point item in subList)
-                {
-                    Console.WriteLine("water: {0}, hills: {1}", item.water, item.hills);
-                }
-            }
-
             return returnData;
             
-            
+          //sample json string
 
-
-
-
-
-
-
-
-            //var weights = from something in results["sections"][0]["points"] select something["weights"];
-
-
-
-            // int something = (int)results["sections"][0]["points"][0]["weights"]["water"];
-
-
-
-
-
-            /*foreach (var element in results["sections"])
-            {
-                JToken points = JToken.Parse(results["sections"].ToString());
-               // foreach (var point in points)
-                //{
-                    //JToken weights = JToken.Parse(points["points"].ToString());
-                    
-                    foreach (var item in points)
-                 
-                    {
-                        */
-            /* temp2 = JsonConvert.DeserializeObject<Dictionary<string, int>>(Convert.ToString(item));
-             foreach (KeyValuePair<string, int> component in temp2)
-             {
-                 temp3.Add(component.Key, component.Value);
-             }
-             place.water = temp3["water"];
-             place.hills = temp3["hills"];
-
-         }
-     //}
-
- }
- */
             //{"weight_percentages":[{"water":0.75},{"hills":0.5}],"sections"
             //:[{"id":"1","points":[{"latitude":11.7575,"longitude":13.55567,
             //"weights":{"water":1,"hills":2}},{"latitude":12.2343,"longitude":
@@ -321,6 +168,118 @@ namespace HelloWorld
 
         }
 
-    }
+        //gets the weight percentage for each object from the json string
+        static Hashtable Get_Weight_Percentages(string jsonString)
+        {
+            //takes the json string and makes it readable when using the newtonsoft.json namespace
+            JObject results = JObject.Parse(jsonString);
+
+            //creates a temporary dictionary to eventually store the weight percentages and move it to a more permanent dictionary
+            Dictionary<string, double> temp = new Dictionary<string, double>();
+
+            //the dictionary that will store all the necessary data and that will be made into the final hashtable
+            Dictionary<string, double> weight_percents = new Dictionary<string, double>();
+
+            //runs a loop through each element within the "weight_percentages" portion of the json string
+            foreach (var element in results["weight_percentages"])
+            {
+                //takes the section of the json object and converts it into a dictionary
+                //so this portion would take something like {"water": 0.75} and put it in a dictionary 
+                temp = JsonConvert.DeserializeObject<Dictionary<string, double>>(Convert.ToString(element));
+
+                //adds the elements in the temporary dictionary to the official one
+                foreach (KeyValuePair<string, double> item in temp)
+                {
+                    weight_percents.Add(item.Key, item.Value);
+                }
+
+            }
+
+            //Sidewalk is absent in the json code, so I put it at zero. Because the point struct
+            //contains a sidewalk portion, I needed some percentage value for sidewalk otherwise I'd
+            //get a bug
+            double sidewalk_percent = 0;
+            weight_percents.Add("sidewalk", sidewalk_percent);
+
+            //the dictionary is now a hashtable
+            Hashtable returnHashtable = new Hashtable(weight_percents);
+
+            return returnHashtable;
+        }
+
+        //Gets the value for each object within a point (i.e. "water": 1) and places it in a 2d array ->
+        //for each section, there is a list of points.
+        static List<List<point>> Get_Values_For_Each_Section(string jsonString)
+        {
+            //so that I can use the newtonsoft.json namespace to help
+            JObject results = JObject.Parse(jsonString);
+
+            //makes temporary 2d array and temporary 1d array
+            List<List<point>> sections = new List<List<point>>();
+            List<point> list = new List<point>();
+
+            //creates a string that only contains the information under "sections" (from the json string)
+            string sections_string = results["sections"].ToString();
+                       
+            //stores the information under "sections" as a json array that I can use for my benefit
+            JArray sections_array = JArray.Parse(sections_string);
+
+            //will eventually have the specific information under "points" (from the json string)
+            string points_string;
+
+            //finds the number of arrays within "sections"
+            //this will be helpful in a for loop as I locate each specific value
+            int num_sections = sections_array.Count;
+
+            //where the values for each object will be stored
+            int water, hills;
+            int sidewalk = 0;
+
+            //there may be multiple json arrays further within "sections" under "points
+            //this is used as a temporary json array
+            JArray points_array;
+
+            //same use as num_sections, but specific to the amount of elements within "points"
+            //there are multiple "points" within sections so I don't know the value yet
+            int num_points;
+
+            //temporary point that will transfer points into the 2d array
+            point place;
+
+
+            //for each section
+            for (int i = 0; i < num_sections; i++)
+            {
+                //resets the array to accept new data
+                list = new List<point>();
+
+                //finds the information under the "points" key in the json string and stores it as a string
+                points_string = results["sections"][i]["points"].ToString();
+
+                //parses the array elements under "points"
+                points_array = JArray.Parse(points_string);
+
+                //finds the amount of arrays within the new JArray and uses that in the next for loop
+                num_points = points_array.Count;
+
+                for (int j = 0; j < num_points; j++)
+                {
+                    //by querying the specific values of "water" and "hills" can be found
+                    //the JArray objects above were important in finding the values of i and j
+                    water = (int)results["sections"][i]["points"][j]["weights"]["water"];
+                    hills = (int)results["sections"][i]["points"][j]["weights"]["hills"];
+
+                    //cretes a point with the obtained data and adds it to a list (array)
+                    place = new point(water, hills, sidewalk);
+                    list.Add(place);
+                }
+                //adds the new list to the larger 2d array
+                sections.Add(list);
+            }
+
+            return sections;
+            }
+
+        }
 
 }
