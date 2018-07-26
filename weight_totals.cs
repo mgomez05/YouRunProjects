@@ -34,23 +34,27 @@ namespace HelloWorld
         {
             string jsonString = "{ \"weight_percentages\":[{\"water\":0.75},{\"hills\":0.5}],\"sections\":[{\"id\":\"1\",\"points\":[{\"latitude\":11.7575,\"longitude\":13.55567,\"weights\":{\"water\":1,\"hills\":2}},{\"latitude\":12.2343,\"longitude\":2.553535,\"weights\":{\"water\":3,\"hills\":8}}]},{\"id\":\"9\",\"points\":[{\"latitude\":44.7898,\"longitude\":90.5898,\"weights\":{\"water\":6,\"hills\":7}},{\"latitude\":60.2676,\"longitude\":32.553535,\"weights\":{\"water\":5,\"hills\":6}}]}]}";
 
+            List<double> section_totals = scanSections(jsonString);
+
+            printHighestWeightedTotal(section_totals);
+
+            Console.ReadKey();
+        }
+
+
+        //scans the json string and returns the weighted totals each section under the "sections" key of the json string
+        public static List<double> scanSections(string jsonString)
+        {
             ScannerData data = parseJsonData(jsonString);
 
             List<List<point>> sections = data.sections;
 
             List<Hashtable> section_results = getSectionResults(sections);
+                        
+            List<double> section_totals = getSectionTotals(section_results, data.weight_percentages);
 
-            //A new hashtable with weight percentages for objects
-            Hashtable weight_percentages = data.weight_percentages;
-                       
-            List<double> section_totals = getSectionTotals(section_results, weight_percentages);
-
-            printHighestWeightedTotal(section_totals);
-
-
-            Console.ReadKey();
+            return section_totals;
         }
-
         //takes an array of pointers and stores the information in a hashtable
         //also adds the total values of all of the pointers
         static Hashtable getScannerResults(List<point> Points)
