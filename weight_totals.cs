@@ -37,38 +37,14 @@ namespace HelloWorld
             ScannerData data = parseJsonData(jsonString);
 
             List<List<point>> sections = data.sections;
-                       
+
             List<Hashtable> section_results = getSectionResults(sections);
 
             //A new hashtable with weight percentages for objects
             Hashtable weight_percentages = data.weight_percentages;
+                       
+            List<double> section_totals = getSectionTotals(section_results, weight_percentages);
 
-            //a list containing the total values for each section when the weight percentages are factored in
-            List<double> section_totals = new List<double>();
-
-
-            //runs a loop to add the totals from section_results into section_totals
-            foreach (Hashtable hashtables in section_results)
-            {
-                double total = 0;
-
-                foreach (DictionaryEntry entry in hashtables)
-                {
-                    //makes the key in each DictionaryEntry a string and the Value a double
-                    string key = (string)entry.Key;
-                    double value_for_landmark = Convert.ToDouble(entry.Value);
-
-                    //adds the result of multiplying the weight percentages to the values for each landmark
-                    total += ((double)weight_percentages[key] * value_for_landmark);
-
-                    //checks if the math adds up
-                    //Console.WriteLine("This is the int value {0}", entry.Value);
-                    // Console.WriteLine("This is the weight_percentage {0}",(double)weight_percentages[key]);
-                    // Console.WriteLine("This is the value times the weight_percentage {0}", (double)weight_percentages[key] * value_for_landmark);
-                    //Console.WriteLine("{0}, {1}", entry.Key, entry.Value);
-                }
-                section_totals.Add(total);
-            }
             printHighestWeightedTotal(section_totals);
 
 
@@ -273,14 +249,40 @@ namespace HelloWorld
         static List<Hashtable> getSectionResults(List<List<point>> sections)
         {
             List<Hashtable> section_results = new List<Hashtable>();
-            
+
             //places the Scanner results from each pointer-array into section_results
             foreach (List<point> subList in sections)
             {
-                section_results.Add(getScannerResults(subList));                
+                section_results.Add(getScannerResults(subList));
             }
 
             return section_results;
+        }
+
+        //takes each Hashtable in a list and finds the weighted total of each section. This is done by multiplying each result to 
+        //it's respective weight percentage and then adding it into a total. This total is stored in a list of totals for each section.
+        static List<double> getSectionTotals(List<Hashtable> section_results, Hashtable weight_percentages)
+        {
+            //a list containing the total values for each section when the weight percentages are factored in
+            List<double> section_totals = new List<double>();
+            
+            //runs a loop to add the totals from section_results into section_totals
+            foreach (Hashtable hashtables in section_results)
+            {
+                double total = 0;
+
+                foreach (DictionaryEntry entry in hashtables)
+                {
+                    //makes the key in each DictionaryEntry a string and the Value a double
+                    string key = (string)entry.Key;
+                    double value_for_landmark = Convert.ToDouble(entry.Value);
+
+                    //adds the result of multiplying the weight percentages to the values for each landmark
+                    total += ((double)weight_percentages[key] * value_for_landmark);                                       
+                }
+                section_totals.Add(total);
+            }
+            return section_totals;
         }
 
     }
