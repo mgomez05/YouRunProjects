@@ -37,19 +37,8 @@ namespace HelloWorld
             ScannerData data = parseJsonData(jsonString);
 
             List<List<point>> sections = data.sections;
-
-            //a list of Hashtables that contains the results from getScannerResults
-            List<Hashtable> section_results = new List<Hashtable>();
-
-            Hashtable temp = new Hashtable();
-
-            //places the Scanner results from each pointer-array into section_results
-            foreach (List<point> subList in sections)
-            {
-                section_results.Add(getScannerResults(subList));
-                temp = getScannerResults(subList);
-                                
-            }
+                       
+            List<Hashtable> section_results = getSectionResults(sections);
 
             //A new hashtable with weight percentages for objects
             Hashtable weight_percentages = data.weight_percentages;
@@ -82,7 +71,7 @@ namespace HelloWorld
             }
             printHighestWeightedTotal(section_totals);
 
-            
+
             Console.ReadKey();
         }
 
@@ -148,15 +137,15 @@ namespace HelloWorld
 
         //parses a json string and places desired information into a ScannerData struct
         static ScannerData parseJsonData(string jsonString)
-        {   
+        {
             ScannerData returnData;
 
             returnData.weight_percentages = Get_Weight_Percentages(jsonString);
             returnData.sections = Get_Values_For_Each_Section(jsonString);
-            
+
             return returnData;
-            
-          //sample json string
+
+            //sample json string
 
             //{"weight_percentages":[{"water":0.75},{"hills":0.5}],"sections"
             //:[{"id":"1","points":[{"latitude":11.7575,"longitude":13.55567,
@@ -220,7 +209,7 @@ namespace HelloWorld
 
             //creates a string that only contains the information under "sections" (from the json string)
             string sections_string = results["sections"].ToString();
-                       
+
             //stores the information under "sections" as a json array that I can use for my benefit
             JArray sections_array = JArray.Parse(sections_string);
 
@@ -278,8 +267,22 @@ namespace HelloWorld
             }
 
             return sections;
+        }
+
+        //places the scanner results of each section of points into a list of hashtables
+        static List<Hashtable> getSectionResults(List<List<point>> sections)
+        {
+            List<Hashtable> section_results = new List<Hashtable>();
+            
+            //places the Scanner results from each pointer-array into section_results
+            foreach (List<point> subList in sections)
+            {
+                section_results.Add(getScannerResults(subList));                
             }
 
+            return section_results;
         }
+
+    }
 
 }
