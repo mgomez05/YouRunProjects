@@ -32,11 +32,26 @@ namespace HelloWorld
 
         static void Main(string[] args)
         {
-            string jsonString = "{ \"weight_percentages\":[{\"water\":0.75},{\"hills\":0.5}],\"sections\":[{\"id\":\"1\",\"points\":[{\"latitude\":11.7575,\"longitude\":13.55567,\"weights\":{\"water\":1,\"hills\":2}},{\"latitude\":12.2343,\"longitude\":2.553535,\"weights\":{\"water\":3,\"hills\":8}}]},{\"id\":\"9\",\"points\":[{\"latitude\":44.7898,\"longitude\":90.5898,\"weights\":{\"water\":6,\"hills\":7}},{\"latitude\":60.2676,\"longitude\":32.553535,\"weights\":{\"water\":5,\"hills\":6}}]}]}";
+            string jsonString1 = "{ \"weight_percentages\":[{\"water\":0.75},{\"hills\":0.5}],\"sections\":[{\"id\":\"1\",\"points\":[{\"latitude\":11.7575,\"longitude\":13.55567,\"weights\":{\"water\":1,\"hills\":2}},{\"latitude\":12.2343,\"longitude\":2.553535,\"weights\":{\"water\":3,\"hills\":8}}]},{\"id\":\"9\",\"points\":[{\"latitude\":44.7898,\"longitude\":90.5898,\"weights\":{\"water\":6,\"hills\":7}},{\"latitude\":60.2676,\"longitude\":32.553535,\"weights\":{\"water\":5,\"hills\":6}}]}]}";
 
-            List<double> section_totals = scanSections(jsonString);
+            string jsonString2 = "{ \"weight_percentages\":[{\"water\":0.25},{\"hills\":0.6}],\"sections\":[{\"id\":\"1\",\"points\":[{\"latitude\":11.7575,\"longitude\":13.55567,\"weights\":{\"water\":3,\"hills\":2}},{\"latitude\":12.2343,\"longitude\":2.553535,\"weights\":{\"water\":1,\"hills\":4}}]},{\"id\":\"9\",\"points\":[{\"latitude\":44.7898,\"longitude\":90.5898,\"weights\":{\"water\":7,\"hills\":6}},{\"latitude\":60.2676,\"longitude\":32.553535,\"weights\":{\"water\":3,\"hills\":11}}]}]}";
 
-            printHighestWeightedTotal(section_totals);
+            string jsonString3 = "{ \"weight_percentages\":[{\"water\":0.9},{\"hills\":0.1}],\"sections\":[{\"id\":\"1\",\"points\":[{\"latitude\":11.7575,\"longitude\":13.55567,\"weights\":{\"water\":4,\"hills\":3}},{\"latitude\":12.2343,\"longitude\":2.553535,\"weights\":{\"water\":1,\"hills\":6}}]},{\"id\":\"9\",\"points\":[{\"latitude\":44.7898,\"longitude\":90.5898,\"weights\":{\"water\":9,\"hills\":2}},{\"latitude\":60.2676,\"longitude\":32.553535,\"weights\":{\"water\":7,\"hills\":4}}]}]}";
+
+            List<double> scan1 = scanSections(jsonString1);
+
+            List<double> scan2 = scanSections(jsonString2);
+
+            List<double> scan3 = scanSections(jsonString3);
+
+            Console.WriteLine("This is jsonString number 1");
+            printHighestWeightedTotal(scan1);
+
+            Console.WriteLine("This is jsonString number 2");
+            printHighestWeightedTotal(scan2);
+
+            Console.WriteLine("This is jsonString number 3");
+            printHighestWeightedTotal(scan3);
 
             Console.ReadKey();
         }
