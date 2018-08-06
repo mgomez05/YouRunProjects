@@ -32,10 +32,10 @@ namespace Data
         {
             List<Point> areaPoints = new List<Point>();
             Point center;
-            center.longitude = 1.5;
-            center.latitude = 1.5;
+            center.longitude = 8;
+            center.latitude = 8;
             center.weights = new Hashtable();
-            divideSections(areaPoints, 4, 2, 1, 8, 4, center);
+            divideSections(areaPoints, 6, 32, 16, 32, 16, center);
 
             Console.ReadKey();
 
@@ -45,104 +45,142 @@ namespace Data
         static void divideSections(List<Point> areaPoints, int numSections, double maxLat, double minLat, double maxLng,
                                          double minLng, Point center)
         {
-            List <SectionSlice> sectionSlices = sliceSections_in_four(areaPoints, numSections, maxLat, minLat, maxLng, minLng, center);
+            int i = 1;
+            List<SectionSlice> sectionSlices = SlicetheSquarePie(areaPoints, numSections, maxLat, minLat, maxLng, minLng, center);
             foreach (SectionSlice slice in sectionSlices)
             {
+                Console.WriteLine("Section #{0}", i);
                 foreach (Point point in slice.triangleBounds)
                 {
                     Console.WriteLine("longitude: {0}, latitude: {1}", point.longitude, point.latitude);
                 }
-                
+                i++;
             }
 
         }
 
         //slices the square given by the max and min coordinates into four triangular sections that contain three points each
-        static List<SectionSlice> sliceSections_in_four(List<Point> areaPoints, int numSections, double maxLat, double minLat, double maxLng,
+        static List<SectionSlice> SlicetheSquarePie(List<Point> areaPoints, int numSections, double maxLat, double minLat, double maxLng,
                                          double minLng, Point center)
         {
 
             List<SectionSlice> sectionSlices = new List<SectionSlice>();
 
             //assigns each lat or lng a number starting from 1 to 4
-            Dictionary<int, double> corner_numbers = organized_coordinates(maxLat, minLat, maxLng, minLng);
-                       
+            //Dictionary<int, double> corner_numbers = organized_coordinates(maxLat, minLat, maxLng, minLng);
+
             Point point1;
             Point point2;
             SectionSlice slice;
+            double side_length = maxLat - minLat;                        
+            double perimeter = side_length * 4;
+            double distance_between_points = perimeter / numSections;
+            double current_distance = 0;
+            double prev_distance;
+            double current_latitude = 0;
+            double current_longitude = 0;
 
-            //goal is to find three points for each section
-            for (int i = 0; i <= numSections; i++)
+            if (numSections > 3)
             {
-                //runs a loop through each assigned lat or lng and finds two points to be stored along with the center to create a triangle
-                //This is a bit confusing and I honestly could have found a different way, but I wanted to find a unique way to approach this.
-                //Essentailly, I assigned numbers (1 to 4) according to the min and max values of the square.
-                //Using those numbers, I was able to use a pattern in obtaining the coordinates for the four triangles.
-                //It's weird and I'll eventually change it to account for the numSections. But for now I can only do four sections at a 
-                //time. Also, I think it might be mathematically impossible to do an odd number of numSections such that the triangles will
-                //be equal in area so I'm just putting it out there.
 
-                foreach (KeyValuePair<int, double> elem in corner_numbers)
+                for (int i = 0; i < numSections; i++)
                 {
                     slice.triangleBounds = new List<Point>();
-                    slice.triangleBounds.Add(center);
-
-                    if (elem.Key == i)
+                    if (current_distance <= (perimeter / 4))
                     {
-
-                        if (i <= (numSections / 2))
+                        current_longitude = minLng + current_distance;
+                        current_latitude = minLat;
+                        point1.longitude = current_longitude;
+                        point1.latitude = current_latitude;
+                        prev_distance = current_distance;
+                        current_distance = current_distance + distance_between_points;
+                        if (current_distance <= (perimeter / 4))
                         {
-
-                            point1.latitude = elem.Value;
-                            point1.longitude = minLng;
-                            point2.latitude = elem.Value;
-                            point2.longitude = maxLng;
-                            point1.weights = new Hashtable();
-                            point2.weights = new Hashtable();
-                            //Console.WriteLine("{0}, {1}", point1.latitude, point1.longitude);
-                            //Console.WriteLine("{0}, {1}", point2.latitude, point2.longitude);
-                            
+                            current_longitude = minLng + current_distance;
+                            point2.longitude = current_longitude;
+                            point2.latitude = minLat;
                         }
                         else
                         {
-
-                            point1.longitude = elem.Value;
-                            point1.latitude = minLat;
-                            point2.longitude = elem.Value;
-                            point2.latitude = maxLat;
-                            point1.weights = new Hashtable();
-                            point2.weights = new Hashtable();
-                            //Console.WriteLine("{0}, {1}", point1.latitude, point1.longitude);
-                           // Console.WriteLine("{0}, {1}", point2.latitude, point2.longitude);
+                            current_latitude = (distance_between_points - (maxLng - prev_distance)) + minLat;
+                            current_longitude = maxLng;
+                            point2.latitude = current_latitude;
+                            point2.longitude = current_longitude;
                         }
-                        slice.triangleBounds.Add(point1);
-                        slice.triangleBounds.Add(point2);
-                        slice.memberPoints = new List<Point>();
-                        sectionSlices.Add(slice);
                     }
-                    
+                    else if (current_distance > (perimeter / 4) && current_distance <= (perimeter / 2))
+                    {
+                        current_longitude = maxLng;
+                        current_latitude = minLat + (current_distance - (perimeter / 4));
+                        point1.latitude = current_latitude;
+                        point1.longitude = current_longitude;
+                        prev_distance = current_distance;
+                        current_distance = current_distance + distance_between_points;
+                        if (current_distance <= (perimeter / 2))
+                        {
+                            current_latitude = minLat + (current_distance - (perimeter / 4));
+                            point2.latitude = current_latitude;
+                            point2.longitude = maxLng;
+                        }
+                        else
+                        {
+                            current_longitude = maxLng - (distance_between_points - (maxLat - (prev_distance - (perimeter / 4))));
+                            point2.longitude = current_longitude;
+                            point2.latitude = maxLat;
+                        }
+
+                    }
+                    else if (current_distance > (perimeter / 2) && current_distance <= ((perimeter * 3) / 4))
+                    {
+                        current_latitude = maxLat;
+                        current_longitude = maxLng - (current_distance - (perimeter / 2));
+                        point1.latitude = current_latitude;
+                        point1.longitude = current_longitude;
+                        prev_distance = current_distance;
+                        current_distance = current_distance + distance_between_points;
+                        if (current_distance <= ((perimeter * 3) / 4))
+                        {
+                            current_longitude = maxLng - (current_distance - (perimeter / 4));
+                            point2.latitude = current_latitude;
+                            point2.longitude = maxLng;
+                        }
+                        else
+                        {
+                            current_latitude = maxLat - (distance_between_points - (maxLng - (prev_distance - (perimeter / 2))));
+                            point2.latitude = current_latitude;
+                            point2.longitude = minLng;
+                        }
+                    }
+                    else
+                    {
+                        current_longitude = minLng;
+                        current_latitude = maxLat - (current_distance - ((perimeter * 3) / 4));
+                        point1.latitude = current_latitude;
+                        point1.longitude = current_longitude;
+                        prev_distance = current_distance;
+                        current_distance = current_distance + distance_between_points;
+                        current_latitude = maxLat - (current_distance - ((perimeter * 3) / 4));
+                        point2.latitude = current_latitude;
+                        point2.longitude = minLng;
+
+                    }
+
+                    point1.weights = new Hashtable();
+                    point2.weights = new Hashtable();
+                    slice.triangleBounds.Add(point1);
+                    slice.triangleBounds.Add(point2);
+                    slice.triangleBounds.Add(center);
+                    slice.memberPoints = new List<Point>();
+                    sectionSlices.Add(slice);
+
                 }
-                               
-            }
 
+
+
+            }
             return sectionSlices;
+
         }
 
-        static Dictionary<int, double> organized_coordinates(double maxLat, double minLat, double maxLng, double minLng)
-        {
-            // gives a number value to each coordinate(i.e.maxLat = 1, minLat = 2, maxLng = 3, minLng = 4)
-            //does this by placing the coordinates in a dictionary
-            double[] coords = new double[] { maxLat, minLat, maxLng, minLng };
-            Dictionary<int, double> corner_numbers = new Dictionary<int, double>();
-
-            int j = 0;
-            foreach (double coord in coords)
-            {
-                j++;
-                corner_numbers.Add(j, coord);
-            }
-
-            return corner_numbers;
-        }
     }
 }
