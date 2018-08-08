@@ -285,8 +285,52 @@ namespace Data
 
 
             }
+            else if (numSections == 2)
+            {
+                sectionSlices = TwoSlices(maxLat, minLat, maxLng, minLng);
+            }
             return sectionSlices;
 
+        }
+
+        //if there two sections needed to be sliced from the square, then this is a special case and this function just
+        //accounts for this special case
+        static List<SectionSlice> TwoSlices(double maxLat, double minLat, double maxLng, double minLng)
+        {
+            List<SectionSlice> sectionSlices = new List<SectionSlice>();
+            SectionSlice slice1, slice2;
+            Point point1, point2, point3, point4;
+
+            point1.latitude = minLat;
+            point1.longitude = minLng;
+            point1.weights = new Hashtable();
+            point2.latitude = maxLat;
+            point2.longitude = maxLng;
+            point2.weights = new Hashtable();
+            point3.latitude = minLat;
+            point3.longitude = maxLng;
+            point3.weights = new Hashtable();
+            point4.latitude = maxLat;
+            point4.longitude = minLng;
+            point4.weights = new Hashtable();
+
+            slice1.triangleBounds = new List<Point>();
+            slice2.triangleBounds = new List<Point>();
+            slice1.memberPoints = new List<Point>();
+            slice2.memberPoints = new List<Point>();
+
+            slice1.triangleBounds.Add(point1);
+            slice1.triangleBounds.Add(point2);
+            slice1.triangleBounds.Add(point3);
+
+            slice2.triangleBounds.Add(point1);
+            slice2.triangleBounds.Add(point2);
+            slice2.triangleBounds.Add(point4);
+
+            sectionSlices.Add(slice1);
+            sectionSlices.Add(slice2);
+
+            return sectionSlices;
         }
 
         //The code for IsPointInBounds, area, and isInside comes from website
