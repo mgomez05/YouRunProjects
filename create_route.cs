@@ -9,6 +9,7 @@ namespace Data
 {
     class create_route
     {
+        //stores the longitude, latitude, and weight of a specific point
         public struct Point
         {
             public double longitude;
@@ -16,6 +17,7 @@ namespace Data
             public Hashtable weights;
         }
 
+        //a triangular slice of a square that contains the three points that make up its edges, and the points within the area of the triangle
         public struct SectionSlice
         {
             public List<Point> triangleBounds;// The bounds of this section of the 
@@ -28,19 +30,16 @@ namespace Data
 
         }
 
+
         static void Main(string[] args)
         {
+            //just test data
             List<Point> areaPoints = createTestPointsforMain();
-           /*Point point1;
-            point1.longitude = 2;
-            point1.latitude = 0;
-            point1.weights = new Hashtable();
-            areaPoints.Add(point1);
-            */
             Point center;
             center.longitude = 4;
             center.latitude = 4;
             center.weights = new Hashtable();
+
             List<List<Point>> sections = new List<List<Point>>();
             sections = divideSections(areaPoints, 4, 8, 0, 8, 0, center);
 
@@ -48,44 +47,53 @@ namespace Data
 
         }
 
-
+        //This function takes a list of points, a number of sections, a set of latitudes and longitudes that determine two opposite edges of a square,
+        //and the center of this square. It slices the square into triangular pieces of equal area based of the amount of sections requested, and then
+        //takes the list of points and tries to see which section each point belongs in. It returns the a list of a list of points that contains 
+        //each section and what points are within each section.
         static List<List<Point>> divideSections(List<Point> areaPoints, int numSections, double maxLat, double minLat, double maxLng,
                                          double minLng, Point center)
         {
+            //these variables are for counting and outputting purposes
             int j = 1;
             int i;
             int z = 1;
+
             List<SectionSlice> sectionSlices = SlicetheSquarePie(areaPoints, numSections, maxLat, minLat, maxLng, minLng, center);
 
-            foreach (Point point in areaPoints)
+            //runs a loop through for each point in the areaPoints list and checks if it is within the bounds of a sectionSlice
+            for (int k = 0; k < areaPoints.Count; k++)
             {
-                Point currentPoint = point;
+                Point currentPoint = areaPoints[k];
                 i = 1;
 
+                //For each slice, it checks if the current point is within the slice and if so it is stored as a memberpoint in that slice.
                 foreach (SectionSlice slice in sectionSlices)
                 {                    
                     if (IsPointInBounds(currentPoint, slice) == true)
                     {
                         slice.memberPoints.Add(currentPoint);
-                        Console.WriteLine("Point {1} is within bounds of section {0}", i, z);
+                        Console.WriteLine("Point {0} is within bounds of section {1}", z, i);
                         Console.WriteLine("");
                         break;
                     }
                     i++;
                 }
 
+                //If the previous loop never breaks, then the point was not within any section and is discarded.
+                //The counting variable k needs to be subtracted from to account for the change in the list.
                 if (i > numSections)
                 {
                     Console.WriteLine("point is not within selected area");
                     areaPoints.Remove(currentPoint);
-                    break;
+                    k--;
 
                 }
                 z++;
             }
 
+            //creates a List of Lists called sections and then stores the section and its memberpoints within sections
             List<List<Point>> sections = new List<List<Point>>();
-
             foreach (SectionSlice slice in sectionSlices)
             {
                 sections.Add(slice.memberPoints);
@@ -108,30 +116,53 @@ namespace Data
 
         }
 
-        //slices the square given by the max and min coordinates into four triangular sections that contain three points each
+        //This is a long function, so bear with me. 
+        //The function slices a square made up of max and min latitudes and longitudes into any number of triangular sections.
+        //Each triangle has three points: two on the perimeter of the square, and one at the center.
+        //This function finds the points that is required to make however many sections and returns a list of SectionSlices that contains the bounds
+        //for each triangle based on these points.
+        //It does this by knowing the side lengths of the square and the perimeter.
+        //By dividing the perimeter by the number of sections, the length between the two points on the perimeter of the square that make up a section
+        //is known. The function starts at the min latitude and the min longitude, and works its way around the perimeter to find a point along
+        //the perimeter that is a distance equal to the perimeter divided by the number of sections away. These two points along with the center is the 
+        //first section. Then from the second point (so not minLat and minLng) it finds the next point that is the same distance away. It keeps doing this
+        //until there are the correct number of sections. 
         static List<SectionSlice> SlicetheSquarePie(List<Point> areaPoints, int numSections, double maxLat, double minLat, double maxLng,
                                          double minLng, Point center)
         {
 
             List<SectionSlice> sectionSlices = new List<SectionSlice>();
 
+            //two temporary points will be used to eventually store information into sectionSlices.triangleBounds
             Point point1;
             Point point2;
+
             SectionSlice slice;
+            //side length of the square
             double side_length = maxLat - minLat;
+            //perimeter of the square
             double perimeter = side_length * 4;
+            //distance between two points on the perimeter of the square that makes up a section
             double distance_between_points = perimeter / numSections;
+            //to keep track of where we are along the perimeter
             double current_distance = 0;
             double prev_distance;
             double current_latitude = 0;
             double current_longitude = 0;
 
-            if (numSections > 3)
+            //if numSections is less than three than those are special cases since using the center as a point
+            //of a triangle bound would not work
+            if (numSections >= 3)
             {
-
+                //loop that keeps track of how many sections there are
                 for (int i = 0; i < numSections; i++)
                 {
                     slice.triangleBounds = new List<Point>();
+
+                    //this is the first side of the square that the function travels through.
+                    //this side will always have a latitude value of minLat.
+                    //it finds the first point on the perimeter and then adds the distance_between_points
+                    //to find the second.
                     if (current_distance <= (perimeter / 4))
                     {
                         current_longitude = minLng + current_distance;
@@ -140,12 +171,17 @@ namespace Data
                         point1.latitude = current_latitude;
                         prev_distance = current_distance;
                         current_distance = current_distance + distance_between_points;
+                        //when finding the second point, the function needs to know if the current_distance is still on the same
+                        //side or if it passed onto the next. The if statement is if it is on the same side. The else statement is if
+                        //it moved to another side.
                         if (current_distance <= (perimeter / 4))
                         {
                             current_longitude = minLng + current_distance;
                             point2.longitude = current_longitude;
                             point2.latitude = minLat;
                         }
+                        //If it moved to the next side, the longitude stays at maxLng. However, the latitude has to change
+                        //based off how much distance it traveled on the previous side and how much it traveled on the current side.
                         else
                         {
                             current_latitude = (distance_between_points - (maxLng - prev_distance)) + minLat;
@@ -154,6 +190,10 @@ namespace Data
                             point2.longitude = current_longitude;
                         }
                     }
+                    //this is the second side of the square that the function travels through.
+                    //this side will always have a longitude value of maxLng.
+                    //it finds the first point on the perimeter and then adds the distance_between_points
+                    //to find the second.
                     else if (current_distance > (perimeter / 4) && current_distance <= (perimeter / 2))
                     {
                         current_longitude = maxLng;
@@ -162,12 +202,18 @@ namespace Data
                         point1.longitude = current_longitude;
                         prev_distance = current_distance;
                         current_distance = current_distance + distance_between_points;
+
+                        //when finding the second point, the function needs to know if the current_distance is still on the same
+                        //side or if it passed onto the next. The if statement is if it is on the same side. The else statement is if
+                        //it moved to another side.
                         if (current_distance <= (perimeter / 2))
                         {
                             current_latitude = minLat + (current_distance - (perimeter / 4));
                             point2.latitude = current_latitude;
                             point2.longitude = maxLng;
                         }
+                        //Now this time, if it moved to the next side, the latitude stays at maxLat. However, the longitude has to change
+                        //based off how much distance it traveled on the previous side and how much it traveled on the current side.
                         else
                         {
                             current_longitude = maxLng - (distance_between_points - (maxLat - (prev_distance - (perimeter / 4))));
@@ -176,6 +222,10 @@ namespace Data
                         }
 
                     }
+                    //this is the third side of the square that the function travels through.
+                    //this side will always have a latitude value of maxLat.
+                    //it finds the first point on the perimeter and then adds the distance_between_points
+                    //to find the second.
                     else if (current_distance > (perimeter / 2) && current_distance <= ((perimeter * 3) / 4))
                     {
                         current_latitude = maxLat;
@@ -184,12 +234,17 @@ namespace Data
                         point1.longitude = current_longitude;
                         prev_distance = current_distance;
                         current_distance = current_distance + distance_between_points;
+                        //when finding the second point, the function needs to know if the current_distance is still on the same
+                        //side or if it passed onto the next. The if statement is if it is on the same side. The else statement is if
+                        //it moved to another side.
                         if (current_distance <= ((perimeter * 3) / 4))
                         {
                             current_longitude = maxLng - (current_distance - (perimeter / 4));
                             point2.latitude = current_latitude;
                             point2.longitude = maxLng;
                         }
+                        //If it moved to the next side, the longitude stays at minLng. However, the latitude has to change
+                        //based off how much distance it traveled on the previous side and how much it traveled on the current side.
                         else
                         {
                             current_latitude = maxLat - (distance_between_points - (maxLng - (prev_distance - (perimeter / 2))));
@@ -197,6 +252,11 @@ namespace Data
                             point2.longitude = minLng;
                         }
                     }
+                    //this is the final side of the square that the function travels through.
+                    //this side will always have a latitude value of minLng.
+                    //it finds the first point on the perimeter and then adds the distance_between_points
+                    //to find the second.
+                    //this final one should not worry if it passes to another side.
                     else
                     {
                         current_longitude = minLng;
@@ -211,6 +271,7 @@ namespace Data
 
                     }
 
+                    //add the points the trianglebounds of slice, and then store each slice as a section in sectionSlices
                     point1.weights = new Hashtable();
                     point2.weights = new Hashtable();
                     slice.triangleBounds.Add(point1);
@@ -231,6 +292,9 @@ namespace Data
         //The code for IsPointInBounds, area, and isInside comes from website
         //https://www.geeksforgeeks.org/check-whether-a-given-point-lies-inside-a-triangle-or-not/
 
+        //checks if a point is within the boundry of a triangle made up of three points and returns true or false.
+        //For this to work, I needed to split the latitude and longitude values from each point that makes up the boundry.
+        //Then I use a helper function to do the math.
         static bool IsPointInBounds(Point currentpoint, SectionSlice bounds)
         {
             double y = currentpoint.latitude;
@@ -253,19 +317,19 @@ namespace Data
                 return false;
             }
         }
-        /* A utility function to calculate area of triangle 
-   formed by (x1, y1) (x2, y2) and (x3, y3) */
-        static double area(double x1, double y1, double x2,
-                           double y2, double x3, double y3)
+
+        // Calculates the area of triangle 
+        // formed by (x1, y1) (x2, y2) and (x3, y3) 
+        static double area(double x1, double y1, double x2, double y2, double x3, double y3)
         {
             return Math.Abs((x1 * (y2 - y3) +
                              x2 * (y3 - y1) +
                              x3 * (y1 - y2)) / 2.0);
         }
 
-        /* A function to check whether point P(x, y) lies
-        inside the triangle formed by A(x1, y1),
-        B(x2, y2) and C(x3, y3) */
+        //A function to check whether point P(x, y) lies
+        //inside the triangle formed by A(x1, y1),
+        //B(x2, y2) and C(x3, y3).
         static bool isInside(double[] latitude, double[] longitude, double x, double y)
 
         {
@@ -278,25 +342,26 @@ namespace Data
             double y3 = longitude[2];
 
 
-            /* Calculate area of triangle ABC */
+            // Calculate area of triangle ABC 
             double A = area(x1, y1, x2, y2, x3, y3);
 
-            /* Calculate area of triangle PBC */
+            // Calculate area of triangle PBC
             double A1 = area(x, y, x2, y2, x3, y3);
 
-            /* Calculate area of triangle PAC */
+            // Calculate area of triangle PAC
             double A2 = area(x1, y1, x, y, x3, y3);
 
-            /* Calculate area of triangle PAB */
+            // Calculate area of triangle PAB
             double A3 = area(x1, y1, x2, y2, x, y);
 
-            /* Check if sum of A1, A2 and A3 is same as A */
+            // Check if sum of A1, A2 and A3 is same as A 
             return (A == A1 + A2 + A3);
         }
 
-        
 
 
+        //12 points to help test
+        //I just didn't want Main to be too long
         static List<Point> createTestPointsforMain()
         {
             List<Point> areaPoints = new List<Point>();
@@ -329,8 +394,8 @@ namespace Data
             point7.latitude = 5;
             point7.weights = new Hashtable();
             areaPoints.Add(point7);
-            point8.longitude = 4;
-            point8.latitude = 6;
+            point8.longitude = 40;
+            point8.latitude = 60;
             point8.weights = new Hashtable();
             areaPoints.Add(point8);
             point9.longitude = 4;
