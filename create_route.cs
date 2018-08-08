@@ -30,12 +30,13 @@ namespace Data
 
         static void Main(string[] args)
         {
-            List<Point> areaPoints = new List<Point>();
-            Point point1;
-            point1.longitude = 6;
-            point1.latitude = 1;
+            List<Point> areaPoints = createTestPointsforMain();
+           /*Point point1;
+            point1.longitude = 2;
+            point1.latitude = 0;
             point1.weights = new Hashtable();
             areaPoints.Add(point1);
+            */
             Point center;
             center.longitude = 4;
             center.latitude = 4;
@@ -52,13 +53,14 @@ namespace Data
                                          double minLng, Point center)
         {
             int j = 1;
-            int i = 1;
+            int i;
             int z = 1;
             List<SectionSlice> sectionSlices = SlicetheSquarePie(areaPoints, numSections, maxLat, minLat, maxLng, minLng, center);
 
             foreach (Point point in areaPoints)
             {
                 Point currentPoint = point;
+                i = 1;
 
                 foreach (SectionSlice slice in sectionSlices)
                 {                    
@@ -66,6 +68,7 @@ namespace Data
                     {
                         slice.memberPoints.Add(currentPoint);
                         Console.WriteLine("Point {1} is within bounds of section {0}", i, z);
+                        Console.WriteLine("");
                         break;
                     }
                     i++;
@@ -88,8 +91,6 @@ namespace Data
                 sections.Add(slice.memberPoints);
             }
 
-            return sections;
-
             /*foreach (SectionSlice slice in sectionSlices)
             {
                 Console.WriteLine("Section #{0}", j);
@@ -100,6 +101,9 @@ namespace Data
                 j++;
             }
             */
+            return sections;
+
+            
 
 
         }
@@ -110,9 +114,6 @@ namespace Data
         {
 
             List<SectionSlice> sectionSlices = new List<SectionSlice>();
-
-            //assigns each lat or lng a number starting from 1 to 4
-            //Dictionary<int, double> corner_numbers = organized_coordinates(maxLat, minLat, maxLng, minLng);
 
             Point point1;
             Point point2;
@@ -226,6 +227,10 @@ namespace Data
             return sectionSlices;
 
         }
+
+        //The code for IsPointInBounds, area, and isInside comes from website
+        //https://www.geeksforgeeks.org/check-whether-a-given-point-lies-inside-a-triangle-or-not/
+
         static bool IsPointInBounds(Point currentpoint, SectionSlice bounds)
         {
             double y = currentpoint.latitude;
@@ -289,8 +294,66 @@ namespace Data
             return (A == A1 + A2 + A3);
         }
 
-        /* Driver program to test above function */
+        
 
+
+        static List<Point> createTestPointsforMain()
+        {
+            List<Point> areaPoints = new List<Point>();
+            Point point1, point2, point3, point4, point5, point6, point7, point8, point9, point10, point11, point12;
+            point1.longitude = 1;
+            point1.latitude = 0;
+            point1.weights = new Hashtable();
+            areaPoints.Add(point1);
+            point2.longitude = 6;
+            point2.latitude = 1;
+            point2.weights = new Hashtable();
+            areaPoints.Add(point2);
+            point3.longitude = 6;
+            point3.latitude = 1;
+            point3.weights = new Hashtable();
+            areaPoints.Add(point3);
+            point4.longitude = 5;
+            point4.latitude = 4;
+            point4.weights = new Hashtable();
+            areaPoints.Add(point4);
+            point5.longitude = 6;
+            point5.latitude = 4;
+            point5.weights = new Hashtable();
+            areaPoints.Add(point5);
+            point6.longitude = 7;
+            point6.latitude = 4;
+            point6.weights = new Hashtable();
+            areaPoints.Add(point6);
+            point7.longitude = 4;
+            point7.latitude = 5;
+            point7.weights = new Hashtable();
+            areaPoints.Add(point7);
+            point8.longitude = 4;
+            point8.latitude = 6;
+            point8.weights = new Hashtable();
+            areaPoints.Add(point8);
+            point9.longitude = 4;
+            point9.latitude = 7;
+            point9.weights = new Hashtable();
+            areaPoints.Add(point9);
+            point10.longitude = 3;
+            point10.latitude = 4;
+            point10.weights = new Hashtable();
+            areaPoints.Add(point10);
+            point11.longitude = 2;
+            point11.latitude = 4;
+            point11.weights = new Hashtable();
+            areaPoints.Add(point11);
+            point12.longitude = 4;
+            point12.latitude = 5;
+            point12.weights = new Hashtable();
+            areaPoints.Add(point12);
+
+            return areaPoints;
+        }
+
+    
 
 
     }
