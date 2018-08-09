@@ -61,6 +61,8 @@ namespace Data
             double radius = Get_Radius(jsonString);
 
             Point currentLocation = Get_currentLocation(jsonString);
+
+            List<double> boundries = Get_squareBoundary(currentLocation, radius);
         }
 
         //gets the weight percentage for each object from the json string
@@ -107,6 +109,42 @@ namespace Data
             returnLocation.weights = new Hashtable();
 
             return returnLocation;
+
+        }
+
+        static List<double> Get_squareBoundary(Point currentLocation, double radius)
+        {
+            double earth_radius = 3960.0;
+            double degrees_to_radians = Math.PI / 180.0;
+            double radians_to_degrees = 180.0 / Math.PI;
+
+            double change_in_latitude = (radius / earth_radius) * radians_to_degrees;
+            double r = earth_radius * Math.Cos(currentLocation.latitude * degrees_to_radians);
+            double change_in_longitude = (radius / r) * radians_to_degrees;
+
+            Console.WriteLine("change in latitude: {0}, change in longitude: {1}", change_in_latitude, change_in_longitude);
+
+            double maxLat = currentLocation.latitude + change_in_latitude;
+            double minLat = currentLocation.latitude - change_in_latitude;
+            double maxLng = currentLocation.longitude + change_in_longitude;
+            double minLng = currentLocation.longitude - change_in_longitude;
+
+            Console.WriteLine("maxLat: {0}, minLat {1}, maxLng {2}, minLng {3}", maxLat, minLat, maxLng, minLng);
+
+            List<double> returnBoundaries = new List<double>();
+
+            returnBoundaries.Add(maxLat);
+            returnBoundaries.Add(minLat);
+            returnBoundaries.Add(maxLng);
+            returnBoundaries.Add(minLng);
+
+            foreach (double boundry in returnBoundaries)
+            {
+                Console.WriteLine(boundry);
+            }
+
+            return returnBoundaries;
+
 
         }
 
