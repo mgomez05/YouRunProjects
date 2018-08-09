@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
 
 namespace Data
 {
@@ -40,6 +42,10 @@ namespace Data
             center.latitude = 4;
             center.weights = new Hashtable();
 
+            string jsonString = "{ \"preferences\": [{\"name\": \"hills\", \"weight\": .75},{ \"name\": \"water\", \"weight\": .55}, { \"name\": \"grass\", \"weight\": -.44}], \"current location\": { \"lat\": 12.99, \"lng\": -27.00}, \"radius\": 5.7}";
+
+            findBestRunningArea(jsonString);
+          
             List<List<Point>> sections = new List<List<Point>>();
             sections = divideSections(areaPoints, 4, 8, 0, 8, 0, center);
 
@@ -47,11 +53,68 @@ namespace Data
 
         }
 
-        //This function takes a list of points, a number of sections, a set of latitudes and longitudes that determine two opposite edges of a square,
-        //and the center of this square. It slices the square into triangular pieces of equal area based of the amount of sections requested, and then
-        //takes the list of points and tries to see which section each point belongs in. It returns the a list of a list of points that contains 
-        //each section and what points are within each section.
-        static List<List<Point>> divideSections(List<Point> areaPoints, int numSections, double maxLat, double minLat, double maxLng,
+
+        static void findBestRunningArea(string jsonString)
+        {
+            Hashtable preferences = Get_Preferences(jsonString);
+
+            double radius = Get_Radius(jsonString);
+
+            Point currentLocation = Get_currentLocation(jsonString);
+        }
+
+        //gets the weight percentage for each object from the json string
+        static Hashtable Get_Preferences(string jsonString)
+        {
+            //takes the json string and makes it readable when using the newtonsoft.json namespace
+            JObject results = JObject.Parse(jsonString);
+
+            string preferences_string = results["preferences"].ToString();
+
+            JArray preferences = JArray.Parse(preferences_string);
+
+            int num_preferences = preferences.Count;
+
+            Hashtable returnHashtable = new Hashtable();
+
+            for (int i = 0; i < num_preferences; i++)
+            {
+                returnHashtable.Add(preferences[i]["name"], preferences[i]["weight"]);
+               
+            }
+
+            return returnHashtable;
+        }
+
+        static double Get_Radius(string jsonString)
+        {
+            JObject results = JObject.Parse(jsonString);
+
+            double radius = Convert.ToDouble(results["radius"]);
+
+            return radius;
+        }
+
+        static Point Get_currentLocation(string jsonString)
+        {
+            JObject results = JObject.Parse(jsonString);
+
+            Point returnLocation;
+
+            returnLocation.latitude = Convert.ToDouble(results["current location"]["lat"]);
+            returnLocation.longitude = Convert.ToDouble(results["current location"]["lng"]);
+                        
+            returnLocation.weights = new Hashtable();
+
+            return returnLocation;
+
+        }
+
+            //This function takes a list of points, a number of sections, a set of latitudes and longitudes that determine two opposite edges of a square,
+            //and the center of this square. It slices the square into triangular pieces of equal area based of the amount of sections requested, and then
+            //takes the list of points and tries to see which section each point belongs in. It returns the a list of a list of points that contains 
+            //each section and what points are within each section.
+            static List<List<Point>> divideSections(List<Point> areaPoints, int numSections, double maxLat, double minLat, double maxLng,
                                          double minLng, Point center)
         {
             //these variables are for counting and outputting purposes
