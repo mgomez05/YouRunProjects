@@ -6,6 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
+using System.IO;
+using System.Net;
+using System.Data;
 
 namespace Data
 {
@@ -44,6 +47,7 @@ namespace Data
 
             string jsonString = "{ \"preferences\": [{\"name\": \"hills\", \"weight\": .75},{ \"name\": \"water\", \"weight\": .55}, { \"name\": \"grass\", \"weight\": -.44}], \"current location\": { \"lat\": 12.99, \"lng\": -27.00}, \"radius\": 5.7}";
 
+            HTTP_Get_Points(30, 20, 180, 0);
             findBestRunningArea(jsonString);
           
             List<List<Point>> sections = new List<List<Point>>();
@@ -56,6 +60,7 @@ namespace Data
 
         static void findBestRunningArea(string jsonString)
         {
+
             Hashtable preferences = Get_Preferences(jsonString);
 
             double radius = Get_Radius(jsonString);
@@ -63,6 +68,8 @@ namespace Data
             Point currentLocation = Get_currentLocation(jsonString);
 
             List<double> boundries = Get_squareBoundary(currentLocation, radius);
+
+
         }
 
         //gets the weight percentage for each object from the json string
@@ -122,14 +129,14 @@ namespace Data
             double r = earth_radius * Math.Cos(currentLocation.latitude * degrees_to_radians);
             double change_in_longitude = (radius / r) * radians_to_degrees;
 
-            Console.WriteLine("change in latitude: {0}, change in longitude: {1}", change_in_latitude, change_in_longitude);
+            //Console.WriteLine("change in latitude: {0}, change in longitude: {1}", change_in_latitude, change_in_longitude);
 
             double maxLat = currentLocation.latitude + change_in_latitude;
             double minLat = currentLocation.latitude - change_in_latitude;
             double maxLng = currentLocation.longitude + change_in_longitude;
             double minLng = currentLocation.longitude - change_in_longitude;
 
-            Console.WriteLine("maxLat: {0}, minLat {1}, maxLng {2}, minLng {3}", maxLat, minLat, maxLng, minLng);
+            //Console.WriteLine("maxLat: {0}, minLat {1}, maxLng {2}, minLng {3}", maxLat, minLat, maxLng, minLng);
 
             List<double> returnBoundaries = new List<double>();
 
@@ -148,11 +155,72 @@ namespace Data
 
         }
 
-            //This function takes a list of points, a number of sections, a set of latitudes and longitudes that determine two opposite edges of a square,
-            //and the center of this square. It slices the square into triangular pieces of equal area based of the amount of sections requested, and then
-            //takes the list of points and tries to see which section each point belongs in. It returns the a list of a list of points that contains 
-            //each section and what points are within each section.
-            static List<List<Point>> divideSections(List<Point> areaPoints, int numSections, double maxLat, double minLat, double maxLng,
+        static void HTTP_Get_Points(double maxLat, double minLat, double maxLng, double minLng)
+        {
+            // Create a request using a URL that can receive a post
+            WebRequest request = WebRequest.Create("https://yourun-server.herokuapp.com/locations/range?minLat=" + minLat.ToString() + "&maxLat=" + maxLat.ToString() + "&minLng=" + minLng.ToString() + "&maxLng=" + maxLng.ToString());
+            // Set the Method property of the request to POST.
+            request.Method = "Get";
+            // Create POST data and convert it to a byte array.
+            request.Credentials = CredentialCache.DefaultCredentials;
+            // Get the response.  
+            WebResponse response = request.GetResponse();
+            // Display the status.  
+            Console.WriteLine(((HttpWebResponse)response).StatusDescription);
+            // Get the stream containing content returned by the server.  
+            Stream dataStream = response.GetResponseStream();
+            // Open the stream using a StreamReader for easy access.  
+            StreamReader reader = new StreamReader(dataStream);
+            // Read the content.  
+            string runnerAreaJson = reader.ReadToEnd();
+            // Display the content.  
+            Console.WriteLine(runnerAreaJson);
+            // Clean up the streams and the response.
+            reader.Close();
+            response.Close();
+            List<Point> areaPoints = Parse_runnerAreaJson(runnerAreaJson);
+        }
+
+        static List<Point> Parse_runnerAreaJson(string runnerAreaJson)
+        {
+            JObject results = JObject.Parse(runnerAreaJson);
+
+            string results_string = results["results"].ToString();
+
+            JArray json_points_array = (JArray)results["results"];
+
+            int num_points = json_points_array.Count;
+
+            JArray weights_array;
+
+            int num_weights;
+
+            Point temp;
+            List<Point> areaPoints = new List<Point>();
+
+            for (int i = 0; i < num_points; i++)
+            {
+                temp.latitude = Convert.ToDouble(results["results"][i]["latitude"]);
+                temp.longitude = Convert.ToDouble(results["results"][i]["longitude"]);
+                temp.weights = new Hashtable();
+                weights_array = (JArray)results["results"][i]["weights"];
+                num_weights = weights_array.Count;
+                Console.WriteLine(num_weights);
+                for (int j = 0; j < num_weights; j++)
+                {
+                    temp.weights.Add(results["results"][i]["weights"]["name"], results["weights"][i]["weights"]["value"]);
+                }
+                areaPoints.Add(temp);
+            }
+
+            return areaPoints;
+        }
+
+        //This function takes a list of points, a number of sections, a set of latitudes and longitudes that determine two opposite edges of a square,
+        //and the center of this square. It slices the square into triangular pieces of equal area based of the amount of sections requested, and then
+        //takes the list of points and tries to see which section each point belongs in. It returns the a list of a list of points that contains 
+        //each section and what points are within each section.
+        static List<List<Point>> divideSections(List<Point> areaPoints, int numSections, double maxLat, double minLat, double maxLng,
                                          double minLng, Point center)
         {
             //these variables are for counting and outputting purposes
@@ -174,8 +242,8 @@ namespace Data
                     if (IsPointInBounds(currentPoint, slice) == true)
                     {
                         slice.memberPoints.Add(currentPoint);
-                        Console.WriteLine("Point {0} is within bounds of section {1}", z, i);
-                        Console.WriteLine("");
+                        //Console.WriteLine("Point {0} is within bounds of section {1}", z, i);
+                        //Console.WriteLine("");
                         break;
                     }
                     i++;
@@ -185,7 +253,7 @@ namespace Data
                 //The counting variable k needs to be subtracted from to account for the change in the list.
                 if (i > numSections)
                 {
-                    Console.WriteLine("point is not within selected area");
+                    //Console.WriteLine("point is not within selected area");
                     areaPoints.Remove(currentPoint);
                     k--;
 
