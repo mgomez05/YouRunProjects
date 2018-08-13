@@ -45,13 +45,11 @@ namespace Data
             center.latitude = 4;
             center.weights = new Hashtable();
 
-            string jsonString = "{ \"preferences\": [{\"name\": \"hills\", \"weight\": .75},{ \"name\": \"water\", \"weight\": .55}, { \"name\": \"grass\", \"weight\": -.44}], \"current location\": { \"lat\": 12.99, \"lng\": -27.00}, \"radius\": 5.7}";
+            string jsonString = "{ \"preferences\": [{\"name\": \"hills\", \"weight\": .75},{ \"name\": \"water\", \"weight\": .55}, { \"name\": \"grass\", \"weight\": -.44}], \"current location\": { \"lat\": 0.99, \"lng\": 3.99}, \"radius\": 3000}";
 
-            HTTP_Get_Points(30, 20, 180, 0);
             findBestRunningArea(jsonString);
           
-            List<List<Point>> sections = new List<List<Point>>();
-            sections = divideSections(areaPoints, 4, 8, 0, 8, 0, center);
+           
 
             Console.ReadKey();
 
@@ -68,6 +66,26 @@ namespace Data
             Point currentLocation = Get_currentLocation(jsonString);
 
             List<double> boundries = Get_squareBoundary(currentLocation, radius);
+
+            List<Point> areaPoints = HTTP_Get_Points(180, 0, 180, 0);
+
+            foreach (Point point in areaPoints)
+            {
+                Console.WriteLine("areaPoints    Latitude: {0}, Longitude: {1}", point.latitude, point.longitude);
+            }
+
+            Console.WriteLine("maxLat: {0}, minLat {1}, maxLng {2}, minLng {3}", boundries[0], boundries[1], boundries[2], boundries[3]);
+
+            List<List<Point>> sections = divideSections(areaPoints, 4, boundries[0], boundries[1], boundries[2], boundries[3], currentLocation);
+
+                       
+            foreach (List<Point> list in sections)
+            {
+                foreach (Point point in list)
+                {
+                    Console.WriteLine("Latitude: {0}, Longitude: {1}", point.latitude, point.longitude);
+                }
+            }
 
 
         }
@@ -155,7 +173,7 @@ namespace Data
 
         }
 
-        static void HTTP_Get_Points(double maxLat, double minLat, double maxLng, double minLng)
+        static List<Point> HTTP_Get_Points(double maxLat, double minLat, double maxLng, double minLng)
         {
             // Create a request using a URL that can receive a post
             WebRequest request = WebRequest.Create("https://yourun-server.herokuapp.com/locations/range?minLat=" + minLat.ToString() + "&maxLat=" + maxLat.ToString() + "&minLng=" + minLng.ToString() + "&maxLng=" + maxLng.ToString());
@@ -179,6 +197,9 @@ namespace Data
             reader.Close();
             response.Close();
             List<Point> areaPoints = Parse_runnerAreaJson(runnerAreaJson);
+
+           
+            return areaPoints;
         }
 
         static List<Point> Parse_runnerAreaJson(string runnerAreaJson)
@@ -200,15 +221,18 @@ namespace Data
 
             for (int i = 0; i < num_points; i++)
             {
+                temp.weights = new Hashtable();
                 temp.latitude = Convert.ToDouble(results["results"][i]["latitude"]);
                 temp.longitude = Convert.ToDouble(results["results"][i]["longitude"]);
                 temp.weights = new Hashtable();
                 weights_array = (JArray)results["results"][i]["weights"];
                 num_weights = weights_array.Count;
-                Console.WriteLine(num_weights);
+                Console.WriteLine("{0}", num_weights);
+                
                 for (int j = 0; j < num_weights; j++)
-                {
-                    temp.weights.Add(results["results"][i]["weights"]["name"], results["weights"][i]["weights"]["value"]);
+                {     
+                    temp.weights.Add(results["results"][i]["weights"][j]["name"], results["results"][i]["weights"][j]["value"]);
+                    Console.WriteLine("name: {0}, value: {1}", results["results"][i]["weights"][j]["name"], results["results"][i]["weights"][j]["value"]);
                 }
                 areaPoints.Add(temp);
             }
@@ -238,9 +262,11 @@ namespace Data
 
                 //For each slice, it checks if the current point is within the slice and if so it is stored as a memberpoint in that slice.
                 foreach (SectionSlice slice in sectionSlices)
-                {                    
+                {
+                    
                     if (IsPointInBounds(currentPoint, slice) == true)
                     {
+                        
                         slice.memberPoints.Add(currentPoint);
                         //Console.WriteLine("Point {0} is within bounds of section {1}", z, i);
                         //Console.WriteLine("");
@@ -254,6 +280,7 @@ namespace Data
                 if (i > numSections)
                 {
                     //Console.WriteLine("point is not within selected area");
+                    Console.WriteLine("fail");
                     areaPoints.Remove(currentPoint);
                     k--;
 
@@ -278,6 +305,7 @@ namespace Data
                 j++;
             }
             */
+            
             return sections;
 
             
@@ -301,7 +329,7 @@ namespace Data
         {
 
             List<SectionSlice> sectionSlices = new List<SectionSlice>();
-
+            
             //two temporary points will be used to eventually store information into sectionSlices.triangleBounds
             Point point1;
             Point point2;
@@ -313,6 +341,8 @@ namespace Data
             double perimeter = side_length * 4;
             //distance between two points on the perimeter of the square that makes up a section
             double distance_between_points = perimeter / numSections;
+
+          
             //to keep track of where we are along the perimeter
             double current_distance = 0;
             double prev_distance;
@@ -332,7 +362,7 @@ namespace Data
                     //this side will always have a latitude value of minLat.
                     //it finds the first point on the perimeter and then adds the distance_between_points
                     //to find the second.
-                    if (current_distance <= (perimeter / 4))
+                    if (current_distance < (perimeter / 4))
                     {
                         current_longitude = minLng + current_distance;
                         current_latitude = minLat;
@@ -348,6 +378,7 @@ namespace Data
                             current_longitude = minLng + current_distance;
                             point2.longitude = current_longitude;
                             point2.latitude = minLat;
+                           
                         }
                         //If it moved to the next side, the longitude stays at maxLng. However, the latitude has to change
                         //based off how much distance it traveled on the previous side and how much it traveled on the current side.
@@ -357,13 +388,14 @@ namespace Data
                             current_longitude = maxLng;
                             point2.latitude = current_latitude;
                             point2.longitude = current_longitude;
+                           
                         }
                     }
                     //this is the second side of the square that the function travels through.
                     //this side will always have a longitude value of maxLng.
                     //it finds the first point on the perimeter and then adds the distance_between_points
                     //to find the second.
-                    else if (current_distance > (perimeter / 4) && current_distance <= (perimeter / 2))
+                    else if (current_distance >= (perimeter / 4) && current_distance < (perimeter / 2))
                     {
                         current_longitude = maxLng;
                         current_latitude = minLat + (current_distance - (perimeter / 4));
@@ -371,6 +403,7 @@ namespace Data
                         point1.longitude = current_longitude;
                         prev_distance = current_distance;
                         current_distance = current_distance + distance_between_points;
+                        
 
                         //when finding the second point, the function needs to know if the current_distance is still on the same
                         //side or if it passed onto the next. The if statement is if it is on the same side. The else statement is if
@@ -378,6 +411,7 @@ namespace Data
                         if (current_distance <= (perimeter / 2))
                         {
                             current_latitude = minLat + (current_distance - (perimeter / 4));
+                           // Console.WriteLine("winning current_latitude = {0}", current_latitude);
                             point2.latitude = current_latitude;
                             point2.longitude = maxLng;
                         }
@@ -388,6 +422,7 @@ namespace Data
                             current_longitude = maxLng - (distance_between_points - (maxLat - (prev_distance - (perimeter / 4))));
                             point2.longitude = current_longitude;
                             point2.latitude = maxLat;
+                            //Console.WriteLine("current_longitude {0}", current_longitude);
                         }
 
                     }
@@ -395,7 +430,7 @@ namespace Data
                     //this side will always have a latitude value of maxLat.
                     //it finds the first point on the perimeter and then adds the distance_between_points
                     //to find the second.
-                    else if (current_distance > (perimeter / 2) && current_distance <= ((perimeter * 3) / 4))
+                    else if (current_distance >= (perimeter / 2) && current_distance < ((perimeter * 3) / 4))
                     {
                         current_latitude = maxLat;
                         current_longitude = maxLng - (current_distance - (perimeter / 2));
@@ -557,6 +592,7 @@ namespace Data
 
             // Calculate area of triangle ABC 
             double A = area(x1, y1, x2, y2, x3, y3);
+           
 
             // Calculate area of triangle PBC
             double A1 = area(x, y, x2, y2, x3, y3);
@@ -567,8 +603,22 @@ namespace Data
             // Calculate area of triangle PAB
             double A3 = area(x1, y1, x2, y2, x, y);
 
+
+       
             // Check if sum of A1, A2 and A3 is same as A 
-            return (A == A1 + A2 + A3);
+            double A_minus = A - (A / 50);
+            double A_plus = A + (A / 50);
+
+        
+            if (A_minus > (A1 + A2 + A3) || A_plus < (A1 + A2 + A3))
+            {
+                return false;
+            }
+            else
+            {
+                
+                return true;
+            }
         }
 
 
