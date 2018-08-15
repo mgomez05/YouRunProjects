@@ -35,6 +35,12 @@ namespace Data
 
         }
 
+        public class JsonInfo
+        {
+            public Dictionary<string, double> weight_percentages { get; set; }
+
+        }
+
 
         static void Main(string[] args)
         {
@@ -45,16 +51,17 @@ namespace Data
             center.latitude = 4;
             center.weights = new Hashtable();
 
-            string jsonString = "{ \"preferences\": [{\"name\": \"hills\", \"weight\": .75},{ \"name\": \"water\", \"weight\": .55}, { \"name\": \"grass\", \"weight\": -.44}], \"current location\": { \"lat\": 0.99, \"lng\": 3.99}, \"radius\": 3000}";
+            string jsonString = "{ \"preferences\": [{\"name\": \"hills\", \"weight\": .75},{ \"name\": \"water\", \"weight\": .55}, { \"name\": \"grass\", \"weight\": -.44}], \"current location\": { \"lat\": 0.99, \"lng\": 3.99}, \"radius\": 20}";
 
             findBestRunningArea(jsonString);
-          
-           
+
+            List<List<Point>> sections = new List<List<Point>>();
+            //sections = divideSections(areaPoints, 4, 8, 0, 8, 0, center);
+
 
             Console.ReadKey();
 
         }
-
 
         static void findBestRunningArea(string jsonString)
         {
@@ -69,26 +76,101 @@ namespace Data
 
             List<Point> areaPoints = HTTP_Get_Points(180, 0, 180, 0);
 
-            foreach (Point point in areaPoints)
+            /*foreach (Point point in areaPoints)
             {
                 Console.WriteLine("areaPoints    Latitude: {0}, Longitude: {1}", point.latitude, point.longitude);
             }
-
-            Console.WriteLine("maxLat: {0}, minLat {1}, maxLng {2}, minLng {3}", boundries[0], boundries[1], boundries[2], boundries[3]);
+            */
+                
 
             List<List<Point>> sections = divideSections(areaPoints, 4, boundries[0], boundries[1], boundries[2], boundries[3], currentLocation);
 
-                       
+            int i = 1; 
             foreach (List<Point> list in sections)
             {
                 foreach (Point point in list)
                 {
-                    Console.WriteLine("Latitude: {0}, Longitude: {1}", point.latitude, point.longitude);
+                    //Console.WriteLine("This point is in section {2}, Latitude: {0}, Longitude: {1}", point.latitude, point.longitude, i);
+                    i++;
                 }
             }
-
+     
+            string new_jsonString = create_JSON_string(preferences, sections);
 
         }
+               
+           
+        static string create_JSON_string(Hashtable preferences, List<List<Point>> sections)
+        {
+            JTokenWriter writer = new JTokenWriter();
+
+            writer.WriteStartObject();
+            Write_Weight_Percentages(preferences, writer);
+            Write_Sections(sections, writer);
+            writer.WriteEndObject();
+
+            JObject o = (JObject)writer.Token;
+
+            string json = o.ToString();
+
+            return json;
+
+        }
+        static void Write_Weight_Percentages(Hashtable preferences, JTokenWriter writer)
+        {               
+            writer.WritePropertyName("weight_percentages");
+            writer.WriteStartArray();
+            foreach (DictionaryEntry entry in preferences)
+            {
+                writer.WriteStartObject();
+                writer.WritePropertyName(entry.Key.ToString());
+                writer.WriteValue(Convert.ToDouble(entry.Value));
+                writer.WriteEndObject();
+            }
+            writer.WriteEndArray();               
+        }
+
+        static void Write_Sections(List<List<Point>> sections, JTokenWriter writer)
+        {
+            writer.WritePropertyName("sections");
+            writer.WriteStartArray();
+
+            int id_number = 1;
+            foreach (List<Point> list in sections)
+            {
+                writer.WriteStartObject();
+                writer.WritePropertyName("id");
+                writer.WriteValue(id_number);
+                writer.WritePropertyName("points");
+                writer.WriteStartArray();
+                foreach (Point point in list)
+                {
+                    writer.WriteStartObject();
+                    writer.WritePropertyName("latitude");
+                    writer.WriteValue(point.latitude);
+                    writer.WritePropertyName("longitude");
+                    writer.WriteValue(point.longitude);
+                    writer.WritePropertyName("weights");
+                    foreach (DictionaryEntry hash in point.weights)
+                    {
+                        writer.WriteStartObject();
+                        writer.WritePropertyName(hash.Key.ToString());
+                        writer.WriteValue(Convert.ToDouble(hash.Value));
+                        writer.WriteEndObject();
+                    }
+                    writer.WriteEndObject();
+                }
+                writer.WriteEndArray();
+                writer.WriteEndObject();
+                id_number++;
+            }
+
+            writer.WriteEndArray();
+        }
+
+    
+
+
 
         //gets the weight percentage for each object from the json string
         static Hashtable Get_Preferences(string jsonString)
@@ -232,11 +314,11 @@ namespace Data
                 for (int j = 0; j < num_weights; j++)
                 {     
                     temp.weights.Add(results["results"][i]["weights"][j]["name"], results["results"][i]["weights"][j]["value"]);
-                    Console.WriteLine("name: {0}, value: {1}", results["results"][i]["weights"][j]["name"], results["results"][i]["weights"][j]["value"]);
+                    
                 }
                 areaPoints.Add(temp);
             }
-
+            
             return areaPoints;
         }
 
@@ -259,14 +341,14 @@ namespace Data
             {
                 Point currentPoint = areaPoints[k];
                 i = 1;
+               
 
                 //For each slice, it checks if the current point is within the slice and if so it is stored as a memberpoint in that slice.
                 foreach (SectionSlice slice in sectionSlices)
                 {
                     
                     if (IsPointInBounds(currentPoint, slice) == true)
-                    {
-                        
+                    {                        
                         slice.memberPoints.Add(currentPoint);
                         //Console.WriteLine("Point {0} is within bounds of section {1}", z, i);
                         //Console.WriteLine("");
@@ -280,7 +362,6 @@ namespace Data
                 if (i > numSections)
                 {
                     //Console.WriteLine("point is not within selected area");
-                    Console.WriteLine("fail");
                     areaPoints.Remove(currentPoint);
                     k--;
 
@@ -295,7 +376,7 @@ namespace Data
                 sections.Add(slice.memberPoints);
             }
 
-            /*foreach (SectionSlice slice in sectionSlices)
+            foreach (SectionSlice slice in sectionSlices)
             {
                 Console.WriteLine("Section #{0}", j);
                 foreach (Point point in slice.triangleBounds)
@@ -304,7 +385,7 @@ namespace Data
                 }
                 j++;
             }
-            */
+            
             
             return sections;
 
@@ -443,9 +524,10 @@ namespace Data
                         //it moved to another side.
                         if (current_distance <= ((perimeter * 3) / 4))
                         {
-                            current_longitude = maxLng - (current_distance - (perimeter / 4));
-                            point2.latitude = current_latitude;
-                            point2.longitude = maxLng;
+                            current_longitude = maxLng - (current_distance - (perimeter / 2));
+                            point2.latitude = maxLat;
+                            point2.longitude = current_longitude;
+                            
                         }
                         //If it moved to the next side, the longitude stays at minLng. However, the latitude has to change
                         //based off how much distance it traveled on the previous side and how much it traveled on the current side.
@@ -545,8 +627,8 @@ namespace Data
         //Then I use a helper function to do the math.
         static bool IsPointInBounds(Point currentpoint, SectionSlice bounds)
         {
-            double y = currentpoint.latitude;
-            double x = currentpoint.longitude;
+            double y = currentpoint.longitude;
+            double x = currentpoint.latitude;
             double[] latitudes = new double[3];
             double[] longitudes = new double[3];
             int i = 0;
@@ -581,14 +663,14 @@ namespace Data
         static bool isInside(double[] latitude, double[] longitude, double x, double y)
 
         {
-
+            
             double x1 = latitude[0];
             double x2 = latitude[1];
             double x3 = latitude[2];
             double y1 = longitude[0];
             double y2 = longitude[1];
             double y3 = longitude[2];
-
+            //Console.WriteLine("Point P({0}, {1}) lies inside triangle formed by A({2}, {3}), B({4}, {5}), C{6}, {7})", x, y, x1, y1, x2, y2, x3, y3);
 
             // Calculate area of triangle ABC 
             double A = area(x1, y1, x2, y2, x3, y3);
@@ -596,6 +678,7 @@ namespace Data
 
             // Calculate area of triangle PBC
             double A1 = area(x, y, x2, y2, x3, y3);
+            
 
             // Calculate area of triangle PAC
             double A2 = area(x1, y1, x, y, x3, y3);
@@ -608,6 +691,11 @@ namespace Data
             // Check if sum of A1, A2 and A3 is same as A 
             double A_minus = A - (A / 50);
             double A_plus = A + (A / 50);
+
+            
+
+
+            Console.WriteLine("A minus {0} < {1} < A plus {2}", A_minus, A1 + A2 + A3, A_plus);
 
         
             if (A_minus > (A1 + A2 + A3) || A_plus < (A1 + A2 + A3))
