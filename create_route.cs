@@ -14,6 +14,7 @@ namespace Data
 {
     class create_route
     {
+        //used in scanSections() function because that does not use longitude or latitude values
         public struct point
         {            
             public Hashtable weights;
@@ -48,13 +49,7 @@ namespace Data
 
         static void Main(string[] args)
         {
-            //just test data
-            List<Point> areaPoints = createTestPointsforMain();
-            Point center;
-            center.longitude = 4;
-            center.latitude = 4;
-            center.weights = new Hashtable();
-
+            //json with the designated location and the preferences that will be used to find the best section
             string jsonString = "{ \"preferences\": [{\"name\": \"hills\", \"weight\": .75},{ \"name\": \"water\", \"weight\": .55}, { \"name\": \"grass\", \"weight\": -.44}], \"current location\": { \"lat\": 0.99, \"lng\": 3.99}, \"radius\": 20}";
 
             List<Point> best_section = findBestRunningArea(jsonString);
@@ -64,17 +59,13 @@ namespace Data
                 Console.WriteLine("This is a point in the best section Lat: {0}, Lng: {1}", point.latitude, point.longitude);
             }
 
-            List<List<Point>> sections = new List<List<Point>>();
-            //sections = divideSections(areaPoints, 4, 8, 0, 8, 0, center);
-
-
             Console.ReadKey();
 
         }
 
         static List<Point> findBestRunningArea(string jsonString)
         {
-
+            //a bunch of get functions to be used later for divideSections
             Hashtable preferences = Get_Preferences(jsonString);
 
             double radius = Get_Radius(jsonString);
@@ -83,53 +74,61 @@ namespace Data
 
             List<double> boundries = Get_squareBoundary(currentLocation, radius);
 
-            List<Point> areaPoints = HTTP_Get_Points(180, 0, 180, 0);
-
-   
+            //the points obtained are of any latitude and longitude as of now (0 -> 180)
+            List<Point> areaPoints = HTTP_Get_Points(180, 0, 180, 0);   
 
             List<List<Point>> sections = divideSections(areaPoints, 4, boundries[0], boundries[1], boundries[2], boundries[3], currentLocation);
 
-            int i = 1; 
-            foreach (List<Point> list in sections)
-            {
-                foreach (Point point in list)
-                {
-                    //Console.WriteLine("This point is in section {2}, Latitude: {0}, Longitude: {1}", point.latitude, point.longitude, i);
-                    i++;
-                }
-            }
-     
+            //creates a jsonString to be analized by scanSections
             string new_jsonString = create_JSON_string(preferences, sections);
 
+            //the weighted totals of each section
             List<double> scan_result = scanSections(new_jsonString);
 
+            //a list of points that are within the best section
             List<Point> best_section = findBestSection(scan_result, sections);
+
             printHighestWeightedTotal(scan_result);
+
             return best_section;
 
         }
                
-           
+        //creates a json string in a specific format
+        //this json string will contain information about the weight percentages, and the specifics of each section
         static string create_JSON_string(Hashtable preferences, List<List<Point>> sections)
         {
+            //JTokenWriter is basically a tool that allows the user to manually input each part of the json
+            //Passed by reference and I like to use it since it allows me to run for loops unlike other serializing newtonsoft stuff
             JTokenWriter writer = new JTokenWriter();
 
+            //startObject = {
             writer.WriteStartObject();
+
+            //helper functions
             Write_Weight_Percentages(preferences, writer);
             Write_Sections(sections, writer);
+
+            //EndObject = }
             writer.WriteEndObject();
 
+            //placed into a JObject and then cast into a string
             JObject o = (JObject)writer.Token;
-
             string json = o.ToString();
 
             return json;
 
         }
+
+        //creates the weight_percentages portion of a json string, passed by reference
         static void Write_Weight_Percentages(Hashtable preferences, JTokenWriter writer)
-        {               
+        {   
+            //Example of PropertyName and Value: PropertyName -> "weight_percentages" :
             writer.WritePropertyName("weight_percentages");
+            //StartArray = [
             writer.WriteStartArray();
+
+            //writes the hashtable in json format
             foreach (DictionaryEntry entry in preferences)
             {
                 writer.WriteStartObject();
@@ -137,15 +136,23 @@ namespace Data
                 writer.WriteValue(Convert.ToDouble(entry.Value));
                 writer.WriteEndObject();
             }
+            //EndArray = ]
             writer.WriteEndArray();               
         }
 
+        //writes the Section portion of the json string, passed by reference
         static void Write_Sections(List<List<Point>> sections, JTokenWriter writer)
         {
             writer.WritePropertyName("sections");
             writer.WriteStartArray();
 
+            //I made the id number equal to the index number
             int id_number = 1;
+
+            //example of what each element of the foreach loop looks like:
+            //{"id":"1","points":[{"latitude":11.7575,"longitude":13.55567,
+            //"weights":{"water":1,"hills":2}},{"latitude":12.2343,"longitude":
+            // 2.553535,"weights":{"water":3,"hills":8}}
             foreach (List<Point> list in sections)
             {
                 writer.WriteStartObject();
@@ -188,14 +195,17 @@ namespace Data
             //takes the json string and makes it readable when using the newtonsoft.json namespace
             JObject results = JObject.Parse(jsonString);
 
+            //Isolates everything under "preferences" and makes it a string
             string preferences_string = results["preferences"].ToString();
 
+            //parse the information under "preferences" as a JArray in order to find how many preferences there are
             JArray preferences = JArray.Parse(preferences_string);
 
             int num_preferences = preferences.Count;
 
             Hashtable returnHashtable = new Hashtable();
 
+            //places the relevant information from each preference into a hashtable
             for (int i = 0; i < num_preferences; i++)
             {
                 returnHashtable.Add(preferences[i]["name"], preferences[i]["weight"]);
@@ -205,6 +215,7 @@ namespace Data
             return returnHashtable;
         }
 
+        //gets the specified "radius" from a json string
         static double Get_Radius(string jsonString)
         {
             JObject results = JObject.Parse(jsonString);
@@ -214,6 +225,7 @@ namespace Data
             return radius;
         }
 
+        //gets the latitude and longitude values of the specified "current location" in a json string
         static Point Get_currentLocation(string jsonString)
         {
             JObject results = JObject.Parse(jsonString);
@@ -229,42 +241,61 @@ namespace Data
 
         }
 
+        //Using a specific location as the center and a radius, this function creates a square.
+        //This square is made up of four corner points: a maximum latitude, a minimum latitude, 
+        //a maximum longitude, and a minimum longitude, which are returned as a list of doubles in that 
+        //same order.
         static List<double> Get_squareBoundary(Point currentLocation, double radius)
-        {
-            double earth_radius = 3960.0;
-            double degrees_to_radians = Math.PI / 180.0;
-            double radians_to_degrees = 180.0 / Math.PI;
+        {   
+            //change in latitude and longitude from the currentLocation will determine the corners of the square
+            double change_in_latitude = Convert_miles_to_latitude(radius);
+            double change_in_longitude = Convert_miles_to_longitude(currentLocation, radius);
 
-            double change_in_latitude = (radius / earth_radius) * radians_to_degrees;
-            double r = earth_radius * Math.Cos(currentLocation.latitude * degrees_to_radians);
-            double change_in_longitude = (radius / r) * radians_to_degrees;
-
-            //Console.WriteLine("change in latitude: {0}, change in longitude: {1}", change_in_latitude, change_in_longitude);
-
+            //square made up of max and min values of longitude and latitude.
+            //Think of longitude and latitude as x and y coordinates
             double maxLat = currentLocation.latitude + change_in_latitude;
             double minLat = currentLocation.latitude - change_in_latitude;
             double maxLng = currentLocation.longitude + change_in_longitude;
             double minLng = currentLocation.longitude - change_in_longitude;
 
-            //Console.WriteLine("maxLat: {0}, minLat {1}, maxLng {2}, minLng {3}", maxLat, minLat, maxLng, minLng);
-
             List<double> returnBoundaries = new List<double>();
-
             returnBoundaries.Add(maxLat);
             returnBoundaries.Add(minLat);
             returnBoundaries.Add(maxLng);
             returnBoundaries.Add(minLng);
 
-            foreach (double boundry in returnBoundaries)
-            {
-                Console.WriteLine(boundry);
-            }
-
             return returnBoundaries;
-
-
         }
 
+        //converts the unit of miles into latitude
+        static double Convert_miles_to_latitude(double radius)
+        {
+            double earth_radius = 3960.0;
+            double radians_to_degrees = 180.0 / Math.PI;
+
+            double change_in_latitude = (radius / earth_radius) * radians_to_degrees;
+
+            return change_in_latitude;
+        }
+           
+        //converts the unit of miles into longitude
+        //longitude is a little bit more weird to convert than latitude because the earth is not a perfect sphere
+        //this accounts for the earth's more ellipsoid shape
+        static double Convert_miles_to_longitude(Point currentLocation, double radius)
+        {
+            double earth_radius = 3960.0;
+            double degrees_to_radians = Math.PI / 180.0;
+            double radians_to_degrees = 180.0 / Math.PI;         
+
+           
+            double r = earth_radius * Math.Cos(currentLocation.latitude * degrees_to_radians);
+            double change_in_longitude = (radius / r) * radians_to_degrees;
+
+            return change_in_longitude;
+        }
+
+        //runs a HTTP get request in order to get the information from the server
+        //it then places the information into a list of points called arePoints
         static List<Point> HTTP_Get_Points(double maxLat, double minLat, double maxLng, double minLng)
         {
             // Create a request using a URL that can receive a post
@@ -276,51 +307,57 @@ namespace Data
             // Get the response.  
             WebResponse response = request.GetResponse();
             // Display the status.  
-            Console.WriteLine(((HttpWebResponse)response).StatusDescription);
+            //Console.WriteLine(((HttpWebResponse)response).StatusDescription);
             // Get the stream containing content returned by the server.  
             Stream dataStream = response.GetResponseStream();
             // Open the stream using a StreamReader for easy access.  
             StreamReader reader = new StreamReader(dataStream);
             // Read the content.  
             string runnerAreaJson = reader.ReadToEnd();
-            // Display the content.  
-            Console.WriteLine(runnerAreaJson);
             // Clean up the streams and the response.
             reader.Close();
             response.Close();
+
+            //parses the json string to get a list of points
             List<Point> areaPoints = Parse_runnerAreaJson(runnerAreaJson);
 
            
             return areaPoints;
         }
 
+        //Parses the json string obtained from the server so that each point in the json string
+        //can be stored into a list
         static List<Point> Parse_runnerAreaJson(string runnerAreaJson)
         {
+            //makes the json string readable through the newtonsoft namespace
             JObject results = JObject.Parse(runnerAreaJson);
 
+            //finds the amount of elements there are within the key "results" (stored as num_points)
             string results_string = results["results"].ToString();
-
             JArray json_points_array = (JArray)results["results"];
-
             int num_points = json_points_array.Count;
 
+            //declared now to be used later
             JArray weights_array;
-
             int num_weights;
-
             Point temp;
             List<Point> areaPoints = new List<Point>();
 
+            //runs through each element within "results" and stores the information 
+            //under "latitude", "longitude", and "weights" into a point. This point is then 
+            //added to a list of points
             for (int i = 0; i < num_points; i++)
-            {
-                temp.weights = new Hashtable();
+            {                
                 temp.latitude = Convert.ToDouble(results["results"][i]["latitude"]);
                 temp.longitude = Convert.ToDouble(results["results"][i]["longitude"]);
+
                 temp.weights = new Hashtable();
+                //finds the amount of elemetns there are within "weights"
                 weights_array = (JArray)results["results"][i]["weights"];
                 num_weights = weights_array.Count;
-                Console.WriteLine("{0}", num_weights);
                 
+                //runs through each element within "weights" and stores that information
+                //in a hashtable
                 for (int j = 0; j < num_weights; j++)
                 {     
                     temp.weights.Add(results["results"][i]["weights"][j]["name"], results["results"][i]["weights"][j]["value"]);
@@ -350,13 +387,11 @@ namespace Data
             for (int k = 0; k < areaPoints.Count; k++)
             {
                 Point currentPoint = areaPoints[k];
-                i = 1;
-               
+                i = 1;              
 
                 //For each slice, it checks if the current point is within the slice and if so it is stored as a memberpoint in that slice.
                 foreach (SectionSlice slice in sectionSlices)
-                {
-                    
+                {                    
                     if (IsPointInBounds(currentPoint, slice) == true)
                     {                        
                         slice.memberPoints.Add(currentPoint);
@@ -374,7 +409,6 @@ namespace Data
                     //Console.WriteLine("point is not within selected area");
                     areaPoints.Remove(currentPoint);
                     k--;
-
                 }
                 z++;
             }
@@ -385,7 +419,7 @@ namespace Data
             {
                 sections.Add(slice.memberPoints);
             }
-
+            /*
             foreach (SectionSlice slice in sectionSlices)
             {
                 Console.WriteLine("Section #{0}", j);
@@ -395,13 +429,9 @@ namespace Data
                 }
                 j++;
             }
+            */          
             
-            
-            return sections;
-
-            
-
-
+            return sections;       
         }
 
         //This is a long function, so bear with me. 
@@ -695,19 +725,15 @@ namespace Data
 
             // Calculate area of triangle PAB
             double A3 = area(x1, y1, x2, y2, x, y);
-
-
-       
-            // Check if sum of A1, A2 and A3 is same as A 
-            double A_minus = A - (A / 50);
-            double A_plus = A + (A / 50);
-
-            
-
-
-            Console.WriteLine("A minus {0} < {1} < A plus {2}", A_minus, A1 + A2 + A3, A_plus);
-
-        
+      
+            //gives a high and low value for A (kind of like a plus or minus sign for error)
+            double A_minus = A - (A / 100);
+            double A_plus = A + (A / 100);
+  
+            //Checks if sum of A1, A2, and A3 is in the same range as A.
+            //The reason that there is a range is due to the chance
+            //that the sum might be slightly off due to the complexity of maintaining a
+            //consistant decimal value (accounts for errors with significant figures)
             if (A_minus > (A1 + A2 + A3) || A_plus < (A1 + A2 + A3))
             {
                 return false;
@@ -734,30 +760,34 @@ namespace Data
             return section_totals;
         }
 
-        //takes an array of pointers and stores the information in a hashtable
-        //also adds the total values of all of the pointers
+        //Takes an array of pointers and stores the information in a hashtable.
+        //Each point has a hashtable itself, but the point of this function is to combine
+        //those hashtables. That means the values of the same key need to be added together.
+        //This is done by finding all of the keys (put inside no_repeats) and then adding all of their
+        //associated values into one hashtable.
         static Hashtable getScannerResults(List<point> Points)
         {
             Hashtable pointWeights = new Hashtable();
             List<string> commands = new List<string>();
             List<double> values = new List<double>();
-            double value = 0;
-            int i = 0;
-
-
+            double value = 0;            
+            //stores the hashtable information into parallel lists
             foreach (point p in Points)
             {
                 foreach (DictionaryEntry entry in p.weights)
                 {
                     commands.Add(entry.Key.ToString());
                     values.Add(Convert.ToDouble(entry.Value));
-                    Console.WriteLine("hello:  {0}, {1}", entry.Key, entry.Value);
-
                 }
             }
-
+            //the point of no_repeats is so that no string within 
+            //the list is the same
             List<string> no_repeats = Get_no_repeats(commands);
 
+            //runs a loop through each string in no_repeats and sees if it 
+            //is the same as a string in commands. If it is, since it is parallel
+            //to values, it adds the values to a temporary double, which is then added
+            //to the hashtable pointWeights.
             foreach (string elem in no_repeats)
             {
                 for (int j = 0; j < commands.Count; j++)
@@ -772,19 +802,21 @@ namespace Data
                 value = 0;
 
             }
-
-            foreach (DictionaryEntry entry in pointWeights)
-            {
-                Console.WriteLine("{0}, {1}", entry.Key, entry.Value);
-            }
-
             return pointWeights;
 
         }
 
+        //takes a list of strings and makes a new list where
+        //none of the strings repeat (are the same)
         static List<string> Get_no_repeats(List<string> commands)
         {
             List<string> return_array = new List<string>();
+
+            //The bool is set to false for now, but if an element within 
+            //commands is equal to an element in return_array, then the bool
+            //is changed to true.
+            //If the bool is true, then the element in commands is not added
+            //to return_array.
             bool a = false;
             foreach (string elem in commands)
             {
@@ -808,7 +840,7 @@ namespace Data
             return return_array;
         }
 
-        //helper function that gets the highest waited total
+        //helper function that gets the highest weighted total out of a list of weighted totals
         static double getHighestWeightedTotal(List<double> section_totals)
         {
             double highest_weighted_total = 0;
@@ -843,7 +875,7 @@ namespace Data
                 section_number++;
                 section_total_before = weighted_total;
             }
-            Console.WriteLine("Section #{0} has the highest weighted total of {1}", highest_section, highest_weighted_total);
+            //Console.WriteLine("Section #{0} has the highest weighted total of {1}", highest_section, highest_weighted_total);
         }
 
         //parses a json string and places desired information into a ScannerData struct
@@ -1034,6 +1066,8 @@ namespace Data
             return section_totals;
         }
 
+        //takes a list of weighted totals and the jagged list sections and finds the best section
+        //and its section number
         static List<Point> findBestSection(List<double> section_totals, List<List<Point>> sections)
         {
             List<Point> best_section = new List<Point>();
@@ -1051,7 +1085,6 @@ namespace Data
 
                 }
                 section_number++;
-
             }
 
             int i = 1;
@@ -1063,71 +1096,8 @@ namespace Data
 
                 }
                 i++;
-
             }
             return best_section;  
             }
-
-        //12 points to help test
-        //I just didn't want Main to be too long
-        static List<Point> createTestPointsforMain()
-        {
-            List<Point> areaPoints = new List<Point>();
-            Point point1, point2, point3, point4, point5, point6, point7, point8, point9, point10, point11, point12;
-            point1.longitude = 1;
-            point1.latitude = 0;
-            point1.weights = new Hashtable();
-            areaPoints.Add(point1);
-            point2.longitude = 6;
-            point2.latitude = 1;
-            point2.weights = new Hashtable();
-            areaPoints.Add(point2);
-            point3.longitude = 6;
-            point3.latitude = 1;
-            point3.weights = new Hashtable();
-            areaPoints.Add(point3);
-            point4.longitude = 5;
-            point4.latitude = 4;
-            point4.weights = new Hashtable();
-            areaPoints.Add(point4);
-            point5.longitude = 6;
-            point5.latitude = 4;
-            point5.weights = new Hashtable();
-            areaPoints.Add(point5);
-            point6.longitude = 7;
-            point6.latitude = 4;
-            point6.weights = new Hashtable();
-            areaPoints.Add(point6);
-            point7.longitude = 4;
-            point7.latitude = 5;
-            point7.weights = new Hashtable();
-            areaPoints.Add(point7);
-            point8.longitude = 40;
-            point8.latitude = 60;
-            point8.weights = new Hashtable();
-            areaPoints.Add(point8);
-            point9.longitude = 4;
-            point9.latitude = 7;
-            point9.weights = new Hashtable();
-            areaPoints.Add(point9);
-            point10.longitude = 3;
-            point10.latitude = 4;
-            point10.weights = new Hashtable();
-            areaPoints.Add(point10);
-            point11.longitude = 2;
-            point11.latitude = 4;
-            point11.weights = new Hashtable();
-            areaPoints.Add(point11);
-            point12.longitude = 4;
-            point12.latitude = 5;
-            point12.weights = new Hashtable();
-            areaPoints.Add(point12);
-
-            return areaPoints;
-        }
-
-    
-
-
     }
 }
