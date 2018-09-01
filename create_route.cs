@@ -168,13 +168,14 @@ namespace Data
                     writer.WritePropertyName("longitude");
                     writer.WriteValue(point.longitude);
                     writer.WritePropertyName("weights");
+                    writer.WriteStartObject();
                     foreach (DictionaryEntry hash in point.weights)
-                    {
-                        writer.WriteStartObject();
+                    {                        
                         writer.WritePropertyName(hash.Key.ToString());
                         writer.WriteValue(Convert.ToDouble(hash.Value));
-                        writer.WriteEndObject();
+                        Console.WriteLine("{0}, {1}", hash.Key, hash.Value);
                     }
+                    writer.WriteEndObject();
                     writer.WriteEndObject();
                 }
                 writer.WriteEndArray();
@@ -491,27 +492,30 @@ namespace Data
                         point1.latitude = current_latitude;
                         prev_distance = current_distance;
                         current_distance = current_distance + distance_between_points;
-                        //when finding the second point, the function needs to know if the current_distance is still on the same
-                        //side or if it passed onto the next. The if statement is if it is on the same side. The else statement is if
-                        //it moved to another side.
-                        if (current_distance <= (perimeter / 4))
-                        {
-                            current_longitude = minLng + current_distance;
-                            point2.longitude = current_longitude;
-                            point2.latitude = minLat;
-                           
-                        }
-                        //If it moved to the next side, the longitude stays at maxLng. However, the latitude has to change
-                        //based off how much distance it traveled on the previous side and how much it traveled on the current side.
-                        else
-                        {
-                            current_latitude = (distance_between_points - (maxLng - prev_distance)) + minLat;
-                            current_longitude = maxLng;
-                            point2.latitude = current_latitude;
-                            point2.longitude = current_longitude;
-                           
-                        }
+                        point2 = Find_Second_Point_1stSide(current_distance, distance_between_points, minLng, minLat, maxLng, perimeter);
+                    
+                    //when finding the second point, the function needs to know if the current_distance is still on the same
+                    //side or if it passed onto the next. The if statement is if it is on the same side. The else statement is if
+                    //it moved to another side.
+                    /*if (current_distance <= (perimeter / 4))
+                    {
+                        current_longitude = minLng + current_distance;
+                        point2.longitude = current_longitude;
+                        point2.latitude = minLat;
+
                     }
+                    //If it moved to the next side, the longitude stays at maxLng. However, the latitude has to change
+                    //based off how much distance it traveled on the previous side and how much it traveled on the current side.
+                    else
+                    {
+                        current_latitude = (distance_between_points - (maxLng - prev_distance)) + minLat;
+                        current_longitude = maxLng;
+                        point2.latitude = current_latitude;
+                        point2.longitude = current_longitude;
+
+                    }*/
+                }
+                
                     //this is the second side of the square that the function travels through.
                     //this side will always have a longitude value of maxLng.
                     //it finds the first point on the perimeter and then adds the distance_between_points
@@ -524,15 +528,16 @@ namespace Data
                         point1.longitude = current_longitude;
                         prev_distance = current_distance;
                         current_distance = current_distance + distance_between_points;
-                        
 
+                        point2 = Find_Second_Point_2ndSide(current_distance, distance_between_points, minLat, maxLng, maxLat, perimeter);
                         //when finding the second point, the function needs to know if the current_distance is still on the same
                         //side or if it passed onto the next. The if statement is if it is on the same side. The else statement is if
                         //it moved to another side.
+                        /*
                         if (current_distance <= (perimeter / 2))
                         {
                             current_latitude = minLat + (current_distance - (perimeter / 4));
-                           // Console.WriteLine("winning current_latitude = {0}", current_latitude);
+                            // Console.WriteLine("winning current_latitude = {0}", current_latitude);
                             point2.latitude = current_latitude;
                             point2.longitude = maxLng;
                         }
@@ -545,6 +550,7 @@ namespace Data
                             point2.latitude = maxLat;
                             //Console.WriteLine("current_longitude {0}", current_longitude);
                         }
+                        */
 
                     }
                     //this is the third side of the square that the function travels through.
@@ -562,12 +568,14 @@ namespace Data
                         //when finding the second point, the function needs to know if the current_distance is still on the same
                         //side or if it passed onto the next. The if statement is if it is on the same side. The else statement is if
                         //it moved to another side.
+                        point2 = Find_Second_Point_3rdSide(current_distance, distance_between_points, maxLng, maxLat, minLng, perimeter);
+                        /*
                         if (current_distance <= ((perimeter * 3) / 4))
                         {
                             current_longitude = maxLng - (current_distance - (perimeter / 2));
                             point2.latitude = maxLat;
                             point2.longitude = current_longitude;
-                            
+
                         }
                         //If it moved to the next side, the longitude stays at minLng. However, the latitude has to change
                         //based off how much distance it traveled on the previous side and how much it traveled on the current side.
@@ -577,6 +585,7 @@ namespace Data
                             point2.latitude = current_latitude;
                             point2.longitude = minLng;
                         }
+                        */
                     }
                     //this is the final side of the square that the function travels through.
                     //this side will always have a latitude value of minLng.
@@ -605,7 +614,8 @@ namespace Data
                     slice.triangleBounds.Add(center);
                     slice.memberPoints = new List<Point>();
                     sectionSlices.Add(slice);
-
+                    
+                  
                 }
 
 
@@ -615,8 +625,114 @@ namespace Data
             {
                 sectionSlices = TwoSlices(maxLat, minLat, maxLng, minLng);
             }
+            int r = 0;
+            foreach (SectionSlice thing in sectionSlices)
+            {
+                Console.WriteLine("Section {0}", r);
+                foreach (Point point in thing.triangleBounds)
+                {
+                    Console.WriteLine("Longitude: {0}, Latitude: {1}", point.longitude, point.latitude);
+                }
+                r++;
+            }
+
             return sectionSlices;
 
+        }
+
+        static Point Find_Second_Point_1stSide (double current_distance, double distance_between_points, double minLng, double minLat, double maxLng, 
+                                                double perimeter)
+        {
+            double prev_distance = current_distance;
+            
+            double current_latitude, current_longitude;
+            Point returnpoint;
+            returnpoint.weights = new Hashtable();
+            //when finding the second point, the function needs to know if the current_distance is still on the same
+            //side or if it passed onto the next. The if statement is if it is on the same side. The else statement is if
+            //it moved to another side.
+            if (current_distance <= (perimeter / 4))
+            {
+                current_longitude = minLng + current_distance;
+                returnpoint.longitude = current_longitude;
+                returnpoint.latitude = minLat;
+
+            }
+            //If it moved to the next side, the longitude stays at maxLng. However, the latitude has to change
+            //based off how much distance it traveled on the previous side and how much it traveled on the current side.
+            else
+            {
+                current_latitude = (distance_between_points - (maxLng - prev_distance)) + minLat;
+                current_longitude = maxLng;
+                returnpoint.latitude = current_latitude;
+                returnpoint.longitude = current_longitude;
+
+            }
+
+            return returnpoint;
+        }
+
+        static Point Find_Second_Point_2ndSide (double current_distance, double distance_between_points, double minLat, double maxLng, double maxLat,
+                                                double perimeter)
+        {
+            double prev_distance = current_distance;
+            double current_latitude, current_longitude;
+            Point returnpoint;
+            returnpoint.weights = new Hashtable();
+
+            //when finding the second point, the function needs to know if the current_distance is still on the same
+            //side or if it passed onto the next. The if statement is if it is on the same side. The else statement is if
+            //it moved to another side.
+            if (current_distance <= (perimeter / 2))
+            {
+                current_latitude = minLat + (current_distance - (perimeter / 4));
+                // Console.WriteLine("winning current_latitude = {0}", current_latitude);
+                returnpoint.latitude = current_latitude;
+                returnpoint.longitude = maxLng;
+            }
+            //Now this time, if it moved to the next side, the latitude stays at maxLat. However, the longitude has to change
+            //based off how much distance it traveled on the previous side and how much it traveled on the current side.
+            else
+            {
+                current_longitude = maxLng - (distance_between_points - (maxLat - (prev_distance - (perimeter / 4))));
+                returnpoint.longitude = current_longitude;
+                returnpoint.latitude = maxLat;
+                //Console.WriteLine("current_longitude {0}", current_longitude);
+            }
+
+            return returnpoint;
+
+        }
+
+
+        static Point Find_Second_Point_3rdSide(double current_distance, double distance_between_points, double maxLng, double maxLat, double minLng,
+                                               double perimeter)
+        {
+            double prev_distance = current_distance;
+            double current_latitude, current_longitude;
+            Point returnpoint;
+            returnpoint.weights = new Hashtable();
+
+            //when finding the second point, the function needs to know if the current_distance is still on the same
+            //side or if it passed onto the next. The if statement is if it is on the same side. The else statement is if
+            //it moved to another side.
+            if (current_distance <= ((perimeter * 3) / 4))
+            {
+                current_longitude = maxLng - (current_distance - (perimeter / 2));
+                returnpoint.latitude = maxLat;
+                returnpoint.longitude = current_longitude;
+
+            }
+            //If it moved to the next side, the longitude stays at minLng. However, the latitude has to change
+            //based off how much distance it traveled on the previous side and how much it traveled on the current side.
+            else
+            {
+                current_latitude = maxLat - (distance_between_points - (maxLng - (prev_distance - (perimeter / 2))));
+                returnpoint.latitude = current_latitude;
+                returnpoint.longitude = minLng;
+            }
+
+            return returnpoint;
         }
 
         //if there two sections needed to be sliced from the square, then this is a special case and this function just
