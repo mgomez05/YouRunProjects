@@ -1,0 +1,1991 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="CGImap 0.6.0 (1860 thorn-03.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <bounds minlat="40.7524000" minlon="-73.9908000" maxlat="40.7626000" maxlon="-73.9709000"/>
+ <node id="42428264" visible="true" version="6" changeset="47374240" timestamp="2017-04-02T07:40:36Z" user="Wolowitz" uid="670376" lat="40.7521844" lon="-73.9875229">
+  <tag k="crossing" v="traffic_signals"/>
+  <tag k="highway" v="traffic_signals"/>
+  <tag k="sloped_curb" v="yes"/>
+ </node>
+ <node id="42428268" visible="true" version="6" changeset="47374240" timestamp="2017-04-02T07:40:36Z" user="Wolowitz" uid="670376" lat="40.7529027" lon="-73.9873355">
+  <tag k="crossing" v="traffic_signals"/>
+  <tag k="highway" v="traffic_signals"/>
+  <tag k="sloped_curb" v="yes"/>
+ </node>
+ <node id="42428272" visible="true" version="5" changeset="47374240" timestamp="2017-04-02T07:40:36Z" user="Wolowitz" uid="670376" lat="40.7536275" lon="-73.9871097">
+  <tag k="crossing" v="traffic_signals"/>
+  <tag k="highway" v="traffic_signals"/>
+  <tag k="sloped_curb" v="yes"/>
+ </node>
+ <node id="42428277" visible="true" version="7" changeset="47374240" timestamp="2017-04-02T07:40:36Z" user="Wolowitz" uid="670376" lat="40.7543309" lon="-73.9868863">
+  <tag k="crossing" v="traffic_signals"/>
+  <tag k="highway" v="traffic_signals"/>
+  <tag k="sloped_curb" v="yes"/>
+ </node>
+ <node id="42428283" visible="true" version="6" changeset="47374240" timestamp="2017-04-02T07:40:36Z" user="Wolowitz" uid="670376" lat="40.7550519" lon="-73.9866661">
+  <tag k="crossing" v="traffic_signals"/>
+  <tag k="highway" v="traffic_signals"/>
+  <tag k="sloped_curb" v="yes"/>
+ </node>
+ <node id="42428287" visible="true" version="6" changeset="46427936" timestamp="2017-02-26T22:47:37Z" user="TheBestIdea" uid="298513" lat="40.7558137" lon="-73.9864171">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42428291" visible="true" version="5" changeset="36860261" timestamp="2016-01-28T16:29:36Z" user="robgeb" uid="336460" lat="40.7565752" lon="-73.9861364">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42428294" visible="true" version="6" changeset="15200651" timestamp="2013-02-28T18:55:46Z" user="wegavision" uid="564585" lat="40.7572592" lon="-73.9858201">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42428297" visible="true" version="7" changeset="36860261" timestamp="2016-01-28T16:29:36Z" user="robgeb" uid="336460" lat="40.7579634" lon="-73.9855335">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42428300" visible="true" version="6" changeset="15200651" timestamp="2013-02-28T18:55:46Z" user="wegavision" uid="564585" lat="40.7586863" lon="-73.9853225">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42428303" visible="true" version="6" changeset="15200651" timestamp="2013-02-28T18:55:46Z" user="wegavision" uid="564585" lat="40.7593949" lon="-73.9850691">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42428305" visible="true" version="6" changeset="15200651" timestamp="2013-02-28T18:55:46Z" user="wegavision" uid="564585" lat="40.7601058" lon="-73.9848067">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42428307" visible="true" version="7" changeset="47560470" timestamp="2017-04-08T09:02:59Z" user="Wolowitz" uid="670376" lat="40.7607802" lon="-73.9844587">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42428308" visible="true" version="7" changeset="47560470" timestamp="2017-04-08T07:41:53Z" user="Wolowitz" uid="670376" lat="40.7614293" lon="-73.9840461">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42428310" visible="true" version="6" changeset="5161739" timestamp="2010-07-07T20:48:42Z" user="Dylan Semler" uid="31855" lat="40.7620648" lon="-73.9836282">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42428312" visible="true" version="6" changeset="3396277" timestamp="2009-12-17T20:14:10Z" user="NE2" uid="207745" lat="40.7626973" lon="-73.9832221">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42428313" visible="true" version="6" changeset="3396277" timestamp="2009-12-17T20:14:09Z" user="NE2" uid="207745" lat="40.7633546" lon="-73.9828256">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42428315" visible="true" version="7" changeset="28386398" timestamp="2015-01-25T01:44:09Z" user="ceyockey" uid="146680" lat="40.7640370" lon="-73.9824772">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42428321" visible="true" version="6" changeset="3396277" timestamp="2009-12-17T20:14:08Z" user="NE2" uid="207745" lat="40.7647366" lon="-73.9822148">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42428328" visible="true" version="6" changeset="3396277" timestamp="2009-12-17T20:14:09Z" user="NE2" uid="207745" lat="40.7654522" lon="-73.9819937">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42428329" visible="true" version="5" changeset="3396277" timestamp="2009-12-17T20:14:09Z" user="NE2" uid="207745" lat="40.7662870" lon="-73.9818480">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42429986" visible="true" version="5" changeset="34624719" timestamp="2015-10-14T02:07:42Z" user="SH17" uid="2591427" lat="40.7621165" lon="-73.9601308">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42430138" visible="true" version="6" changeset="38825153" timestamp="2016-04-24T03:54:25Z" user="wambag" uid="326503" lat="40.7230028" lon="-74.0050635">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42430271" visible="true" version="4" changeset="12104263" timestamp="2012-07-03T20:26:08Z" user="NJ Engineer" uid="703728" lat="40.7429010" lon="-73.9928050">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42430298" visible="true" version="10" changeset="46429192" timestamp="2017-02-27T00:22:05Z" user="TheBestIdea" uid="298513" lat="40.7491158" lon="-73.9882654">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42430308" visible="true" version="5" changeset="21113608" timestamp="2014-03-15T09:41:14Z" user="Thomassien" uid="1964852" lat="40.7504580" lon="-73.9872889">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42430311" visible="true" version="5" changeset="5759214" timestamp="2010-09-12T12:59:43Z" user="logostein" uid="345756" lat="40.7510880" lon="-73.9868238">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42430314" visible="true" version="4" changeset="3396277" timestamp="2009-12-17T20:34:15Z" user="NE2" uid="207745" lat="40.7517000" lon="-73.9863990">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42430317" visible="true" version="4" changeset="3396277" timestamp="2009-12-17T20:34:16Z" user="NE2" uid="207745" lat="40.7523170" lon="-73.9859470">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42430320" visible="true" version="3" changeset="12104263" timestamp="2012-07-03T20:26:08Z" user="NJ Engineer" uid="703728" lat="40.7529350" lon="-73.9854880">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42430324" visible="true" version="5" changeset="45065918" timestamp="2017-01-11T01:01:14Z" user="CartoRD" uid="2958525" lat="40.7535585" lon="-73.9850397">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42430329" visible="true" version="5" changeset="43306505" timestamp="2016-10-31T15:29:50Z" user="Gardster" uid="2651407" lat="40.7541770" lon="-73.9845960">
+  <tag k="crossing" v="zebra"/>
+  <tag k="highway" v="traffic_signals"/>
+  <tag k="name" v="41st Street and Sixth Avenue"/>
+ </node>
+ <node id="42430333" visible="true" version="5" changeset="12104263" timestamp="2012-07-03T20:26:09Z" user="NJ Engineer" uid="703728" lat="40.7548420" lon="-73.9841180">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42430338" visible="true" version="4" changeset="12104263" timestamp="2012-07-03T20:26:09Z" user="NJ Engineer" uid="703728" lat="40.7555160" lon="-73.9836240">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42430342" visible="true" version="6" changeset="15200651" timestamp="2013-02-28T18:55:46Z" user="wegavision" uid="564585" lat="40.7561419" lon="-73.9831666">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42430344" visible="true" version="6" changeset="15200651" timestamp="2013-02-28T18:55:46Z" user="wegavision" uid="564585" lat="40.7567712" lon="-73.9827118">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42430347" visible="true" version="6" changeset="15200651" timestamp="2013-02-28T18:55:46Z" user="wegavision" uid="564585" lat="40.7573902" lon="-73.9822537">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42430350" visible="true" version="6" changeset="15200651" timestamp="2013-02-28T18:55:46Z" user="wegavision" uid="564585" lat="40.7580163" lon="-73.9817975">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42430352" visible="true" version="5" changeset="12104263" timestamp="2012-07-03T20:26:09Z" user="NJ Engineer" uid="703728" lat="40.7586450" lon="-73.9813410">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42430356" visible="true" version="6" changeset="15200651" timestamp="2013-02-28T18:55:46Z" user="wegavision" uid="564585" lat="40.7592744" lon="-73.9808828">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42430358" visible="true" version="6" changeset="15200651" timestamp="2013-02-28T18:55:46Z" user="wegavision" uid="564585" lat="40.7599106" lon="-73.9804176">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42430361" visible="true" version="6" changeset="12104263" timestamp="2012-07-03T20:26:09Z" user="NJ Engineer" uid="703728" lat="40.7605248" lon="-73.9799722">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42430363" visible="true" version="6" changeset="12104263" timestamp="2012-07-03T20:26:09Z" user="NJ Engineer" uid="703728" lat="40.7611421" lon="-73.9795173">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42430367" visible="true" version="5" changeset="12104263" timestamp="2012-07-03T20:26:09Z" user="NJ Engineer" uid="703728" lat="40.7617710" lon="-73.9790570">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42430371" visible="true" version="5" changeset="12104263" timestamp="2012-07-03T20:26:10Z" user="NJ Engineer" uid="703728" lat="40.7623960" lon="-73.9786010">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42430375" visible="true" version="6" changeset="12104263" timestamp="2012-07-03T20:26:09Z" user="NJ Engineer" uid="703728" lat="40.7630230" lon="-73.9781397">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42430378" visible="true" version="6" changeset="12104263" timestamp="2012-07-03T20:26:10Z" user="NJ Engineer" uid="703728" lat="40.7636462" lon="-73.9776851">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42430384" visible="true" version="5" changeset="12104263" timestamp="2012-07-03T20:26:10Z" user="NJ Engineer" uid="703728" lat="40.7643240" lon="-73.9771960">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42430394" visible="true" version="7" changeset="47832066" timestamp="2017-04-16T08:04:38Z" user="Wolowitz" uid="670376" lat="40.7656707" lon="-73.9762208">
+  <tag k="crossing" v="traffic_signals"/>
+  <tag k="highway" v="traffic_signals"/>
+  <tag k="sloped_curb" v="yes"/>
+ </node>
+ <node id="42430664" visible="true" version="7" changeset="12268550" timestamp="2012-07-17T16:02:25Z" user="sdelmont" uid="563596" lat="40.7595167" lon="-73.9992636">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42430694" visible="true" version="7" changeset="15855786" timestamp="2013-04-25T01:18:22Z" user="WestsideGuy" uid="716239" lat="40.7646309" lon="-73.9955449">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42430698" visible="true" version="8" changeset="47560470" timestamp="2017-04-08T09:02:59Z" user="Wolowitz" uid="670376" lat="40.7652542" lon="-73.9950835">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42430704" visible="true" version="8" changeset="47560470" timestamp="2017-04-08T07:41:53Z" user="Wolowitz" uid="670376" lat="40.7658858" lon="-73.9946355">
+  <tag k="crossing" v="traffic_signals"/>
+  <tag k="highway" v="traffic_signals"/>
+  <tag k="sloped_curb" v="yes"/>
+ </node>
+ <node id="42430713" visible="true" version="9" changeset="3394677" timestamp="2009-12-17T16:36:00Z" user="NE2" uid="207745" lat="40.7671047" lon="-73.9937222">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42430739" visible="true" version="8" changeset="49379537" timestamp="2017-06-08T20:49:40Z" user="ALE!" uid="40023" lat="40.7690142" lon="-73.9923444">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42430742" visible="true" version="9" changeset="49379537" timestamp="2017-06-08T20:41:39Z" user="ALE!" uid="40023" lat="40.7696438" lon="-73.9918904">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42431544" visible="true" version="6" changeset="12110019" timestamp="2012-07-04T12:26:07Z" user="NJ Engineer" uid="703728" lat="40.7622930" lon="-73.9744570">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42431549" visible="true" version="7" changeset="47586371" timestamp="2017-04-09T08:38:36Z" user="Wolowitz" uid="670376" lat="40.7648393" lon="-73.9805314">
+  <tag k="crossing" v="traffic_signals"/>
+  <tag k="highway" v="traffic_signals"/>
+  <tag k="sloped_curb" v="yes"/>
+ </node>
+ <node id="42431556" visible="true" version="7" changeset="15200651" timestamp="2013-02-28T18:55:47Z" user="wegavision" uid="564585" lat="40.7660319" lon="-73.9833766">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42431560" visible="true" version="9" changeset="35727220" timestamp="2015-12-03T13:52:52Z" user="CitymapperHQ" uid="2818856" lat="40.7672471" lon="-73.9862074">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42431563" visible="true" version="9" changeset="49379537" timestamp="2017-06-08T20:41:40Z" user="ALE!" uid="40023" lat="40.7684455" lon="-73.9890489">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42432436" visible="true" version="6" changeset="12110019" timestamp="2012-07-04T12:26:07Z" user="NJ Engineer" uid="703728" lat="40.7528140" lon="-73.9813720">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42432438" visible="true" version="6" changeset="3394023" timestamp="2009-12-17T14:38:58Z" user="NE2" uid="207745" lat="40.7521385" lon="-73.9797698">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42432444" visible="true" version="6" changeset="3394023" timestamp="2009-12-17T14:08:05Z" user="NE2" uid="207745" lat="40.7507747" lon="-73.9765352">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42432451" visible="true" version="7" changeset="45059722" timestamp="2017-01-10T19:47:35Z" user="CartoRD" uid="2958525" lat="40.7500879" lon="-73.9748993">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42432580" visible="true" version="6" changeset="12110019" timestamp="2012-07-04T12:26:08Z" user="NJ Engineer" uid="703728" lat="40.7579120" lon="-73.9776550">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42432585" visible="true" version="8" changeset="47560470" timestamp="2017-04-08T09:02:59Z" user="Wolowitz" uid="670376" lat="40.7604633" lon="-73.9837062">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42432589" visible="true" version="7" changeset="47560470" timestamp="2017-04-08T09:02:59Z" user="Wolowitz" uid="670376" lat="40.7616677" lon="-73.9865661">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42432594" visible="true" version="8" changeset="47560470" timestamp="2017-04-08T09:02:59Z" user="Wolowitz" uid="670376" lat="40.7628617" lon="-73.9894017">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42432598" visible="true" version="8" changeset="47560470" timestamp="2017-04-08T09:02:59Z" user="Wolowitz" uid="670376" lat="40.7640575" lon="-73.9922415">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42432605" visible="true" version="16" changeset="47560470" timestamp="2017-04-08T09:02:59Z" user="Wolowitz" uid="670376" lat="40.7662075" lon="-73.9973475">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42432693" visible="true" version="6" changeset="12110019" timestamp="2012-07-04T12:26:08Z" user="NJ Engineer" uid="703728" lat="40.7554050" lon="-73.9794830">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42432697" visible="true" version="6" changeset="15200651" timestamp="2013-02-28T18:55:47Z" user="wegavision" uid="564585" lat="40.7584619" lon="-73.9867284"/>
+ <node id="42432700" visible="true" version="6" changeset="15200651" timestamp="2013-02-28T18:55:47Z" user="wegavision" uid="564585" lat="40.7591595" lon="-73.9883858">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42432703" visible="true" version="7" changeset="15200651" timestamp="2013-02-28T18:55:47Z" user="wegavision" uid="564585" lat="40.7603553" lon="-73.9912267">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42432706" visible="true" version="7" changeset="21113608" timestamp="2014-03-15T09:41:14Z" user="Thomassien" uid="1964852" lat="40.7615516" lon="-73.9940688">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42432818" visible="true" version="6" changeset="12110019" timestamp="2012-07-04T12:26:08Z" user="NJ Engineer" uid="703728" lat="40.7629670" lon="-73.9739680">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42432825" visible="true" version="6" changeset="12113203" timestamp="2012-07-04T18:03:18Z" user="NJ Engineer" uid="703728" lat="40.7622894" lon="-73.9723599">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42432834" visible="true" version="10" changeset="31749987" timestamp="2015-06-05T16:17:57Z" user="cquest" uid="158826" lat="40.7615719" lon="-73.9706375">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42433604" visible="true" version="5" changeset="5161739" timestamp="2010-07-07T20:48:57Z" user="Dylan Semler" uid="31855" lat="40.7509590" lon="-73.9827240">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42433611" visible="true" version="4" changeset="3396277" timestamp="2009-12-17T20:34:16Z" user="NE2" uid="207745" lat="40.7535170" lon="-73.9887870">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42433620" visible="true" version="4" changeset="3389568" timestamp="2009-12-16T21:59:48Z" user="NE2" uid="207745" lat="40.7547070" lon="-73.9916330">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42433625" visible="true" version="10" changeset="47604966" timestamp="2017-04-09T21:50:59Z" user="SH17" uid="2591427" lat="40.7559126" lon="-73.9944708">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42434072" visible="true" version="6" changeset="12110019" timestamp="2012-07-04T12:26:08Z" user="NJ Engineer" uid="703728" lat="40.7560320" lon="-73.9790240">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42434074" visible="true" version="6" changeset="3410431" timestamp="2009-12-19T22:58:24Z" user="NE2" uid="207745" lat="40.7553543" lon="-73.9774168">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42434077" visible="true" version="5" changeset="3410431" timestamp="2009-12-19T22:58:24Z" user="NE2" uid="207745" lat="40.7549743" lon="-73.9765158">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42434085" visible="true" version="6" changeset="3410431" timestamp="2009-12-19T22:58:25Z" user="NE2" uid="207745" lat="40.7539937" lon="-73.9741902">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42434087" visible="true" version="7" changeset="45059722" timestamp="2017-01-10T19:47:35Z" user="CartoRD" uid="2958525" lat="40.7533087" lon="-73.9725589">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42434090" visible="true" version="5" changeset="3394023" timestamp="2009-12-17T13:43:35Z" user="NE2" uid="207745" lat="40.7523790" lon="-73.9703410">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42434092" visible="true" version="8" changeset="52180810" timestamp="2017-09-19T14:31:21Z" user="ALE!" uid="40023" lat="40.7513711" lon="-73.9679757">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42435618" visible="true" version="6" changeset="45067643" timestamp="2017-01-11T04:05:42Z" user="CartoRD" uid="2958525" lat="40.7440088" lon="-73.9994196">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42435650" visible="true" version="4" changeset="3389568" timestamp="2009-12-16T21:59:48Z" user="NE2" uid="207745" lat="40.7540910" lon="-73.9920790">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42435654" visible="true" version="3" changeset="3389568" timestamp="2009-12-16T21:59:48Z" user="NE2" uid="207745" lat="40.7553300" lon="-73.9911770">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42435657" visible="true" version="5" changeset="45065918" timestamp="2017-01-11T01:01:14Z" user="CartoRD" uid="2958525" lat="40.7559486" lon="-73.9907278">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42435660" visible="true" version="4" changeset="3389568" timestamp="2009-12-16T21:59:45Z" user="NE2" uid="207745" lat="40.7565670" lon="-73.9902760">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42435663" visible="true" version="6" changeset="15200651" timestamp="2013-02-28T18:55:47Z" user="wegavision" uid="564585" lat="40.7572335" lon="-73.9897914">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42435668" visible="true" version="7" changeset="41820715" timestamp="2016-08-31T07:58:35Z" user="asaf@streetsmart" uid="3412719" lat="40.7579112" lon="-73.9892910">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42435671" visible="true" version="6" changeset="15200651" timestamp="2013-02-28T18:55:47Z" user="wegavision" uid="564585" lat="40.7585320" lon="-73.9888431">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42435675" visible="true" version="9" changeset="15200651" timestamp="2013-02-28T18:55:47Z" user="wegavision" uid="564585" lat="40.7597869" lon="-73.9879285">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42435677" visible="true" version="6" changeset="15200651" timestamp="2013-02-28T18:55:47Z" user="wegavision" uid="564585" lat="40.7604088" lon="-73.9874753">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42435680" visible="true" version="6" changeset="15200651" timestamp="2013-02-28T18:55:47Z" user="wegavision" uid="564585" lat="40.7610365" lon="-73.9870177">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42435684" visible="true" version="7" changeset="47560470" timestamp="2017-04-08T07:41:53Z" user="Wolowitz" uid="670376" lat="40.7622941" lon="-73.9861011">
+  <tag k="crossing" v="traffic_signals"/>
+  <tag k="highway" v="traffic_signals"/>
+  <tag k="sloped_curb" v="yes"/>
+ </node>
+ <node id="42435687" visible="true" version="7" changeset="15200651" timestamp="2013-02-28T18:55:47Z" user="wegavision" uid="564585" lat="40.7629156" lon="-73.9856481">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42435702" visible="true" version="7" changeset="15200651" timestamp="2013-02-28T18:55:47Z" user="wegavision" uid="564585" lat="40.7635282" lon="-73.9852016">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42435705" visible="true" version="7" changeset="15200651" timestamp="2013-02-28T18:55:47Z" user="wegavision" uid="564585" lat="40.7641596" lon="-73.9847413">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42435710" visible="true" version="7" changeset="15200651" timestamp="2013-02-28T18:55:48Z" user="wegavision" uid="564585" lat="40.7654145" lon="-73.9838267">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42436700" visible="true" version="6" changeset="12110019" timestamp="2012-07-04T12:26:05Z" user="NJ Engineer" uid="703728" lat="40.7604180" lon="-73.9758310">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42436701" visible="true" version="5" changeset="12113203" timestamp="2012-07-04T18:03:17Z" user="NJ Engineer" uid="703728" lat="40.7597393" lon="-73.9742235">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42436703" visible="true" version="11" changeset="36884681" timestamp="2016-01-29T18:13:14Z" user="robgeb" uid="336460" lat="40.7590185" lon="-73.9725069">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42436705" visible="true" version="5" changeset="15966137" timestamp="2013-05-03T21:26:12Z" user="Avi Flamholz" uid="753896" lat="40.7583747" lon="-73.9709918">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42436707" visible="true" version="6" changeset="45059722" timestamp="2017-01-10T19:47:35Z" user="CartoRD" uid="2958525" lat="40.7576937" lon="-73.9693722">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42437358" visible="true" version="6" changeset="12110019" timestamp="2012-07-04T12:26:06Z" user="NJ Engineer" uid="703728" lat="40.7534810" lon="-73.9808880">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42437363" visible="true" version="6" changeset="15200651" timestamp="2013-02-28T18:55:48Z" user="wegavision" uid="564585" lat="40.7560361" lon="-73.9869489">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42437368" visible="true" version="9" changeset="47604966" timestamp="2017-04-09T21:50:59Z" user="SH17" uid="2591427" lat="40.7584296" lon="-73.9926312">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42437654" visible="true" version="6" changeset="37275699" timestamp="2016-02-17T20:48:35Z" user="wegavision" uid="564585" lat="40.7510002" lon="-73.9906170">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42437663" visible="true" version="11" changeset="46143789" timestamp="2017-02-16T17:53:19Z" user="TheBestIdea" uid="298513" lat="40.7534056" lon="-73.9963236">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42438881" visible="true" version="4" changeset="3394023" timestamp="2009-12-17T14:38:59Z" user="NE2" uid="207745" lat="40.7572320" lon="-73.9760450">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42438886" visible="true" version="9" changeset="31749987" timestamp="2015-06-05T16:17:57Z" user="cquest" uid="158826" lat="40.7565228" lon="-73.9743466">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42438889" visible="true" version="4" changeset="3394023" timestamp="2009-12-17T13:43:37Z" user="NE2" uid="207745" lat="40.7558700" lon="-73.9728200">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42438891" visible="true" version="6" changeset="45059722" timestamp="2017-01-10T19:47:35Z" user="CartoRD" uid="2958525" lat="40.7551864" lon="-73.9711944">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42438894" visible="true" version="5" changeset="3394023" timestamp="2009-12-17T13:43:36Z" user="NE2" uid="207745" lat="40.7542510" lon="-73.9689780">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42439952" visible="true" version="5" changeset="21113608" timestamp="2014-03-15T09:41:15Z" user="Thomassien" uid="1964852" lat="40.7516588" lon="-73.9901341">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42439955" visible="true" version="5" changeset="21113608" timestamp="2014-03-15T09:41:13Z" user="Thomassien" uid="1964852" lat="40.7522886" lon="-73.9896878">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42439960" visible="true" version="4" changeset="3396277" timestamp="2009-12-17T20:34:15Z" user="NE2" uid="207745" lat="40.7528950" lon="-73.9892430">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42439964" visible="true" version="3" changeset="3396277" timestamp="2009-12-17T20:14:03Z" user="NE2" uid="207745" lat="40.7541300" lon="-73.9883350">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42439968" visible="true" version="5" changeset="45065918" timestamp="2017-01-11T01:01:14Z" user="CartoRD" uid="2958525" lat="40.7547554" lon="-73.9878881">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42439972" visible="true" version="4" changeset="3396277" timestamp="2009-12-17T20:14:02Z" user="NE2" uid="207745" lat="40.7553730" lon="-73.9874470">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42439981" visible="true" version="5" changeset="3396277" timestamp="2009-12-17T20:14:01Z" user="NE2" uid="207745" lat="40.7567100" lon="-73.9864580">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42439984" visible="true" version="6" changeset="15200651" timestamp="2013-02-28T18:55:48Z" user="wegavision" uid="564585" lat="40.7573404" lon="-73.9860130">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42439990" visible="true" version="6" changeset="15200651" timestamp="2013-02-28T18:55:48Z" user="wegavision" uid="564585" lat="40.7585867" lon="-73.9850867">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42439994" visible="true" version="8" changeset="42341950" timestamp="2016-09-22T08:46:48Z" user="Andrew Hazlett" uid="1785022" lat="40.7592102" lon="-73.9846299">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42439996" visible="true" version="6" changeset="47560470" timestamp="2017-04-08T07:22:41Z" user="Wolowitz" uid="670376" lat="40.7598410" lon="-73.9841740">
+  <tag k="crossing" v="traffic_signals"/>
+  <tag k="highway" v="traffic_signals"/>
+  <tag k="sloped_curb" v="yes"/>
+ </node>
+ <node id="42440001" visible="true" version="7" changeset="35579254" timestamp="2015-11-25T20:09:27Z" user="ALE!" uid="40023" lat="40.7610948" lon="-73.9832504">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42440004" visible="true" version="7" changeset="47586371" timestamp="2017-04-09T08:38:36Z" user="Wolowitz" uid="670376" lat="40.7617189" lon="-73.9828071">
+  <tag k="crossing" v="traffic_signals"/>
+  <tag k="highway" v="traffic_signals"/>
+  <tag k="sloped_curb" v="yes"/>
+ </node>
+ <node id="42440009" visible="true" version="6" changeset="12093140" timestamp="2012-07-02T19:27:47Z" user="NJ Engineer" uid="703728" lat="40.7623343" lon="-73.9823574">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42440012" visible="true" version="6" changeset="12093140" timestamp="2012-07-02T19:27:48Z" user="NJ Engineer" uid="703728" lat="40.7629646" lon="-73.9818975">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42440015" visible="true" version="7" changeset="28386398" timestamp="2015-01-25T01:44:09Z" user="ceyockey" uid="146680" lat="40.7635954" lon="-73.9814328">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42440020" visible="true" version="6" changeset="12093140" timestamp="2012-07-02T19:27:47Z" user="NJ Engineer" uid="703728" lat="40.7642190" lon="-73.9809839">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42440153" visible="true" version="6" changeset="12110019" timestamp="2012-07-04T12:26:06Z" user="NJ Engineer" uid="703728" lat="40.7585380" lon="-73.9772010">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42440163" visible="true" version="8" changeset="47560470" timestamp="2017-04-08T07:41:53Z" user="Wolowitz" uid="670376" lat="40.7634901" lon="-73.9889429">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42440170" visible="true" version="8" changeset="47560470" timestamp="2017-04-08T07:41:53Z" user="Wolowitz" uid="670376" lat="40.7646863" lon="-73.9917852">
+  <tag k="crossing" v="traffic_signals"/>
+  <tag k="highway" v="traffic_signals"/>
+  <tag k="sloped_curb" v="yes"/>
+ </node>
+ <node id="42440452" visible="true" version="6" changeset="12110019" timestamp="2012-07-04T12:26:07Z" user="NJ Engineer" uid="703728" lat="40.7591650" lon="-73.9767440">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42440453" visible="true" version="5" changeset="12113203" timestamp="2012-07-04T18:03:18Z" user="NJ Engineer" uid="703728" lat="40.7584861" lon="-73.9751347">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42440456" visible="true" version="10" changeset="31749987" timestamp="2015-06-05T16:17:57Z" user="cquest" uid="158826" lat="40.7577705" lon="-73.9734122">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42440459" visible="true" version="5" changeset="15966137" timestamp="2013-05-03T21:26:12Z" user="Avi Flamholz" uid="753896" lat="40.7571246" lon="-73.9719073">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42440463" visible="true" version="7" changeset="45059722" timestamp="2017-01-10T19:47:35Z" user="CartoRD" uid="2958525" lat="40.7564418" lon="-73.9702820">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42440465" visible="true" version="6" changeset="11789310" timestamp="2012-06-03T17:52:08Z" user="Eliyak" uid="439046" lat="40.7555037" lon="-73.9680652">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42440469" visible="true" version="7" changeset="45796016" timestamp="2017-02-04T03:37:58Z" user="TheBestIdea" uid="298513" lat="40.7545045" lon="-73.9656965">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42440951" visible="true" version="6" changeset="12110019" timestamp="2012-07-04T12:26:07Z" user="NJ Engineer" uid="703728" lat="40.7616670" lon="-73.9749150">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42440960" visible="true" version="8" changeset="15200651" timestamp="2013-02-28T18:55:48Z" user="wegavision" uid="564585" lat="40.7666100" lon="-73.9866698">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42440966" visible="true" version="8" changeset="49379537" timestamp="2017-06-08T20:49:40Z" user="ALE!" uid="40023" lat="40.7678249" lon="-73.9894995">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42440973" visible="true" version="17" changeset="49379537" timestamp="2017-06-08T20:49:40Z" user="ALE!" uid="40023" lat="40.7699966" lon="-73.9947719">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42442943" visible="true" version="5" changeset="3394023" timestamp="2009-12-17T13:43:32Z" user="NE2" uid="207745" lat="40.7511220" lon="-73.9712630">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42442947" visible="true" version="5" changeset="3394023" timestamp="2009-12-17T13:43:42Z" user="NE2" uid="207745" lat="40.7517480" lon="-73.9708040">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42442948" visible="true" version="7" changeset="35062971" timestamp="2015-11-03T18:58:33Z" user="ALE!" uid="40023" lat="40.7529834" lon="-73.9699017">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42442949" visible="true" version="5" changeset="3394023" timestamp="2009-12-17T13:43:42Z" user="NE2" uid="207745" lat="40.7536240" lon="-73.9694310">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42442955" visible="true" version="6" changeset="11789310" timestamp="2012-06-03T17:52:08Z" user="Eliyak" uid="439046" lat="40.7561287" lon="-73.9676094">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42443528" visible="true" version="6" changeset="12110019" timestamp="2012-07-04T12:26:07Z" user="NJ Engineer" uid="703728" lat="40.7572840" lon="-73.9781160">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42443532" visible="true" version="7" changeset="15200651" timestamp="2013-02-28T18:55:48Z" user="wegavision" uid="564585" lat="40.7622326" lon="-73.9898591">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42443534" visible="true" version="7" changeset="21113608" timestamp="2014-03-15T09:41:14Z" user="Thomassien" uid="1964852" lat="40.7634284" lon="-73.9927002">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42443556" visible="true" version="7" changeset="15200651" timestamp="2013-02-28T18:55:48Z" user="wegavision" uid="564585" lat="40.7547823" lon="-73.9799375">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42443559" visible="true" version="6" changeset="15200651" timestamp="2013-02-28T18:55:48Z" user="wegavision" uid="564585" lat="40.7578357" lon="-73.9871893"/>
+ <node id="42443561" visible="true" version="7" changeset="15200651" timestamp="2013-02-28T18:55:48Z" user="wegavision" uid="564585" lat="40.7597281" lon="-73.9916837">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42443612" visible="true" version="5" changeset="12113203" timestamp="2012-07-04T18:03:17Z" user="NJ Engineer" uid="703728" lat="40.7616152" lon="-73.9728511">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42443613" visible="true" version="10" changeset="31749987" timestamp="2015-06-05T16:17:57Z" user="cquest" uid="158826" lat="40.7608954" lon="-73.9711260">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42443614" visible="true" version="8" changeset="50068382" timestamp="2017-07-05T20:44:47Z" user="woodpeck_repair" uid="145231" lat="40.7602528" lon="-73.9696237">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42443615" visible="true" version="9" changeset="46578258" timestamp="2017-03-04T17:50:25Z" user="SH17" uid="2591427" lat="40.7596067" lon="-73.9680799">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42443804" visible="true" version="6" changeset="36267059" timestamp="2015-12-30T17:25:00Z" user="ALE!" uid="40023" lat="40.7524129" lon="-73.9783547">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42443807" visible="true" version="2" changeset="2221591" timestamp="2009-08-21T10:59:56Z" user="woodpeck_fixbot" uid="147510" lat="40.7537170" lon="-73.9774320"/>
+ <node id="42443810" visible="true" version="4" changeset="3394023" timestamp="2009-12-17T14:15:36Z" user="NE2" uid="207745" lat="40.7543490" lon="-73.9769740">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42443811" visible="true" version="5" changeset="3410431" timestamp="2009-12-19T23:20:03Z" user="NE2" uid="207745" lat="40.7555872" lon="-73.9760685"/>
+ <node id="42443950" visible="true" version="7" changeset="39568078" timestamp="2016-05-25T21:42:48Z" user="Luis36995" uid="1829683" lat="40.7503411" lon="-73.9831797">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42444043" visible="true" version="5" changeset="3394023" timestamp="2009-12-17T14:38:59Z" user="NE2" uid="207745" lat="40.7547280" lon="-73.9778750">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42444047" visible="true" version="4" changeset="35410064" timestamp="2015-11-18T15:45:37Z" user="ALE!" uid="40023" lat="40.7538005" lon="-73.9756683"/>
+ <node id="42444049" visible="true" version="5" changeset="3394023" timestamp="2009-12-17T13:43:40Z" user="NE2" uid="207745" lat="40.7533670" lon="-73.9746480">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42444051" visible="true" version="7" changeset="45059722" timestamp="2017-01-10T19:47:35Z" user="CartoRD" uid="2958525" lat="40.7526820" lon="-73.9730143">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42444055" visible="true" version="7" changeset="52180810" timestamp="2017-09-19T14:31:21Z" user="ALE!" uid="40023" lat="40.7507547" lon="-73.9684141">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42444954" visible="true" version="12" changeset="46143789" timestamp="2017-02-16T17:53:19Z" user="TheBestIdea" uid="298513" lat="40.7527421" lon="-73.9967890">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42445001" visible="true" version="8" changeset="47604966" timestamp="2017-04-09T21:50:59Z" user="SH17" uid="2591427" lat="40.7578275" lon="-73.9930713">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42445011" visible="true" version="7" changeset="15200651" timestamp="2013-02-28T18:55:49Z" user="wegavision" uid="564585" lat="40.7591031" lon="-73.9921390">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42445018" visible="true" version="7" changeset="15200651" timestamp="2013-02-28T18:55:49Z" user="wegavision" uid="564585" lat="40.7609858" lon="-73.9907674">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42445020" visible="true" version="7" changeset="15200651" timestamp="2013-02-28T18:55:49Z" user="wegavision" uid="564585" lat="40.7616057" lon="-73.9903158">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42445025" visible="true" version="8" changeset="15200651" timestamp="2013-02-28T18:55:49Z" user="wegavision" uid="564585" lat="40.7641124" lon="-73.9884895">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42445027" visible="true" version="9" changeset="31360306" timestamp="2015-05-22T04:23:58Z" user="ebrelsford" uid="19239" lat="40.7647492" lon="-73.9880307">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42445649" visible="true" version="4" changeset="12110019" timestamp="2012-07-04T12:26:07Z" user="NJ Engineer" uid="703728" lat="40.7515770" lon="-73.9822750">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42445661" visible="true" version="7" changeset="45059722" timestamp="2017-01-10T19:47:35Z" user="CartoRD" uid="2958525" lat="40.7488523" lon="-73.9757971">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42445916" visible="true" version="6" changeset="3394023" timestamp="2009-12-17T14:38:58Z" user="NE2" uid="207745" lat="40.7528022" lon="-73.9792861">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42445917" visible="true" version="4" changeset="3394023" timestamp="2009-12-17T14:38:58Z" user="NE2" uid="207745" lat="40.7534810" lon="-73.9787830">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42445920" visible="true" version="4" changeset="3394023" timestamp="2009-12-17T14:38:58Z" user="NE2" uid="207745" lat="40.7541000" lon="-73.9783320">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42445924" visible="true" version="6" changeset="3410431" timestamp="2009-12-19T23:20:03Z" user="NE2" uid="207745" lat="40.7559713" lon="-73.9769665">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42445926" visible="true" version="4" changeset="3394023" timestamp="2009-12-17T14:38:59Z" user="NE2" uid="207745" lat="40.7566060" lon="-73.9765040">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42445928" visible="true" version="4" changeset="3394023" timestamp="2009-12-17T14:38:59Z" user="NE2" uid="207745" lat="40.7578600" lon="-73.9755910">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42445930" visible="true" version="5" changeset="12113203" timestamp="2012-07-04T18:03:18Z" user="NJ Engineer" uid="703728" lat="40.7591101" lon="-73.9746829">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42445936" visible="true" version="5" changeset="12113203" timestamp="2012-07-04T18:03:18Z" user="NJ Engineer" uid="703728" lat="40.7603636" lon="-73.9737663">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42445941" visible="true" version="5" changeset="12113203" timestamp="2012-07-04T18:03:18Z" user="NJ Engineer" uid="703728" lat="40.7609894" lon="-73.9733087">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42445947" visible="true" version="4" changeset="3410431" timestamp="2009-12-19T23:20:15Z" user="NE2" uid="207745" lat="40.7629781" lon="-73.9718586">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42445950" visible="true" version="4" changeset="3410431" timestamp="2009-12-19T23:20:06Z" user="NE2" uid="207745" lat="40.7635979" lon="-73.9714037">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42446353" visible="true" version="6" changeset="12110019" timestamp="2012-07-04T12:26:07Z" user="NJ Engineer" uid="703728" lat="40.7597870" lon="-73.9762890">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42446363" visible="true" version="8" changeset="21113608" timestamp="2014-03-15T09:41:14Z" user="Thomassien" uid="1964852" lat="40.7659147" lon="-73.9908872">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42446386" visible="true" version="17" changeset="45042043" timestamp="2017-01-10T04:19:31Z" user="CartoRD" uid="2958525" lat="40.7680419" lon="-73.9959552">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42446488" visible="true" version="5" changeset="12110019" timestamp="2012-07-04T12:26:07Z" user="NJ Engineer" uid="703728" lat="40.7521970" lon="-73.9818220">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42446959" visible="true" version="9" changeset="35410064" timestamp="2015-11-18T15:48:47Z" user="ALE!" uid="40023" lat="40.7514557" lon="-73.9760254">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42446971" visible="true" version="4" changeset="3394023" timestamp="2009-12-17T13:43:40Z" user="NE2" uid="207745" lat="40.7521160" lon="-73.9755580">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42446977" visible="true" version="4" changeset="3394023" timestamp="2009-12-17T13:43:32Z" user="NE2" uid="207745" lat="40.7527410" lon="-73.9751020">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42446986" visible="true" version="7" changeset="31965507" timestamp="2015-06-14T16:09:06Z" user="vincent_95" uid="49047" lat="40.7546125" lon="-73.9737345">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42446987" visible="true" version="4" changeset="3394023" timestamp="2009-12-17T13:43:39Z" user="NE2" uid="207745" lat="40.7552430" lon="-73.9732760">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42446991" visible="true" version="4" changeset="3394023" timestamp="2009-12-17T13:43:37Z" user="NE2" uid="207745" lat="40.7564980" lon="-73.9723620">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42446994" visible="true" version="5" changeset="15966137" timestamp="2013-05-03T21:26:12Z" user="Avi Flamholz" uid="753896" lat="40.7577482" lon="-73.9714516">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42446998" visible="true" version="5" changeset="15966137" timestamp="2013-05-03T21:26:12Z" user="Avi Flamholz" uid="753896" lat="40.7590024" lon="-73.9705330">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42446999" visible="true" version="8" changeset="48804523" timestamp="2017-05-18T21:53:01Z" user="natslaughter" uid="4194138" lat="40.7599969" lon="-73.9711903"/>
+ <node id="42447007" visible="true" version="6" changeset="46578258" timestamp="2017-03-04T17:50:25Z" user="SH17" uid="2591427" lat="40.7616264" lon="-73.9686401">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42448338" visible="true" version="10" changeset="31749987" timestamp="2015-06-05T16:17:57Z" user="cquest" uid="158826" lat="40.7602749" lon="-73.9715914">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42448379" visible="true" version="9" changeset="46578258" timestamp="2017-03-04T17:50:24Z" user="SH17" uid="2591427" lat="40.7589540" lon="-73.9684566">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42448811" visible="true" version="15" changeset="31749987" timestamp="2015-06-05T16:17:57Z" user="cquest" uid="158826" lat="40.7558973" lon="-73.9748157">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42448813" visible="true" version="6" changeset="45059722" timestamp="2017-01-10T19:47:35Z" user="CartoRD" uid="2958525" lat="40.7545610" lon="-73.9716488">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42448996" visible="true" version="9" changeset="48895143" timestamp="2017-05-22T17:49:43Z" user="ALE!" uid="40023" lat="40.7607161" lon="-74.0020708">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42449685" visible="true" version="6" changeset="45059722" timestamp="2017-01-10T19:47:35Z" user="CartoRD" uid="2958525" lat="40.7476147" lon="-73.9766965">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42449932" visible="true" version="7" changeset="45059722" timestamp="2017-01-10T19:47:35Z" user="CartoRD" uid="2958525" lat="40.7469955" lon="-73.9771464">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42449938" visible="true" version="6" changeset="45059722" timestamp="2017-01-10T19:47:35Z" user="CartoRD" uid="2958525" lat="40.7482313" lon="-73.9762484">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42449942" visible="true" version="7" changeset="45059722" timestamp="2017-01-10T19:47:35Z" user="CartoRD" uid="2958525" lat="40.7494677" lon="-73.9753500">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42449945" visible="true" version="9" changeset="45059722" timestamp="2017-01-10T19:47:35Z" user="CartoRD" uid="2958525" lat="40.7507644" lon="-73.9744077">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42449947" visible="true" version="6" changeset="45059722" timestamp="2017-01-10T19:47:35Z" user="CartoRD" uid="2958525" lat="40.7514294" lon="-73.9739245">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42449948" visible="true" version="6" changeset="45059722" timestamp="2017-01-10T19:47:35Z" user="CartoRD" uid="2958525" lat="40.7520542" lon="-73.9734705">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42449954" visible="true" version="9" changeset="45059722" timestamp="2017-01-10T19:47:35Z" user="CartoRD" uid="2958525" lat="40.7539219" lon="-73.9721133">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42449956" visible="true" version="6" changeset="45059722" timestamp="2017-01-10T19:47:36Z" user="CartoRD" uid="2958525" lat="40.7558176" lon="-73.9707356">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42449961" visible="true" version="7" changeset="45059722" timestamp="2017-01-10T19:47:36Z" user="CartoRD" uid="2958525" lat="40.7570666" lon="-73.9698279">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42449963" visible="true" version="6" changeset="45059722" timestamp="2017-01-10T19:47:36Z" user="CartoRD" uid="2958525" lat="40.7583238" lon="-73.9689143">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42450426" visible="true" version="6" changeset="12110019" timestamp="2012-07-04T12:26:08Z" user="NJ Engineer" uid="703728" lat="40.7610400" lon="-73.9753730">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42452353" visible="true" version="7" changeset="15200651" timestamp="2013-02-28T18:55:49Z" user="wegavision" uid="564585" lat="40.7566543" lon="-73.9785655">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42452365" visible="true" version="7" changeset="21113608" timestamp="2014-03-15T09:41:14Z" user="Thomassien" uid="1964852" lat="40.7628026" lon="-73.9931565">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42452875" visible="true" version="11" changeset="36884681" timestamp="2016-01-29T18:13:14Z" user="robgeb" uid="336460" lat="40.7583902" lon="-73.9729652">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42452882" visible="true" version="6" changeset="45796016" timestamp="2017-02-04T03:37:58Z" user="TheBestIdea" uid="298513" lat="40.7551302" lon="-73.9652501">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42454428" visible="true" version="5" changeset="12110019" timestamp="2012-07-04T12:26:06Z" user="NJ Engineer" uid="703728" lat="40.7541550" lon="-73.9803950">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42455761" visible="true" version="7" changeset="21113608" timestamp="2014-03-15T09:41:14Z" user="Thomassien" uid="1964852" lat="40.7621850" lon="-73.9936069">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42455932" visible="true" version="9" changeset="34043282" timestamp="2015-09-15T15:44:30Z" user="ALE!" uid="40023" lat="40.7520165" lon="-73.9676835">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42456611" visible="true" version="10" changeset="31749987" timestamp="2015-06-05T16:17:58Z" user="cquest" uid="158826" lat="40.7596371" lon="-73.9720530">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42457476" visible="true" version="11" changeset="31749987" timestamp="2015-06-05T16:17:58Z" user="cquest" uid="158826" lat="40.7553537" lon="-73.9754547">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="42459051" visible="true" version="11" changeset="34644586" timestamp="2015-10-15T00:11:30Z" user="SH17" uid="2591427" lat="40.7522367" lon="-73.9775502"/>
+ <node id="42459083" visible="true" version="6" changeset="2221591" timestamp="2009-08-21T11:01:31Z" user="woodpeck_fixbot" uid="147510" lat="40.7525809" lon="-73.9780290"/>
+ <node id="42459085" visible="true" version="4" changeset="2221591" timestamp="2009-08-21T11:01:31Z" user="woodpeck_fixbot" uid="147510" lat="40.7536410" lon="-73.9772810"/>
+ <node id="42459087" visible="true" version="4" changeset="2221591" timestamp="2009-08-21T11:01:31Z" user="woodpeck_fixbot" uid="147510" lat="40.7541280" lon="-73.9769180"/>
+ <node id="42459098" visible="true" version="9" changeset="31749987" timestamp="2015-06-05T16:17:58Z" user="cquest" uid="158826" lat="40.7571370" lon="-73.9738864">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="61275380" visible="true" version="15" changeset="49379537" timestamp="2017-06-08T20:49:40Z" user="ALE!" uid="40023" lat="40.7699313" lon="-73.9945289">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="61275600" visible="true" version="16" changeset="45042043" timestamp="2017-01-10T04:19:32Z" user="CartoRD" uid="2958525" lat="40.7679669" lon="-73.9957765">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="62915516" visible="true" version="16" changeset="46392158" timestamp="2017-02-25T12:49:39Z" user="SomeoneElse_Revert" uid="1778799" lat="40.7654896" lon="-73.9975938">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="62915521" visible="true" version="17" changeset="47560470" timestamp="2017-04-08T07:41:53Z" user="Wolowitz" uid="670376" lat="40.7667398" lon="-73.9966648">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="62915536" visible="true" version="18" changeset="47560470" timestamp="2017-04-08T09:02:59Z" user="Wolowitz" uid="670376" lat="40.7661216" lon="-73.9971436">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="100515086" visible="true" version="13" changeset="45943910" timestamp="2017-02-09T10:53:30Z" user="rolandmwagner" uid="39288" lat="40.7530695" lon="-73.9769572">
+  <tag k="name" v="Grand Central Terminal"/>
+  <tag k="network" v="Metro-North Railroad"/>
+  <tag k="operator" v="Metro-North Railroad"/>
+  <tag k="public_transport" v="stop_position"/>
+  <tag k="railway" v="buffer_stop"/>
+  <tag k="train" v="yes"/>
+ </node>
+ <node id="100521542" visible="true" version="4" changeset="11096123" timestamp="2012-03-25T15:12:55Z" user="LucasLarson" uid="38533" lat="40.7543165" lon="-73.9767725"/>
+ <node id="100521543" visible="true" version="3" changeset="425953" timestamp="2007-11-06T23:39:48Z" user="KindredCoda" uid="14293" lat="40.7543300" lon="-73.9766214"/>
+ <node id="100521544" visible="true" version="5" changeset="31749987" timestamp="2015-06-05T16:17:54Z" user="cquest" uid="158826" lat="40.7542160" lon="-73.9763540"/>
+ <node id="100521545" visible="true" version="6" changeset="31749987" timestamp="2015-06-05T16:17:54Z" user="cquest" uid="158826" lat="40.7542262" lon="-73.9762544"/>
+ <node id="100521728" visible="true" version="2" changeset="425953" timestamp="2007-11-06T23:39:48Z" user="KindredCoda" uid="14293" lat="40.7525029" lon="-73.9779689"/>
+ <node id="100521730" visible="true" version="2" changeset="425953" timestamp="2007-11-06T23:39:48Z" user="KindredCoda" uid="14293" lat="40.7526785" lon="-73.9780119"/>
+ <node id="100521831" visible="true" version="2" changeset="3394023" timestamp="2009-12-17T14:08:02Z" user="NE2" uid="207745" lat="40.7522023" lon="-73.9776664"/>
+ <node id="100521834" visible="true" version="3" changeset="11096123" timestamp="2012-03-25T15:12:55Z" user="LucasLarson" uid="38533" lat="40.7522975" lon="-73.9776245"/>
+ <node id="100521835" visible="true" version="1" changeset="425953" timestamp="2007-11-06T23:39:48Z" user="KindredCoda" uid="14293" lat="40.7523729" lon="-73.9776685"/>
+ <node id="100522479" visible="true" version="3" changeset="34644586" timestamp="2015-10-15T00:11:30Z" user="SH17" uid="2591427" lat="40.7513515" lon="-73.9782800"/>
+ <node id="100522728" visible="true" version="9" changeset="31749987" timestamp="2015-06-05T16:17:54Z" user="cquest" uid="158826" lat="40.7552720" lon="-73.9752590">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="100522730" visible="true" version="7" changeset="34644586" timestamp="2015-10-15T00:11:31Z" user="SH17" uid="2591427" lat="40.7541461" lon="-73.9760192"/>
+ <node id="100522731" visible="true" version="6" changeset="34644586" timestamp="2015-10-15T00:11:31Z" user="SH17" uid="2591427" lat="40.7540770" lon="-73.9759753"/>
+ <node id="100522732" visible="true" version="5" changeset="34644586" timestamp="2015-10-15T00:11:31Z" user="SH17" uid="2591427" lat="40.7540122" lon="-73.9758391"/>
+ <node id="100522733" visible="true" version="6" changeset="34644586" timestamp="2015-10-15T00:11:31Z" user="SH17" uid="2591427" lat="40.7538880" lon="-73.9758033"/>
+ <node id="100522734" visible="true" version="5" changeset="34644586" timestamp="2015-10-15T00:11:31Z" user="SH17" uid="2591427" lat="40.7536020" lon="-73.9758933"/>
+ <node id="100522735" visible="true" version="5" changeset="34644586" timestamp="2015-10-15T00:11:31Z" user="SH17" uid="2591427" lat="40.7521912" lon="-73.9769279"/>
+ <node id="100522736" visible="true" version="5" changeset="34644586" timestamp="2015-10-15T00:11:31Z" user="SH17" uid="2591427" lat="40.7521256" lon="-73.9770630"/>
+ <node id="100522737" visible="true" version="5" changeset="34644586" timestamp="2015-10-15T00:11:31Z" user="SH17" uid="2591427" lat="40.7521273" lon="-73.9770815"/>
+ <node id="100522739" visible="true" version="5" changeset="34644586" timestamp="2015-10-15T00:11:31Z" user="SH17" uid="2591427" lat="40.7522629" lon="-73.9774036"/>
+ <node id="100522741" visible="true" version="8" changeset="35410723" timestamp="2015-11-18T16:08:55Z" user="ALE!" uid="40023" lat="40.7546344" lon="-73.9756983">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="100524007" visible="true" version="5" changeset="45943910" timestamp="2017-02-09T10:53:30Z" user="rolandmwagner" uid="39288" lat="40.7873172" lon="-73.9520449"/>
+ <node id="243775506" visible="true" version="3" changeset="35193473" timestamp="2015-11-09T14:32:17Z" user="ALE!" uid="40023" lat="40.7528357" lon="-73.9830971"/>
+ <node id="243775507" visible="true" version="3" changeset="35193473" timestamp="2015-11-09T14:32:17Z" user="ALE!" uid="40023" lat="40.7539337" lon="-73.9823185"/>
+ <node id="243775508" visible="true" version="3" changeset="35193473" timestamp="2015-11-09T14:32:17Z" user="ALE!" uid="40023" lat="40.7546859" lon="-73.9840783"/>
+ <node id="243775509" visible="true" version="3" changeset="35193473" timestamp="2015-11-09T14:32:17Z" user="ALE!" uid="40023" lat="40.7535660" lon="-73.9848048"/>
+ <node id="246942634" visible="true" version="24" changeset="14112769" timestamp="2012-12-01T16:15:47Z" user="Michael Yap" uid="1093326" lat="40.7609333" lon="-74.0027873"/>
+ <node id="246942635" visible="true" version="24" changeset="14112769" timestamp="2012-12-01T16:15:47Z" user="Michael Yap" uid="1093326" lat="40.7615111" lon="-74.0022683"/>
+ <node id="246942636" visible="true" version="23" changeset="11353577" timestamp="2012-04-19T13:16:45Z" user="robgeb" uid="336460" lat="40.7625052" lon="-74.0045840"/>
+ <node id="246942637" visible="true" version="24" changeset="14112769" timestamp="2012-12-01T16:15:47Z" user="Michael Yap" uid="1093326" lat="40.7626861" lon="-74.0044429"/>
+ <node id="246942638" visible="true" version="24" changeset="14112769" timestamp="2012-12-01T16:15:47Z" user="Michael Yap" uid="1093326" lat="40.7617183" lon="-74.0022061"/>
+ <node id="246942639" visible="true" version="23" changeset="10713552" timestamp="2012-02-17T17:59:13Z" user="Rahden 16" uid="94942" lat="40.7626395" lon="-74.0015314"/>
+ <node id="246942640" visible="true" version="23" changeset="10713552" timestamp="2012-02-17T17:59:13Z" user="Rahden 16" uid="94942" lat="40.7635923" lon="-74.0037790"/>
+ <node id="246942641" visible="true" version="23" changeset="10713552" timestamp="2012-02-17T17:59:13Z" user="Rahden 16" uid="94942" lat="40.7637782" lon="-74.0036331"/>
+ <node id="246942642" visible="true" version="23" changeset="10713552" timestamp="2012-02-17T17:59:13Z" user="Rahden 16" uid="94942" lat="40.7628433" lon="-74.0013932"/>
+ <node id="246942643" visible="true" version="23" changeset="10713220" timestamp="2012-02-17T17:22:56Z" user="Rahden 16" uid="94942" lat="40.7634173" lon="-74.0009742"/>
+ <node id="246942644" visible="true" version="24" changeset="14112769" timestamp="2012-12-01T16:15:47Z" user="Michael Yap" uid="1093326" lat="40.7643414" lon="-74.0031474"/>
+ <node id="246942645" visible="true" version="23" changeset="10713220" timestamp="2012-02-17T17:22:57Z" user="Rahden 16" uid="94942" lat="40.7646719" lon="-74.0029101"/>
+ <node id="246942646" visible="true" version="23" changeset="10713220" timestamp="2012-02-17T17:22:57Z" user="Rahden 16" uid="94942" lat="40.7634031" lon="-73.9999232"/>
+ <node id="246942647" visible="true" version="23" changeset="10713552" timestamp="2012-02-17T17:59:13Z" user="Rahden 16" uid="94942" lat="40.7642099" lon="-73.9991561"/>
+ <node id="246942650" visible="true" version="25" changeset="13222315" timestamp="2012-09-23T16:20:20Z" user="robgeb" uid="336460" lat="40.7645657" lon="-73.9988896"/>
+ <node id="246942651" visible="true" version="25" changeset="14112769" timestamp="2012-12-01T16:15:47Z" user="Michael Yap" uid="1093326" lat="40.7650444" lon="-73.9985391"/>
+ <node id="246942652" visible="true" version="23" changeset="14112769" timestamp="2012-12-01T16:15:47Z" user="Michael Yap" uid="1093326" lat="40.7650589" lon="-73.9986106"/>
+ <node id="246942653" visible="true" version="22" changeset="10713552" timestamp="2012-02-17T17:59:13Z" user="Rahden 16" uid="94942" lat="40.7652115" lon="-73.9986789"/>
+ <node id="246942654" visible="true" version="22" changeset="10713552" timestamp="2012-02-17T17:59:13Z" user="Rahden 16" uid="94942" lat="40.7652565" lon="-73.9986249"/>
+ <node id="246942655" visible="true" version="23" changeset="13222315" timestamp="2012-09-23T16:19:51Z" user="robgeb" uid="336460" lat="40.7654430" lon="-73.9983296"/>
+ <node id="246942656" visible="true" version="23" changeset="13222315" timestamp="2012-09-23T16:19:51Z" user="robgeb" uid="336460" lat="40.7669126" lon="-74.0016310"/>
+ <node id="246942657" visible="true" version="24" changeset="13222315" timestamp="2012-09-23T16:19:51Z" user="robgeb" uid="336460" lat="40.7673153" lon="-74.0013271"/>
+ <node id="246942658" visible="true" version="24" changeset="14112769" timestamp="2012-12-01T16:15:47Z" user="Michael Yap" uid="1093326" lat="40.7660666" lon="-73.9979213"/>
+ <node id="246942659" visible="true" version="23" changeset="14112769" timestamp="2012-12-01T16:22:50Z" user="Michael Yap" uid="1093326" lat="40.7668312" lon="-73.9973681"/>
+ <node id="246942660" visible="true" version="22" changeset="10713552" timestamp="2012-02-17T17:59:14Z" user="Rahden 16" uid="94942" lat="40.7682209" lon="-74.0006720"/>
+ <node id="246942661" visible="true" version="23" changeset="14112769" timestamp="2012-12-01T16:22:50Z" user="Michael Yap" uid="1093326" lat="40.7685163" lon="-74.0004452"/>
+ <node id="246942662" visible="true" version="24" changeset="14112769" timestamp="2012-12-01T16:22:50Z" user="Michael Yap" uid="1093326" lat="40.7671245" lon="-73.9971551"/>
+ <node id="246942663" visible="true" version="23" changeset="14112769" timestamp="2012-12-01T16:22:50Z" user="Michael Yap" uid="1093326" lat="40.7680944" lon="-73.9964398"/>
+ <node id="246942664" visible="true" version="22" changeset="10713552" timestamp="2012-02-17T17:59:14Z" user="Rahden 16" uid="94942" lat="40.7694856" lon="-73.9997537"/>
+ <node id="246942665" visible="true" version="23" changeset="10713552" timestamp="2012-02-17T17:59:14Z" user="Rahden 16" uid="94942" lat="40.7697882" lon="-73.9995203"/>
+ <node id="246942666" visible="true" version="25" changeset="48897488" timestamp="2017-05-22T19:26:57Z" user="ALE!" uid="40023" lat="40.7687427" lon="-73.9970806"/>
+ <node id="246942667" visible="true" version="24" changeset="14112769" timestamp="2012-12-01T16:22:50Z" user="Michael Yap" uid="1093326" lat="40.7694274" lon="-73.9965951"/>
+ <node id="246942668" visible="true" version="23" changeset="10713552" timestamp="2012-02-17T17:59:14Z" user="Rahden 16" uid="94942" lat="40.7704273" lon="-73.9989306"/>
+ <node id="246942669" visible="true" version="23" changeset="10713552" timestamp="2012-02-17T17:59:14Z" user="Rahden 16" uid="94942" lat="40.7707699" lon="-73.9986707"/>
+ <node id="246942670" visible="true" version="23" changeset="10713552" timestamp="2012-02-17T17:59:14Z" user="Rahden 16" uid="94942" lat="40.7697770" lon="-73.9963115"/>
+ <node id="246942671" visible="true" version="22" changeset="10713552" timestamp="2012-02-17T17:59:14Z" user="Rahden 16" uid="94942" lat="40.7716623" lon="-73.9949779"/>
+ <node id="246942672" visible="true" version="22" changeset="10713552" timestamp="2012-02-17T17:59:14Z" user="Rahden 16" uid="94942" lat="40.7725590" lon="-73.9971237"/>
+ <node id="246942673" visible="true" version="22" changeset="10713552" timestamp="2012-02-17T17:59:14Z" user="Rahden 16" uid="94942" lat="40.7728334" lon="-73.9969137"/>
+ <node id="246942674" visible="true" version="22" changeset="14112769" timestamp="2012-12-01T16:22:50Z" user="Michael Yap" uid="1093326" lat="40.7719351" lon="-73.9947747"/>
+ <node id="246942675" visible="true" version="22" changeset="14112769" timestamp="2012-12-01T16:22:50Z" user="Michael Yap" uid="1093326" lat="40.7723825" lon="-73.9944522"/>
+ <node id="246942676" visible="true" version="22" changeset="14112769" timestamp="2012-12-01T16:22:50Z" user="Michael Yap" uid="1093326" lat="40.7731387" lon="-73.9962345"/>
+ <node id="246942677" visible="true" version="22" changeset="14112769" timestamp="2012-12-01T16:22:50Z" user="Michael Yap" uid="1093326" lat="40.7732796" lon="-73.9961294"/>
+ <node id="246942678" visible="true" version="22" changeset="14112769" timestamp="2012-12-01T16:22:50Z" user="Michael Yap" uid="1093326" lat="40.7724668" lon="-73.9941693"/>
+ <node id="246942679" visible="true" version="22" changeset="14112769" timestamp="2012-12-01T16:22:50Z" user="Michael Yap" uid="1093326" lat="40.7729334" lon="-73.9938339"/>
+ <node id="246942680" visible="true" version="23" changeset="14112769" timestamp="2012-12-01T16:22:50Z" user="Michael Yap" uid="1093326" lat="40.7737999" lon="-73.9961434"/>
+ <node id="246942681" visible="true" version="23" changeset="14112769" timestamp="2012-12-01T16:22:50Z" user="Michael Yap" uid="1093326" lat="40.7740654" lon="-73.9960375"/>
+ <node id="246942682" visible="true" version="21" changeset="507947" timestamp="2009-04-13T22:59:07Z" user="partim" uid="48010" lat="40.7731738" lon="-73.9939064"/>
+ <node id="247120348" visible="true" version="5" changeset="49379537" timestamp="2017-06-08T20:49:40Z" user="ALE!" uid="40023" lat="40.7700320" lon="-73.9949325">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="247123611" visible="true" version="5" changeset="49379537" timestamp="2017-06-08T20:49:41Z" user="ALE!" uid="40023" lat="40.7698656" lon="-73.9943576">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="277046959" visible="true" version="8" changeset="51897344" timestamp="2017-09-10T05:12:12Z" user="nyuriks" uid="339581" lat="40.7423738" lon="-73.9481659">
+  <tag k="name" v="Hunters Point Avenue (7)"/>
+  <tag k="network" v="New York City Subway"/>
+  <tag k="railway" v="station"/>
+  <tag k="wheelchair" v="no"/>
+  <tag k="wikidata" v="Q2611930"/>
+  <tag k="wikipedia" v="en:Hunters Point Avenue (IRT Flushing Line)"/>
+ </node>
+ <node id="297480921" visible="true" version="23" changeset="24078013" timestamp="2014-07-11T09:03:07Z" user="NoelB" uid="236361" lat="40.7635657" lon="-73.9996284"/>
+ <node id="299046361" visible="true" version="12" changeset="51897341" timestamp="2017-09-10T05:11:31Z" user="nyuriks" uid="339581" lat="40.7579523" lon="-73.9855699">
+  <tag k="addr:postcode" v="10036"/>
+  <tag k="name" v="Times Square"/>
+  <tag k="name:en" v="Times Square"/>
+  <tag k="name:ru" v="Таймс-сквер"/>
+  <tag k="name:zh" v="時報廣場"/>
+  <tag k="tourism" v="attraction"/>
+  <tag k="wheelchair" v="yes"/>
+  <tag k="wikidata" v="Q11259"/>
+  <tag k="wikipedia" v="en:Times Square"/>
+ </node>
+ <node id="304980816" visible="true" version="2" changeset="45943910" timestamp="2017-02-09T10:53:30Z" user="rolandmwagner" uid="39288" lat="40.7666252" lon="-73.9671270"/>
+ <node id="321803845" visible="true" version="6" changeset="21088995" timestamp="2014-03-13T20:33:02Z" user="Rub21_nycbuildings" uid="1781294" lat="40.7585968" lon="-73.9768425"/>
+ <node id="321803847" visible="true" version="6" changeset="21088995" timestamp="2014-03-13T20:33:02Z" user="Rub21_nycbuildings" uid="1781294" lat="40.7588982" lon="-73.9766284"/>
+ <node id="349323821" visible="true" version="2" changeset="25465048" timestamp="2014-09-15T20:13:41Z" user="robgeb" uid="336460" lat="40.7625361" lon="-73.9766972">
+  <tag k="addr:city" v="New York"/>
+  <tag k="addr:housenumber" v="43"/>
+  <tag k="addr:postcode" v="10019"/>
+  <tag k="addr:street" v="West 55th Street"/>
+  <tag k="amenity" v="restaurant"/>
+  <tag k="cuisine" v="burger"/>
+  <tag k="name" v="Five Guys"/>
+  <tag k="website" v="http://www.fiveguys.com/"/>
+ </node>
+ <node id="357579218" visible="true" version="1" changeset="763672" timestamp="2009-03-08T23:00:05Z" user="iandees" uid="4732" lat="40.7567683" lon="-73.9723609">
+  <tag k="amenity" v="school"/>
+  <tag k="ele" v="15"/>
+  <tag k="gnis:county_id" v="061"/>
+  <tag k="gnis:created" v="01/23/1980"/>
+  <tag k="gnis:edited" v="09/06/2005"/>
+  <tag k="gnis:feature_id" v="961446"/>
+  <tag k="gnis:state_id" v="36"/>
+  <tag k="name" v="Public School 18"/>
+ </node>
+ <node id="357609892" visible="true" version="3" changeset="51897341" timestamp="2017-09-10T05:11:31Z" user="nyuriks" uid="339581" lat="40.7534349" lon="-73.9823612">
+  <tag k="ele" v="21"/>
+  <tag k="end_date" v="1899"/>
+  <tag k="gnis:feature_id" v="2062673"/>
+  <tag k="historic" v="reservoir"/>
+  <tag k="name" v="Croton Reservoir"/>
+  <tag k="start_date" v="1842"/>
+  <tag k="wikidata" v="Q5188981"/>
+  <tag k="wikipedia" v="en:Croton Distributing Reservoir"/>
+ </node>
+ <node id="357620487" visible="true" version="7" changeset="51897341" timestamp="2017-09-10T05:11:31Z" user="nyuriks" uid="339581" lat="40.7550421" lon="-73.9881185">
+  <tag k="demolished:amenity" v="school"/>
+  <tag k="ele" v="15"/>
+  <tag k="gnis:county_id" v="061"/>
+  <tag k="gnis:created" v="01/17/2006"/>
+  <tag k="gnis:feature_id" v="2083199"/>
+  <tag k="gnis:state_id" v="36"/>
+  <tag k="name" v="Parsons The New School for Design"/>
+  <tag k="url" v="http://en.wikipedia.org/wiki/Parsons_The_New_School_for_Design"/>
+  <tag k="wikidata" v="Q1339626"/>
+  <tag k="wikipedia" v="en:Parsons The New School for Design"/>
+ </node>
+ <node id="357620498" visible="true" version="5" changeset="20742496" timestamp="2014-02-23T23:05:49Z" user="wvdp" uid="436419" lat="40.7563342" lon="-73.9846623">
+  <tag k="ele" v="18"/>
+  <tag k="gnis:county_id" v="061"/>
+  <tag k="gnis:created" v="01/20/2006"/>
+  <tag k="gnis:feature_id" v="2083214"/>
+  <tag k="gnis:state_id" v="36"/>
+  <tag k="historic" v="place_of_worship"/>
+  <tag k="name" v="Manhattan Church of the Nazarene"/>
+  <tag k="religion" v="christian"/>
+ </node>
+ <node id="357621676" visible="true" version="1" changeset="763672" timestamp="2009-03-08T23:52:16Z" user="iandees" uid="4732" lat="40.7611111" lon="-73.9883333">
+  <tag k="amenity" v="school"/>
+  <tag k="ele" v="15"/>
+  <tag k="gnis:county_id" v="061"/>
+  <tag k="gnis:created" v="02/15/2006"/>
+  <tag k="gnis:feature_id" v="2083997"/>
+  <tag k="gnis:state_id" v="36"/>
+  <tag k="name" v="Public School 212"/>
+ </node>
+ <node id="357648621" visible="true" version="2" changeset="21015370" timestamp="2014-03-09T21:55:24Z" user="Rub21_nycbuildings" uid="1781294" lat="40.7615114" lon="-73.9886384">
+  <tag k="amenity" v="school"/>
+  <tag k="ele" v="15"/>
+  <tag k="gnis:county_id" v="061"/>
+  <tag k="gnis:created" v="10/21/2008"/>
+  <tag k="gnis:feature_id" v="2493099"/>
+  <tag k="gnis:state_id" v="36"/>
+  <tag k="name" v="M408 Professional Performing Arts High School"/>
+ </node>
+ <node id="357650837" visible="true" version="2" changeset="20407400" timestamp="2014-02-06T09:04:48Z" user="robgeb" uid="336460" lat="40.7598662" lon="-73.9750298">
+  <tag k="amenity" v="school"/>
+  <tag k="ele" v="19"/>
+  <tag k="gnis:county_id" v="061"/>
+  <tag k="gnis:created" v="10/14/2008"/>
+  <tag k="gnis:feature_id" v="2501238"/>
+  <tag k="gnis:state_id" v="36"/>
+  <tag k="name" v="Laboratory Institute of Merchandising"/>
+ </node>
+ <node id="368042983" visible="true" version="3" changeset="51897341" timestamp="2017-09-10T05:11:32Z" user="nyuriks" uid="339581" lat="40.7536111" lon="-73.9841667">
+  <tag k="addr:state" v="NY"/>
+  <tag k="ele" v="20"/>
+  <tag k="end_date" v="1858"/>
+  <tag k="gnis:county_name" v="New York"/>
+  <tag k="gnis:feature_id" v="2072068"/>
+  <tag k="historic" v="building"/>
+  <tag k="name" v="Crystal Palace"/>
+  <tag k="source" v="USGS Geonames"/>
+  <tag k="start_date" v="1853"/>
+  <tag k="wikidata" v="Q1983045"/>
+  <tag k="wikipedia" v="en:New York Crystal Palace"/>
+ </node>
+ <node id="368043730" visible="true" version="1" changeset="3235" timestamp="2009-04-01T00:15:22Z" user="amillar" uid="28145" lat="40.7550000" lon="-73.9819444">
+  <tag k="addr:state" v="NY"/>
+  <tag k="building" v="yes"/>
+  <tag k="ele" v="20"/>
+  <tag k="gnis:county_name" v="New York"/>
+  <tag k="gnis:feature_id" v="2083169"/>
+  <tag k="gnis:import_uuid" v="57871b70-0100-4405-bb30-88b2e001a944"/>
+  <tag k="gnis:reviewed" v="no"/>
+  <tag k="name" v="University of Pennsylvania Club"/>
+  <tag k="source" v="USGS Geonames"/>
+ </node>
+ <node id="368043739" visible="true" version="4" changeset="21105245" timestamp="2014-03-14T19:37:43Z" user="Rub21_nycbuildings" uid="1781294" lat="40.7555187" lon="-73.9819926">
+  <tag k="addr:housenumber" v="42"/>
+  <tag k="addr:state" v="NY"/>
+  <tag k="addr:street" v="West 44th Street"/>
+  <tag k="ele" v="19"/>
+  <tag k="gnis:county_name" v="New York"/>
+  <tag k="gnis:feature_id" v="2083168"/>
+  <tag k="gnis:import_uuid" v="57871b70-0100-4405-bb30-88b2e001a944"/>
+  <tag k="gnis:reviewed" v="no"/>
+  <tag k="name" v="Association of the Bar of the City of New York"/>
+  <tag k="source" v="USGS Geonames"/>
+ </node>
+ <node id="368043742" visible="true" version="3" changeset="21013273" timestamp="2014-03-09T20:10:14Z" user="Rub21_nycbuildings" uid="1781294" lat="40.7530564" lon="-73.9841884">
+  <tag k="addr:state" v="NY"/>
+  <tag k="building" v="yes"/>
+  <tag k="ele" v="20"/>
+  <tag k="gnis:county_name" v="New York"/>
+  <tag k="gnis:feature_id" v="2083158"/>
+  <tag k="gnis:import_uuid" v="57871b70-0100-4405-bb30-88b2e001a944"/>
+  <tag k="gnis:reviewed" v="no"/>
+  <tag k="name" v="Daytop Village"/>
+  <tag k="source" v="USGS Geonames"/>
+ </node>
+ <node id="368043746" visible="true" version="1" changeset="3235" timestamp="2009-04-01T00:15:26Z" user="amillar" uid="28145" lat="40.7533333" lon="-73.9852778">
+  <tag k="addr:state" v="NY"/>
+  <tag k="building" v="yes"/>
+  <tag k="ele" v="19"/>
+  <tag k="gnis:county_name" v="New York"/>
+  <tag k="gnis:feature_id" v="2083159"/>
+  <tag k="gnis:import_uuid" v="57871b70-0100-4405-bb30-88b2e001a944"/>
+  <tag k="gnis:reviewed" v="no"/>
+  <tag k="name" v="Bryant Park Studios"/>
+  <tag k="source" v="USGS Geonames"/>
+ </node>
+ <node id="368043764" visible="true" version="2" changeset="36897742" timestamp="2016-01-30T12:59:18Z" user="robgeb" uid="336460" lat="40.7594951" lon="-73.9753651"/>
+ <node id="368043851" visible="true" version="4" changeset="51897341" timestamp="2017-09-10T05:11:32Z" user="nyuriks" uid="339581" lat="40.7607932" lon="-73.9725635">
+  <tag k="addr:city" v="New York"/>
+  <tag k="addr:housenumber" v="57"/>
+  <tag k="addr:postcode" v="10022"/>
+  <tag k="addr:state" v="NY"/>
+  <tag k="addr:street" v="East 55th Street"/>
+  <tag k="club" v="theatre"/>
+  <tag k="gnis:county_name" v="New York"/>
+  <tag k="gnis:feature_id" v="2083261"/>
+  <tag k="name" v="Friar's Club"/>
+  <tag k="start_date" v="1904"/>
+  <tag k="website" v="www.friarsclub.com"/>
+  <tag k="wikidata" v="Q7013557"/>
+  <tag k="wikipedia" v="en:New York Friars Club"/>
+ </node>
+ <node id="368047441" visible="true" version="4" changeset="26667610" timestamp="2014-11-09T16:45:20Z" user="oude_account_kan_weg" uid="2424765" lat="40.7568252" lon="-73.9709356">
+  <tag k="addr:housenumber" v="165"/>
+  <tag k="addr:postcode" v="10022"/>
+  <tag k="addr:state" v="NY"/>
+  <tag k="addr:street" v="East 51st Street"/>
+  <tag k="amenity" v="fire_station"/>
+  <tag k="ele" v="12"/>
+  <tag k="gnis:county_name" v="New York"/>
+  <tag k="gnis:feature_id" v="2084040"/>
+  <tag k="gnis:import_uuid" v="57871b70-0100-4405-bb30-88b2e001a944"/>
+  <tag k="gnis:reviewed" v="no"/>
+  <tag k="name" v="Engine 8 / Ladder 2 / Battalion 8"/>
+  <tag k="source" v="USGS Geonames"/>
+ </node>
+ <node id="368047444" visible="true" version="2" changeset="26666267" timestamp="2014-11-09T15:51:26Z" user="oude_account_kan_weg" uid="2424765" lat="40.7531937" lon="-73.9903002">
+  <tag k="addr:housenumber" v="220"/>
+  <tag k="addr:state" v="NY"/>
+  <tag k="addr:street" v="West 37th Street"/>
+  <tag k="amenity" v="fire_station"/>
+  <tag k="ele" v="11"/>
+  <tag k="gnis:county_name" v="New York"/>
+  <tag k="gnis:feature_id" v="2084051"/>
+  <tag k="gnis:import_uuid" v="57871b70-0100-4405-bb30-88b2e001a944"/>
+  <tag k="gnis:reviewed" v="no"/>
+  <tag k="name" v="Engine 26"/>
+  <tag k="source" v="USGS Geonames"/>
+ </node>
+ <node id="368050750" visible="true" version="4" changeset="49024123" timestamp="2017-05-27T12:43:01Z" user="user_5359" uid="5359" lat="40.7605308" lon="-73.9747158">
+  <tag k="addr:state" v="NY"/>
+  <tag k="amenity" v="parking"/>
+  <tag k="ele" v="18"/>
+  <tag k="gnis:county_name" v="New York"/>
+  <tag k="gnis:feature_id" v="2083280"/>
+  <tag k="name" v="Alpha Garage"/>
+ </node>
+ <node id="368051263" visible="true" version="2" changeset="20742496" timestamp="2014-02-23T23:05:50Z" user="wvdp" uid="436419" lat="40.7541706" lon="-73.9818025">
+  <tag k="addr:state" v="NY"/>
+  <tag k="amenity" v="public_building"/>
+  <tag k="ele" v="21"/>
+  <tag k="gnis:county_name" v="New York"/>
+  <tag k="gnis:feature_id" v="2083166"/>
+  <tag k="gnis:import_uuid" v="57871b70-0100-4405-bb30-88b2e001a944"/>
+  <tag k="gnis:reviewed" v="no"/>
+  <tag k="name" v="Unification Church Headquarters"/>
+  <tag k="source" v="USGS Geonames"/>
+ </node>
+ <node id="368051445" visible="true" version="3" changeset="51897341" timestamp="2017-09-10T05:11:32Z" user="nyuriks" uid="339581" lat="40.7625043" lon="-73.9841063">
+  <tag k="addr:state" v="NY"/>
+  <tag k="ele" v="19"/>
+  <tag k="gnis:county_name" v="New York"/>
+  <tag k="gnis:feature_id" v="2072081"/>
+  <tag k="gnis:reviewed" v="no"/>
+  <tag k="historic" v="theatre"/>
+  <tag k="name" v="Mark Hellinger Theater"/>
+  <tag k="source" v="USGS Geonames"/>
+  <tag k="wikidata" v="Q6767988"/>
+  <tag k="wikipedia" v="en:Mark Hellinger Theatre"/>
+ </node>
+ <node id="368051619" visible="true" version="4" changeset="51897341" timestamp="2017-09-10T05:11:32Z" user="nyuriks" uid="339581" lat="40.7588940" lon="-73.9846754">
+  <tag k="addr:city" v="New York"/>
+  <tag k="addr:housenumber" v="1564"/>
+  <tag k="addr:state" v="NY"/>
+  <tag k="addr:street" v="Broadway"/>
+  <tag k="amenity" v="theatre"/>
+  <tag k="ele" v="15"/>
+  <tag k="gnis:feature_id" v="2083222"/>
+  <tag k="name" v="Palace Theater"/>
+  <tag k="source" v="USGS Geonames"/>
+  <tag k="wikidata" v="Q3360756"/>
+  <tag k="wikipedia" v="en:Palace Theatre (Broadway)"/>
+ </node>
+ <node id="368051649" visible="true" version="2" changeset="20742496" timestamp="2014-02-23T23:05:49Z" user="wvdp" uid="436419" lat="40.7563823" lon="-73.9848113">
+  <tag k="addr:state" v="NY"/>
+  <tag k="amenity" v="theatre"/>
+  <tag k="ele" v="18"/>
+  <tag k="gnis:county_name" v="New York"/>
+  <tag k="gnis:feature_id" v="2083213"/>
+  <tag k="gnis:import_uuid" v="57871b70-0100-4405-bb30-88b2e001a944"/>
+  <tag k="gnis:reviewed" v="no"/>
+  <tag k="name" v="Lambs Theater"/>
+  <tag k="source" v="USGS Geonames"/>
+ </node>
+ <node id="368051660" visible="true" version="2" changeset="11597198" timestamp="2012-05-14T16:54:47Z" user="robgeb" uid="336460" lat="40.7581985" lon="-73.9895564">
+  <tag k="addr:state" v="NY"/>
+  <tag k="amenity" v="theatre"/>
+  <tag k="ele" v="12"/>
+  <tag k="gnis:county_name" v="New York"/>
+  <tag k="gnis:feature_id" v="2083203"/>
+  <tag k="gnis:import_uuid" v="57871b70-0100-4405-bb30-88b2e001a944"/>
+  <tag k="gnis:reviewed" v="no"/>
+  <tag k="name" v="Second Stage Theater"/>
+  <tag k="source" v="USGS Geonames"/>
+ </node>
+ <node id="368052116" visible="true" version="2" changeset="11598404" timestamp="2012-05-14T18:51:08Z" user="robgeb" uid="336460" lat="40.7585928" lon="-73.9849571">
+  <tag k="addr:state" v="NY"/>
+  <tag k="building" v="yes"/>
+  <tag k="ele" v="15"/>
+  <tag k="gnis:county_name" v="New York"/>
+  <tag k="gnis:feature_id" v="2072080"/>
+  <tag k="gnis:import_uuid" v="57871b70-0100-4405-bb30-88b2e001a944"/>
+  <tag k="gnis:reviewed" v="no"/>
+  <tag k="name" v="Embassy I Theater"/>
+  <tag k="source" v="USGS Geonames"/>
+ </node>
+ <node id="368053255" visible="true" version="2" changeset="20742496" timestamp="2014-02-23T23:05:50Z" user="wvdp" uid="436419" lat="40.7563977" lon="-73.9875606">
+  <tag k="addr:state" v="NY"/>
+  <tag k="building" v="yes"/>
+  <tag k="ele" v="16"/>
+  <tag k="gnis:county_name" v="New York"/>
+  <tag k="gnis:feature_id" v="2072078"/>
+  <tag k="gnis:import_uuid" v="57871b70-0100-4405-bb30-88b2e001a944"/>
+  <tag k="gnis:reviewed" v="no"/>
+  <tag k="name" v="Rialto Building"/>
+  <tag k="source" v="USGS Geonames"/>
+ </node>
+ <node id="368053261" visible="true" version="1" changeset="3235" timestamp="2009-04-01T00:39:16Z" user="amillar" uid="28145" lat="40.7550000" lon="-73.9886111">
+  <tag k="addr:state" v="NY"/>
+  <tag k="building" v="yes"/>
+  <tag k="ele" v="15"/>
+  <tag k="gnis:county_name" v="New York"/>
+  <tag k="gnis:feature_id" v="2072075"/>
+  <tag k="gnis:import_uuid" v="57871b70-0100-4405-bb30-88b2e001a944"/>
+  <tag k="gnis:reviewed" v="no"/>
+  <tag k="name" v="Brotherhood In Action Building"/>
+  <tag k="source" v="USGS Geonames"/>
+ </node>
+ <node id="368053267" visible="true" version="1" changeset="3235" timestamp="2009-04-01T00:39:17Z" user="amillar" uid="28145" lat="40.7555556" lon="-73.9872222">
+  <tag k="addr:state" v="NY"/>
+  <tag k="building" v="yes"/>
+  <tag k="ele" v="16"/>
+  <tag k="gnis:county_name" v="New York"/>
+  <tag k="gnis:feature_id" v="2072076"/>
+  <tag k="gnis:import_uuid" v="57871b70-0100-4405-bb30-88b2e001a944"/>
+  <tag k="gnis:reviewed" v="no"/>
+  <tag k="name" v="Crossroads Building"/>
+  <tag k="source" v="USGS Geonames"/>
+ </node>
+ <node id="368053287" visible="true" version="1" changeset="3235" timestamp="2009-04-01T00:39:18Z" user="amillar" uid="28145" lat="40.7550000" lon="-73.9841667">
+  <tag k="addr:state" v="NY"/>
+  <tag k="building" v="yes"/>
+  <tag k="ele" v="19"/>
+  <tag k="gnis:county_name" v="New York"/>
+  <tag k="gnis:feature_id" v="2072069"/>
+  <tag k="gnis:import_uuid" v="57871b70-0100-4405-bb30-88b2e001a944"/>
+  <tag k="gnis:reviewed" v="no"/>
+  <tag k="name" v="Bryant Park Building"/>
+  <tag k="source" v="USGS Geonames"/>
+ </node>
+ <node id="368055562" visible="true" version="2" changeset="20742496" timestamp="2014-02-23T23:05:49Z" user="wvdp" uid="436419" lat="40.7563784" lon="-73.9874825">
+  <tag k="addr:state" v="NY"/>
+  <tag k="building" v="yes"/>
+  <tag k="ele" v="16"/>
+  <tag k="gnis:county_name" v="New York"/>
+  <tag k="gnis:feature_id" v="2083211"/>
+  <tag k="gnis:import_uuid" v="57871b70-0100-4405-bb30-88b2e001a944"/>
+  <tag k="gnis:reviewed" v="no"/>
+  <tag k="name" v="Reuters Building"/>
+  <tag k="source" v="USGS Geonames"/>
+ </node>
+ <node id="368061366" visible="true" version="6" changeset="21550837" timestamp="2014-04-07T11:51:31Z" user="robgeb" uid="336460" lat="40.7588235" lon="-73.9846955">
+  <tag k="addr:state" v="NY"/>
+  <tag k="ele" v="15"/>
+  <tag k="email" v="info@timessquarenyc.org"/>
+  <tag k="gnis:county_name" v="New York"/>
+  <tag k="gnis:feature_id" v="2083221"/>
+  <tag k="name" v="Times Square Museum &amp; Visitor Center"/>
+  <tag k="tourism" v="information"/>
+ </node>
+ <node id="368061915" visible="true" version="2" changeset="20742496" timestamp="2014-02-23T23:05:48Z" user="wvdp" uid="436419" lat="40.7549784" lon="-73.9819619">
+  <tag k="addr:state" v="NY"/>
+  <tag k="building" v="yes"/>
+  <tag k="ele" v="20"/>
+  <tag k="gnis:county_name" v="New York"/>
+  <tag k="gnis:feature_id" v="2072071"/>
+  <tag k="gnis:import_uuid" v="57871b70-0100-4405-bb30-88b2e001a944"/>
+  <tag k="gnis:reviewed" v="no"/>
+  <tag k="name" v="Army and Navy Club of America"/>
+  <tag k="source" v="USGS Geonames"/>
+ </node>
+ <node id="419359789" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:50:30Z" user="cityracks" uid="134892" lat="40.7620274" lon="-73.9901163">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="2"/>
+  <tag k="cityracks.housenum" v="693"/>
+  <tag k="cityracks.installed" v="10/15/200"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="2719"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="9th Ave"/>
+ </node>
+ <node id="419359878" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:50:35Z" user="cityracks" uid="134892" lat="40.7625235" lon="-73.9845318">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="5"/>
+  <tag k="cityracks.housenum" v="251"/>
+  <tag k="cityracks.large" v="1"/>
+  <tag k="cityracks.rackid" v="2561"/>
+  <tag k="cityracks.small" v="0"/>
+  <tag k="cityracks.street" v="W 51st St"/>
+ </node>
+ <node id="419359925" visible="true" version="2" changeset="31749987" timestamp="2015-06-05T16:17:54Z" user="cquest" uid="158826" lat="40.7569678" lon="-73.9739390">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="2"/>
+  <tag k="cityracks.housenum" v="315"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="2572"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="Park Ave North"/>
+ </node>
+ <node id="419359973" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:50:45Z" user="cityracks" uid="134892" lat="40.7610796" lon="-73.9831713">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="2"/>
+  <tag k="cityracks.housenum" v="761"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="2556"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="7th Ave"/>
+ </node>
+ <node id="419360006" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:50:48Z" user="cityracks" uid="134892" lat="40.7528708" lon="-73.9893706">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="2"/>
+  <tag k="cityracks.housenum" v="200"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="1295"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="W 37th St"/>
+ </node>
+ <node id="419360056" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:50:55Z" user="cityracks" uid="134892" lat="40.7615409" lon="-73.9840736">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="2"/>
+  <tag k="cityracks.housenum" v="1633"/>
+  <tag k="cityracks.installed" v="4/5/2000"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="2565"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="Broadway"/>
+ </node>
+ <node id="419360073" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:50:57Z" user="cityracks" uid="134892" lat="40.7546950" lon="-73.9755498">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="15"/>
+  <tag k="cityracks.housenum" v="245"/>
+  <tag k="cityracks.large" v="3"/>
+  <tag k="cityracks.rackid" v="163"/>
+  <tag k="cityracks.small" v="0"/>
+  <tag k="cityracks.street" v="Park Ave"/>
+ </node>
+ <node id="419360106" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:51:01Z" user="cityracks" uid="134892" lat="40.7619402" lon="-73.9757498">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="2"/>
+  <tag k="cityracks.housenum" v="24"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="153"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="W 55th St"/>
+ </node>
+ <node id="419360131" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:51:03Z" user="cityracks" uid="134892" lat="40.7555097" lon="-73.9779751">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="2"/>
+  <tag k="cityracks.housenum" v="20"/>
+  <tag k="cityracks.installed" v="6/1/2005"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="2805"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="E 46th St"/>
+ </node>
+ <node id="419360170" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:51:05Z" user="cityracks" uid="134892" lat="40.7559981" lon="-73.9771881">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="4"/>
+  <tag k="cityracks.housenum" v="22"/>
+  <tag k="cityracks.installed" v="6/10/2002"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="1307"/>
+  <tag k="cityracks.small" v="2"/>
+  <tag k="cityracks.street" v="E 47th St"/>
+ </node>
+ <node id="419360261" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:51:16Z" user="cityracks" uid="134892" lat="40.7619401" lon="-73.9757493">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="2"/>
+  <tag k="cityracks.housenum" v="24"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="2559"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="W 55th St"/>
+ </node>
+ <node id="419360262" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:51:16Z" user="cityracks" uid="134892" lat="40.7604489" lon="-73.9877666">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="2"/>
+  <tag k="cityracks.housenum" v="306"/>
+  <tag k="cityracks.installed" v="10/15/200"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="2794"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="W 47th St"/>
+ </node>
+ <node id="419360276" visible="true" version="2" changeset="31749987" timestamp="2015-06-05T16:17:55Z" user="cquest" uid="158826" lat="40.7601030" lon="-73.9719526">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="2"/>
+  <tag k="cityracks.housenum" v="410"/>
+  <tag k="cityracks.installed" v="4/5/2000"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="2575"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="Park Ave"/>
+ </node>
+ <node id="419360304" visible="true" version="2" changeset="31749987" timestamp="2015-06-05T16:17:55Z" user="cquest" uid="158826" lat="40.7584839" lon="-73.9731336">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="8"/>
+  <tag k="cityracks.housenum" v="360"/>
+  <tag k="cityracks.installed" v="1/8/2007"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="3106"/>
+  <tag k="cityracks.small" v="4"/>
+  <tag k="cityracks.street" v="Park Ave"/>
+ </node>
+ <node id="419360352" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:51:24Z" user="cityracks" uid="134892" lat="40.7600880" lon="-73.9787497">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="9"/>
+  <tag k="cityracks.housenum" v="51"/>
+  <tag k="cityracks.large" v="1"/>
+  <tag k="cityracks.rackid" v="2548,2566"/>
+  <tag k="cityracks.small" v="2"/>
+  <tag k="cityracks.street" v="W 51st St"/>
+ </node>
+ <node id="419360365" visible="true" version="2" changeset="31749987" timestamp="2015-06-05T16:17:55Z" user="cquest" uid="158826" lat="40.7610635" lon="-73.9710461">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="2"/>
+  <tag k="cityracks.housenum" v="443"/>
+  <tag k="cityracks.installed" v="10/15/200"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="3110"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="Park Ave North"/>
+ </node>
+ <node id="419360461" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:51:33Z" user="cityracks" uid="134892" lat="40.7624686" lon="-73.9844055">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="2"/>
+  <tag k="cityracks.housenum" v="245"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="2560"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="W 51st St"/>
+ </node>
+ <node id="419360525" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:51:35Z" user="cityracks" uid="134892" lat="40.7625967" lon="-73.9785575">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="2"/>
+  <tag k="cityracks.housenum" v="1345"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="2544"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="6th Ave"/>
+ </node>
+ <node id="419360545" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:51:36Z" user="cityracks" uid="134892" lat="40.7614043" lon="-73.9905640">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="2"/>
+  <tag k="cityracks.housenum" v="675"/>
+  <tag k="cityracks.installed" v="10/15/200"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="2718"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="9th Ave"/>
+ </node>
+ <node id="419360567" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:51:38Z" user="cityracks" uid="134892" lat="40.7587990" lon="-73.9853738">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="2"/>
+  <tag k="cityracks.housenum" v="1553"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="1271"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="Broadway"/>
+ </node>
+ <node id="419360745" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:52:03Z" user="cityracks" uid="134892" lat="40.7547948" lon="-73.9881828">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="2"/>
+  <tag k="cityracks.housenum" v="206"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="1296"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="W 40th St"/>
+ </node>
+ <node id="419360967" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:52:20Z" user="cityracks" uid="134892" lat="40.7605184" lon="-73.9758834">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="2"/>
+  <tag k="cityracks.housenum" v="1"/>
+  <tag k="cityracks.installed" v="8/26/2001"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="2540"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="W 53rd St"/>
+ </node>
+ <node id="419361200" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:52:50Z" user="cityracks" uid="134892" lat="40.7533060" lon="-73.9802930">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="5"/>
+  <tag k="cityracks.housenum" v="11"/>
+  <tag k="cityracks.installed" v="6/10/2002"/>
+  <tag k="cityracks.large" v="1"/>
+  <tag k="cityracks.rackid" v="1306"/>
+  <tag k="cityracks.small" v="0"/>
+  <tag k="cityracks.street" v="E 42nd St"/>
+ </node>
+ <node id="419361204" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:52:50Z" user="cityracks" uid="134892" lat="40.7611784" lon="-73.9830702">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="2"/>
+  <tag k="cityracks.housenum" v="671"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="780"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="7th Ave"/>
+ </node>
+ <node id="419361269" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:52:59Z" user="cityracks" uid="134892" lat="40.7524151" lon="-73.9722049">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="4"/>
+  <tag k="cityracks.housenum" v="235"/>
+  <tag k="cityracks.installed" v="6/10/2002"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="1318"/>
+  <tag k="cityracks.small" v="2"/>
+  <tag k="cityracks.street" v="E 45th St"/>
+ </node>
+ <node id="419361379" visible="true" version="3" changeset="49024123" timestamp="2017-05-27T12:43:01Z" user="user_5359" uid="5359" lat="40.7601391" lon="-73.9749829">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="0"/>
+  <tag k="cityracks.housenum" v="520"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="4981"/>
+  <tag k="cityracks.small" v="0"/>
+  <tag k="cityracks.street" v="Madison Avenue"/>
+ </node>
+ <node id="419361440" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:53:15Z" user="cityracks" uid="134892" lat="40.7542127" lon="-73.9868041">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="2"/>
+  <tag k="cityracks.housenum" v="1430"/>
+  <tag k="cityracks.installed" v="4/5/2000"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="1304"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="Broadway"/>
+ </node>
+ <node id="419361678" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:53:23Z" user="cityracks" uid="134892" lat="40.7569313" lon="-73.9770903">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="2"/>
+  <tag k="cityracks.housenum" v="17"/>
+  <tag k="cityracks.installed" v="8/26/2001"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="1314"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="E 48th St"/>
+ </node>
+ <node id="419361682" visible="true" version="2" changeset="31749987" timestamp="2015-06-05T16:17:55Z" user="cquest" uid="158826" lat="40.7577442" lon="-73.9738217">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="2"/>
+  <tag k="cityracks.housenum" v="330"/>
+  <tag k="cityracks.installed" v="10/15/200"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="3105"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="Park Ave North"/>
+ </node>
+ <node id="419361833" visible="true" version="2" changeset="31749987" timestamp="2015-06-05T16:17:55Z" user="cquest" uid="158826" lat="40.7609510" lon="-73.9713350">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="2"/>
+  <tag k="cityracks.housenum" v="432"/>
+  <tag k="cityracks.installed" v="10/15/200"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="3108"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="Park Ave North"/>
+ </node>
+ <node id="419361913" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:53:37Z" user="cityracks" uid="134892" lat="40.7558790" lon="-73.9889045">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="2"/>
+  <tag k="cityracks.housenum" v="0"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="710"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="W 41st St"/>
+ </node>
+ <node id="419361931" visible="true" version="4" changeset="49024123" timestamp="2017-05-27T12:43:01Z" user="user_5359" uid="5359" lat="40.7608050" lon="-73.9754100">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="4"/>
+  <tag k="cityracks.housenum" v="7"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="2554"/>
+  <tag k="cityracks.small" v="2"/>
+  <tag k="cityracks.street" v="W 51st St"/>
+ </node>
+ <node id="419361993" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:53:45Z" user="cityracks" uid="134892" lat="40.7536939" lon="-73.9885530">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="2"/>
+  <tag k="cityracks.housenum" v="527"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="130"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="7th Ave"/>
+ </node>
+ <node id="419362069" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:53:47Z" user="cityracks" uid="134892" lat="40.7554752" lon="-73.9709078">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="4"/>
+  <tag k="cityracks.housenum" v="805"/>
+  <tag k="cityracks.installed" v="6/10/2002"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="2580"/>
+  <tag k="cityracks.small" v="2"/>
+  <tag k="cityracks.street" v="3rd Ave"/>
+ </node>
+ <node id="419362085" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:53:47Z" user="cityracks" uid="134892" lat="40.7606502" lon="-73.9761938">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="7"/>
+  <tag k="cityracks.housenum" v="11"/>
+  <tag k="cityracks.installed" v="8/26/2001"/>
+  <tag k="cityracks.large" v="1"/>
+  <tag k="cityracks.rackid" v="2541,2563"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="W 53rd St"/>
+ </node>
+ <node id="419362121" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:53:48Z" user="cityracks" uid="134892" lat="40.7562287" lon="-73.9777366">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="2"/>
+  <tag k="cityracks.housenum" v="14"/>
+  <tag k="cityracks.installed" v="8/26/2001"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="1312"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="E 47th St"/>
+ </node>
+ <node id="419362270" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:53:54Z" user="cityracks" uid="134892" lat="40.7621516" lon="-73.9762546">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="2"/>
+  <tag k="cityracks.housenum" v="40"/>
+  <tag k="cityracks.installed" v="4/5/2000"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="2569"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="W 55th St"/>
+ </node>
+ <node id="419362298" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:53:57Z" user="cityracks" uid="134892" lat="40.7544039" lon="-73.9803180">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="10"/>
+  <tag k="cityracks.housenum" v="520"/>
+  <tag k="cityracks.large" v="2"/>
+  <tag k="cityracks.rackid" v="1278"/>
+  <tag k="cityracks.small" v="0"/>
+  <tag k="cityracks.street" v="5th Ave"/>
+ </node>
+ <node id="419362313" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:53:59Z" user="cityracks" uid="134892" lat="40.7618050" lon="-73.9902752">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="2"/>
+  <tag k="cityracks.housenum" v="687"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="1255"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="9th Ave"/>
+ </node>
+ <node id="419362523" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:54:09Z" user="cityracks" uid="134892" lat="40.7565884" lon="-73.9782238">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="2"/>
+  <tag k="cityracks.housenum" v="5"/>
+  <tag k="cityracks.installed" v="8/26/2001"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="1313"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="E 47th St"/>
+ </node>
+ <node id="419362530" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:54:10Z" user="cityracks" uid="134892" lat="40.7610492" lon="-73.9814061">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="2"/>
+  <tag k="cityracks.housenum" v="148"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="2546"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="W 51st St"/>
+ </node>
+ <node id="419362533" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:54:10Z" user="cityracks" uid="134892" lat="40.7586759" lon="-73.9889942">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="2"/>
+  <tag k="cityracks.housenum" v="305"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="1256"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="W 44th St"/>
+ </node>
+ <node id="419362535" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:54:11Z" user="cityracks" uid="134892" lat="40.7552116" lon="-73.9851783">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="2"/>
+  <tag k="cityracks.housenum" v="0"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="173"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="42nd St - bad address"/>
+ </node>
+ <node id="419362548" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:54:12Z" user="cityracks" uid="134892" lat="40.7618996" lon="-73.9825716">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="2"/>
+  <tag k="cityracks.housenum" v="787"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="144"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="7th Ave"/>
+ </node>
+ <node id="419362602" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:54:20Z" user="cityracks" uid="134892" lat="40.7553114" lon="-73.9712345">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="5"/>
+  <tag k="cityracks.housenum" v="800"/>
+  <tag k="cityracks.installed" v="2/10/2009"/>
+  <tag k="cityracks.large" v="1"/>
+  <tag k="cityracks.rackid" v="4822"/>
+  <tag k="cityracks.small" v="0"/>
+  <tag k="cityracks.street" v="3 Avenue"/>
+ </node>
+ <node id="419362753" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:54:27Z" user="cityracks" uid="134892" lat="40.7594867" lon="-73.9773240">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="5"/>
+  <tag k="cityracks.housenum" v="640"/>
+  <tag k="cityracks.large" v="1"/>
+  <tag k="cityracks.rackid" v="2549"/>
+  <tag k="cityracks.small" v="0"/>
+  <tag k="cityracks.street" v="5th Ave"/>
+ </node>
+ <node id="419362772" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:54:28Z" user="cityracks" uid="134892" lat="40.7557253" lon="-73.9722901">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="2"/>
+  <tag k="cityracks.housenum" v="145"/>
+  <tag k="cityracks.installed" v="4/3/2000"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="2596"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="E 49th St"/>
+ </node>
+ <node id="419362810" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:54:30Z" user="cityracks" uid="134892" lat="40.7616697" lon="-73.9828752">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="2"/>
+  <tag k="cityracks.housenum" v="200"/>
+  <tag k="cityracks.installed" v="4/5/2000"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="2568"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="W 51st St"/>
+ </node>
+ <node id="419362945" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:54:36Z" user="cityracks" uid="134892" lat="40.7614118" lon="-73.9839582">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="5"/>
+  <tag k="cityracks.housenum" v="1632"/>
+  <tag k="cityracks.large" v="1"/>
+  <tag k="cityracks.rackid" v="2550"/>
+  <tag k="cityracks.small" v="0"/>
+  <tag k="cityracks.street" v="Broadway"/>
+ </node>
+ <node id="419362994" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:54:40Z" user="cityracks" uid="134892" lat="40.7560074" lon="-73.9833675">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="2"/>
+  <tag k="cityracks.housenum" v="1133"/>
+  <tag k="cityracks.installed" v="4/5/2000"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="1279"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="6th Ave"/>
+ </node>
+ <node id="419363063" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:54:43Z" user="cityracks" uid="134892" lat="40.7562779" lon="-73.9797973">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="12"/>
+  <tag k="cityracks.housenum" v="22"/>
+  <tag k="cityracks.large" v="2"/>
+  <tag k="cityracks.rackid" v="196,79,80"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="West 46th Street"/>
+ </node>
+ <node id="419363092" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:54:44Z" user="cityracks" uid="134892" lat="40.7529916" lon="-73.9892839">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="2"/>
+  <tag k="cityracks.housenum" v="200"/>
+  <tag k="cityracks.installed" v="10/15/200"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="2803"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="W 37th St"/>
+ </node>
+ <node id="419363147" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:54:45Z" user="cityracks" uid="134892" lat="40.7567182" lon="-73.9828512">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="2"/>
+  <tag k="cityracks.housenum" v="1155"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="1270"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="6th Ave"/>
+ </node>
+ <node id="419363473" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:55:01Z" user="cityracks" uid="134892" lat="40.7575255" lon="-73.9711054">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="2"/>
+  <tag k="cityracks.housenum" v="150"/>
+  <tag k="cityracks.installed" v="4/18/2005"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="3114"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="E 52nd St"/>
+ </node>
+ <node id="419363530" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:55:03Z" user="cityracks" uid="134892" lat="40.7568532" lon="-73.9866086">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="5"/>
+  <tag k="cityracks.housenum" v="205"/>
+  <tag k="cityracks.large" v="1"/>
+  <tag k="cityracks.rackid" v="1276"/>
+  <tag k="cityracks.small" v="0"/>
+  <tag k="cityracks.street" v="W 43rd St"/>
+ </node>
+ <node id="419363557" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:55:04Z" user="cityracks" uid="134892" lat="40.7625232" lon="-73.9845307">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="2"/>
+  <tag k="cityracks.housenum" v="251"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="88"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="W 51St"/>
+ </node>
+ <node id="419363683" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:55:13Z" user="cityracks" uid="134892" lat="40.7606153" lon="-73.9803739">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="2"/>
+  <tag k="cityracks.housenum" v="110"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="2542"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="W 51st St"/>
+ </node>
+ <node id="419363724" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:55:19Z" user="cityracks" uid="134892" lat="40.7568847" lon="-73.9773538">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="2"/>
+  <tag k="cityracks.housenum" v="589"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="1309"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="5th Ave"/>
+ </node>
+ <node id="419363750" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:55:21Z" user="cityracks" uid="134892" lat="40.7550536" lon="-73.9756291">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="15"/>
+  <tag k="cityracks.housenum" v="250"/>
+  <tag k="cityracks.large" v="3"/>
+  <tag k="cityracks.rackid" v="1311"/>
+  <tag k="cityracks.small" v="0"/>
+  <tag k="cityracks.street" v="Park Ave"/>
+ </node>
+ <node id="419363762" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:55:22Z" user="cityracks" uid="134892" lat="40.7550432" lon="-73.9787080">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="2"/>
+  <tag k="cityracks.housenum" v="0"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="711"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="E 45th St"/>
+ </node>
+ <node id="419363766" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:55:23Z" user="cityracks" uid="134892" lat="40.7606959" lon="-73.9873659">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="2"/>
+  <tag k="cityracks.housenum" v="777"/>
+  <tag k="cityracks.installed" v="10/15/200"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="2801"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="8th Ave"/>
+ </node>
+ <node id="419363837" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:55:29Z" user="cityracks" uid="134892" lat="40.7615560" lon="-73.9764173">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="10"/>
+  <tag k="cityracks.housenum" v="33"/>
+  <tag k="cityracks.large" v="2"/>
+  <tag k="cityracks.rackid" v="2562"/>
+  <tag k="cityracks.small" v="0"/>
+  <tag k="cityracks.street" v="W 54th St"/>
+ </node>
+ <node id="419364010" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:55:53Z" user="cityracks" uid="134892" lat="40.7625105" lon="-73.9907011">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="2"/>
+  <tag k="cityracks.housenum" v="426"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="1247"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="W 48th St"/>
+ </node>
+ <node id="419364052" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:55:57Z" user="cityracks" uid="134892" lat="40.7545441" lon="-73.9811300">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="2"/>
+  <tag k="cityracks.housenum" v="23"/>
+  <tag k="cityracks.installed" v="4/5/2000"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="1283"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="W 43rd St"/>
+ </node>
+ <node id="419364061" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:55:58Z" user="cityracks" uid="134892" lat="40.7562785" lon="-73.9797976">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="5"/>
+  <tag k="cityracks.housenum" v="22"/>
+  <tag k="cityracks.large" v="1"/>
+  <tag k="cityracks.rackid" v="1277"/>
+  <tag k="cityracks.small" v="0"/>
+  <tag k="cityracks.street" v="W 46th St"/>
+ </node>
+ <node id="419364074" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:56:00Z" user="cityracks" uid="134892" lat="40.7547407" lon="-73.9756581">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="15"/>
+  <tag k="cityracks.housenum" v="245"/>
+  <tag k="cityracks.large" v="3"/>
+  <tag k="cityracks.rackid" v="1310"/>
+  <tag k="cityracks.small" v="0"/>
+  <tag k="cityracks.street" v="Park Ave"/>
+ </node>
+ <node id="419364337" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:56:27Z" user="cityracks" uid="134892" lat="40.7592303" lon="-73.9887379">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="2"/>
+  <tag k="cityracks.housenum" v="308"/>
+  <tag k="cityracks.installed" v="10/15/200"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="2795"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="W 45th St"/>
+ </node>
+ <node id="419364342" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:56:27Z" user="cityracks" uid="134892" lat="40.7600121" lon="-73.9844566">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="2"/>
+  <tag k="cityracks.housenum" v="0"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="731"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="W 48th St"/>
+ </node>
+ <node id="419364465" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:56:41Z" user="cityracks" uid="134892" lat="40.7603640" lon="-73.9894704">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="2"/>
+  <tag k="cityracks.housenum" v="352"/>
+  <tag k="cityracks.installed" v="4/10/2000"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="1266"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="W 46th St"/>
+ </node>
+ <node id="419364488" visible="true" version="2" changeset="31749987" timestamp="2015-06-05T16:17:56Z" user="cquest" uid="158826" lat="40.7598808" lon="-73.9721115">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="2"/>
+  <tag k="cityracks.housenum" v="404"/>
+  <tag k="cityracks.installed" v="10/15/200"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="3107"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="Park Ave North"/>
+ </node>
+ <node id="419364496" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:56:45Z" user="cityracks" uid="134892" lat="40.7593840" lon="-73.9883299">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="2"/>
+  <tag k="cityracks.housenum" v="721"/>
+  <tag k="cityracks.installed" v="10/15/200"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="2720"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="8th Ave"/>
+ </node>
+ <node id="419364595" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:56:56Z" user="cityracks" uid="134892" lat="40.7548689" lon="-73.9879878">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="4"/>
+  <tag k="cityracks.housenum" v="202"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="1305"/>
+  <tag k="cityracks.small" v="2"/>
+  <tag k="cityracks.street" v="W 40th St"/>
+ </node>
+ <node id="419364619" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:56:59Z" user="cityracks" uid="134892" lat="40.7534935" lon="-73.9712479">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="2"/>
+  <tag k="cityracks.housenum" v="240"/>
+  <tag k="cityracks.installed" v="6/27/2006"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="2807"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="E 47th St"/>
+ </node>
+ <node id="419364624" visible="true" version="2" changeset="31749987" timestamp="2015-06-05T16:17:56Z" user="cquest" uid="158826" lat="40.7603638" lon="-73.9717612">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="2"/>
+  <tag k="cityracks.housenum" v="418"/>
+  <tag k="cityracks.installed" v="10/15/200"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="3113"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="Park Ave North"/>
+ </node>
+ <node id="419364666" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:57:03Z" user="cityracks" uid="134892" lat="40.7607535" lon="-73.9873226">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="2"/>
+  <tag k="cityracks.housenum" v="779"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="1263"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="8th Ave"/>
+ </node>
+ <node id="419364682" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:57:05Z" user="cityracks" uid="134892" lat="40.7572598" lon="-73.9879487">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="2"/>
+  <tag k="cityracks.housenum" v="250"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="87"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="West 43rd St"/>
+ </node>
+ <node id="419364692" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:57:07Z" user="cityracks" uid="134892" lat="40.7545750" lon="-73.9866921">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="2"/>
+  <tag k="cityracks.housenum" v="1440"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="1294"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="Broadway"/>
+ </node>
+ <node id="419364968" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:57:21Z" user="cityracks" uid="134892" lat="40.7570781" lon="-73.9855799">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="9"/>
+  <tag k="cityracks.housenum" v="190"/>
+  <tag k="cityracks.installed" v="6/10/2002"/>
+  <tag k="cityracks.large" v="1"/>
+  <tag k="cityracks.rackid" v="1272,1273,1274"/>
+  <tag k="cityracks.small" v="2"/>
+  <tag k="cityracks.street" v="W 44th St"/>
+ </node>
+ <node id="419365071" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:57:24Z" user="cityracks" uid="134892" lat="40.7612499" lon="-73.9838246">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="2"/>
+  <tag k="cityracks.housenum" v="204"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="2557"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="W 50th St"/>
+ </node>
+ <node id="419365437" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:57:32Z" user="cityracks" uid="134892" lat="40.7552418" lon="-73.9848800">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="2"/>
+  <tag k="cityracks.housenum" v="125"/>
+  <tag k="cityracks.installed" v="4/5/2000"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="1280"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="W 42nd St"/>
+ </node>
+ <node id="419366204" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:58:03Z" user="cityracks" uid="134892" lat="40.7591756" lon="-73.9905535">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="10"/>
+  <tag k="cityracks.housenum" v="358"/>
+  <tag k="cityracks.large" v="2"/>
+  <tag k="cityracks.rackid" v="1257"/>
+  <tag k="cityracks.small" v="0"/>
+  <tag k="cityracks.street" v="W 44th St"/>
+ </node>
+ <node id="419366255" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:58:05Z" user="cityracks" uid="134892" lat="40.7529477" lon="-73.9893092">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="10"/>
+  <tag k="cityracks.housenum" v="500"/>
+  <tag k="cityracks.large" v="2"/>
+  <tag k="cityracks.rackid" v="1299"/>
+  <tag k="cityracks.small" v="0"/>
+  <tag k="cityracks.street" v="7th Ave"/>
+ </node>
+ <node id="419366614" visible="true" version="1" changeset="1500261" timestamp="2009-06-12T21:58:37Z" user="cityracks" uid="134892" lat="40.7550927" lon="-73.9757279">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="15"/>
+  <tag k="cityracks.housenum" v="250"/>
+  <tag k="cityracks.large" v="3"/>
+  <tag k="cityracks.rackid" v="182"/>
+  <tag k="cityracks.small" v="0"/>
+  <tag k="cityracks.street" v="Park Ave"/>
+ </node>
+ <node id="419366686" visible="true" version="2" changeset="31749987" timestamp="2015-06-05T16:17:56Z" user="cquest" uid="158826" lat="40.7609235" lon="-73.9711509">
+  <tag k="amenity" v="bicycle_parking"/>
+  <tag k="capacity" v="2"/>
+  <tag k="cityracks.housenum" v="439"/>
+  <tag k="cityracks.installed" v="10/15/200"/>
+  <tag k="cityracks.large" v="0"/>
+  <tag k="cityracks.rackid" v="3109"/>
+  <tag k="cityracks.small" v="1"/>
+  <tag k="cityracks.street" v="Park Ave North"/>
+ </node>
+</osm>
